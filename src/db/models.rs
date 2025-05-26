@@ -1,50 +1,37 @@
-use diesel::{Queryable, Selectable};
+use diesel::{Queryable, Selectable, Insertable};
 use std::time::SystemTime;
 use crate::db::schema::*;
 
-#[derive(serde::Serialize, serde::Deserialize, Queryable, Selectable,)]
-#[diesel(table_name = youranime_tw)]
-pub struct YourAnimeTw {
-    pub id: i32,
-    pub season_name: String,
-    pub name: String,
-    pub subject_id: Option<i32>,
-    pub created_at: SystemTime,
-    pub updated_at: SystemTime,
-}
-
-#[derive(serde::Serialize, serde::Deserialize, Queryable, Selectable,)]
-#[diesel(table_name = bgm_tv_index)]
-pub struct BgmTvIndex {
-    pub id: i32,
-    pub season_name: String,
-    pub subject_ids: Option<Vec<String>>,
+#[derive(serde::Serialize, serde::Deserialize, Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = season)]
+pub struct Season {
+    pub season_id: i32,
+    pub index_id: i32,
     pub verified: bool,
-    pub created_at: SystemTime,
-    pub updated_at: SystemTime,
 }
 
-#[derive(serde::Serialize, serde::Deserialize, Queryable, Selectable,)]
-#[diesel(table_name = bgm_tv_subject)]
-pub struct BgmTvSubject {
-    pub id: i32,
-    pub season_name: String,
+#[derive(serde::Serialize, serde::Deserialize, Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = subject)]
+pub struct Subject {
+    pub subject_id: i32,
     pub name: String,
     pub name_cn: String,
-    pub date: String,
     pub images_grid: String,
     pub images_large: String,
-    pub air_weekday: String,
     pub rank: i32,
     pub score: f32,
-    pub rating_count: i32,
-    pub collection_on_hold: i32,
-    pub collection_dropped: i32,
-    pub collection_wish: i32,
-    pub collection_collect: i32,
-    pub collection_doing: i32,
+    pub collection_total: i32,
+    pub average_comment: f32,
+    pub drop_rate: f32,
+    pub air_weekday: String,
     pub meta_tags: Vec<String>,
-    pub nsfw: bool,
-    pub created_at: SystemTime,
+}
+
+#[derive(serde::Serialize, serde::Deserialize, Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = subject_season)]
+pub struct SubjectSeason {
+    pub subject_season_id: i32,
+    pub subject_id: Option<i32>,
+    pub season_id: Option<i32>,
     pub updated_at: SystemTime,
 }

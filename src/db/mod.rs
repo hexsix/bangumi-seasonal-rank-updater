@@ -44,24 +44,4 @@ where
     }
 }
 
-pub async fn create_bgm_tv_index(pool: &Pool, index_id: i32, season_name: &str, verified: bool) -> Result<(), Error> {
-    let mut conn = pool.get_owned().await.map_err(|e| Box::new(e) as Error)?;
-    
-    let now = SystemTime::now();
-    let index = (
-        bgm_tv_index::id.eq(index_id),
-        bgm_tv_index::season_name.eq(season_name),
-        bgm_tv_index::verified.eq(verified),
-        bgm_tv_index::created_at.eq(now),
-        bgm_tv_index::updated_at.eq(now),
-    );
-
-    diesel::insert_into(bgm_tv_index::table)
-        .values(index)
-        .execute(&mut conn)
-        .await
-        .map_err(|e| Box::new(e) as Error)?;
-
-    Ok(())
-}
 

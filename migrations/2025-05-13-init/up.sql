@@ -1,41 +1,31 @@
 -- Your SQL goes here
-CREATE TABLE "bgm_tv_index"(
-    "id" SERIAL PRIMARY KEY,
-    "season_name" TEXT NOT NULL,
-    "subject_ids" TEXT[],
-    "verified" BOOLEAN NOT NULL,
-    "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE "season"(
+    "season_id" INTEGER PRIMARY KEY,
+    "index_id" INTEGER NOT NULL,
+    "verified" BOOLEAN NOT NULL DEFAULT FALSE
 );
 
-CREATE TABLE "bgm_tv_subject"(
-    "id" SERIAL PRIMARY KEY,
-    "season_name" TEXT NOT NULL,
+CREATE TABLE "subject"(
+    "subject_id" INTEGER PRIMARY KEY,
     "name" TEXT NOT NULL,
     "name_cn" TEXT NOT NULL,
-    "date" TEXT NOT NULL,
     "images_grid" TEXT NOT NULL,
     "images_large" TEXT NOT NULL,
-    "air_weekday" TEXT NOT NULL,
     "rank" INTEGER NOT NULL,
     "score" FLOAT NOT NULL,
-    "rating_count" INTEGER NOT NULL,
-    "collection_on_hold" INTEGER NOT NULL,
-    "collection_dropped" INTEGER NOT NULL,
-    "collection_wish" INTEGER NOT NULL,
-    "collection_collect" INTEGER NOT NULL,
-    "collection_doing" INTEGER NOT NULL,
-    "meta_tags" TEXT[] NOT NULL,
-    "nsfw" BOOLEAN NOT NULL,
-    "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    "collection_total" INTEGER NOT NULL,
+    "average_comment" FLOAT NOT NULL,
+    "drop_rate" FLOAT NOT NULL,
+    "air_weekday" TEXT NOT NULL,
+    "meta_tags" TEXT[] NOT NULL
 );
 
-CREATE TABLE "youranime_tw"(
-    "id" SERIAL PRIMARY KEY,
-    "season_name" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
-    "subject_id" INTEGER REFERENCES "bgm_tv_subject"("id"),
-    "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE "subject_season"(
+    "subject_season_id" SERIAL PRIMARY KEY,
+    "subject_id" INTEGER,
+    "season_id" INTEGER,
+    "updated_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY ("subject_id") REFERENCES "subject"("subject_id"),
+    FOREIGN KEY ("season_id") REFERENCES "season"("season_id"),
+    UNIQUE ("subject_id", "season_id")
 );
