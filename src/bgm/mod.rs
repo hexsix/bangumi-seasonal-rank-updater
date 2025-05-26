@@ -51,25 +51,24 @@ async fn get_average_comment(subject_id: i32) -> Result<f32, Error> {
 
     loop {
         let episodes = get_episodes(subject_id, 0, 100, offset).await?;
-        println!("episodes: {:?}", episodes);
         let current_batch_size = episodes.data.len();
 
         for episode in episodes.data {
-            total_comments += episode.comment;
             // 检查剧集是否已经播出（airdate 不为空且早于或等于当前日期）
             if !episode.airdate.is_empty() {
                 if let Ok(air_date) =
                     chrono::NaiveDate::parse_from_str(&episode.airdate, "%Y-%m-%d")
                 {
-                    if air_date <= now {
+                    if air_date < now {
                         aired_episodes += 1;
+                        total_comments += episode.comment;
                     }
                 }
             }
         }
 
         // 如果当前批次的数据少于请求的 limit，说明已经获取完所有数据
-        if current_batch_size == 0 {
+        if current_batch_size < 100 {
             break;
         }
         offset += 100;
