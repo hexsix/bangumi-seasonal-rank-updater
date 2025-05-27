@@ -1,95 +1,43 @@
-use axum::{
-    debug_handler,
-    extract::{Query, State},
-    routing::{get, post},
-    Json, Router,
-};
-use diesel_async::{pooled_connection::AsyncDieselConnectionManager, AsyncPgConnection};
-use serde::{Deserialize, Serialize};
-use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
+use axum::{routing::get, Router};
+use dotenvy::dotenv;
+use std::env;
+use std::sync::Arc;
+use tracing::info;
 
+mod api;
 mod bgm;
-mod db;
-mod scrapying;
-use db::models::*;
+use api::{available_seasons, get_season, root, update_all_seasons};
 
-type Pool = bb8::Pool<AsyncDieselConnectionManager<AsyncPgConnection>>;
+#[derive(Clone, Debug)]
+struct AppState {
+    redis_client: Arc<redis::Client>,
+}
 
 #[tokio::main]
-async fn main() {
-    tracing_subscriber::registry()
-        .with(
-            tracing_subscriber::EnvFilter::try_from_default_env()
-                .unwrap_or_else(|_| format!("{}=debug", env!("CARGO_CRATE_NAME")).into()),
-        )
-        .with(tracing_subscriber::fmt::layer())
+async fn main() -> redis::RedisResult<()> {
+    tracing_subscriber::fmt()
+        .json()
+        .with_env_filter("bangumi_seasonal_rank_updater=info,warn")
         .init();
 
-    let db_url = std::env::var("DATABASE_URL").expect("DATABASE_URL is not set");
+    dotenv().ok();
 
-    let config = AsyncDieselConnectionManager::<diesel_async::AsyncPgConnection>::new(db_url);
-    let pool = bb8::Pool::builder().build(config).await.unwrap();
+    info!("bangumi seasonal rank updater is starting...");
+
+    let redis_url = env::var("REDIS_URL").expect("REDIS_URL is not set");
+    let client = redis::Client::open(redis_url).unwrap();
+    let state = AppState {
+        redis_client: Arc::new(client),
+    };
 
     let app = Router::new()
         .route("/", get(root))
-        .route("/available_seasons", get(available_seasons))
-        .route("/seasonal_bangumi_list", get(seasonal_bangumi_list_handler))
-        .route("/index/detail", get(index_detail_handler))
-        .route("/subject/detail", get(subject_detail_handler))
-        .with_state(pool);
+        .route("/api/v0/seasons", get(available_seasons))
+        .route("/api/v0/season/{season_id}", get(get_season))
+        .route("/api/v0/update_all/", get(update_all_seasons))
+        .with_state(state);
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     axum::serve(listener, app).await.unwrap();
-}
-
-async fn root() -> &'static str {
-    "Hello, World!"
-}
-
-async fn available_seasons() -> Json<Vec<String>> {
-    Json(vec!["202501".to_string(), "202504".to_string()])
-}
-
-#[derive(Deserialize)]
-struct SeasonQuery {
-    season: String,
-}
-
-async fn seasonal_bangumi_list_handler(Query(query): Query<SeasonQuery>) -> Json<Vec<String>> {
-    scrapying::youranimes_tw::get_seasonal_bangumi_list(query.season).await
-}
-
-#[derive(Serialize, Deserialize)]
-struct BgmTvIndexRequest {
-    id: i32,
-    season_name: String,
-    verified: bool,
-}
-
-#[derive(Deserialize)]
-struct IndexDetailQuery {
-    index_id: i32,
-}
-
-async fn index_detail_handler(
-    Query(query): Query<IndexDetailQuery>,
-) -> Result<Json<Vec<String>>, (axum::http::StatusCode, String)> {
-    match bgm::get_bgm_tv_index_subject_ids(query.index_id).await {
-        Ok(subject_ids) => Ok(Json(subject_ids.iter().map(|v| v.to_string()).collect())),
-        Err(e) => Err((axum::http::StatusCode::INTERNAL_SERVER_ERROR, e.to_string())),
-    }
-}
-
-#[derive(Deserialize)]
-struct SubjectDetailQuery {
-    subject_id: i32,
-}
-
-async fn subject_detail_handler(
-    Query(query): Query<SubjectDetailQuery>,
-) -> Result<Json<Subject>, (axum::http::StatusCode, String)> {
-    match bgm::get_bgm_tv_subject_detail(query.subject_id).await {
-        Ok(subject) => Ok(subject),
-        Err(e) => Err((axum::http::StatusCode::INTERNAL_SERVER_ERROR, e.to_string())),
-    }
+    Ok(())
 }

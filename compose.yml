@@ -1,12 +1,6 @@
 services:
-  db:
-    image: postgres:15
+  redis:
+    image: redis:alpine
     ports:
-      - 5432:5432
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
-    volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - 6379:6379
     restart: always

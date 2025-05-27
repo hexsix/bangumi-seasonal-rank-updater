@@ -1,6 +1,6 @@
 use self::models::Collection;
-use crate::db::models::Subject;
-use axum::Json;
+use anyhow::Result;
+use serde_json;
 
 pub mod api;
 pub mod models;
@@ -8,9 +8,7 @@ pub mod models;
 use api::{get_episodes, get_index, get_subject};
 use models::Rating;
 
-type Error = Box<dyn std::error::Error + Send + Sync>;
-
-pub async fn get_bgm_tv_index_subject_ids(index_id: i32) -> Result<Vec<i32>, Error> {
+pub async fn get_bgm_tv_index_subject_ids(index_id: i32) -> Result<Vec<i32>> {
     let mut offset = 0;
     let mut subject_ids = Vec::new();
     loop {
@@ -43,7 +41,7 @@ fn get_total_collection(collection: Collection) -> i32 {
         + collection.dropped
 }
 
-async fn get_average_comment(subject_id: i32) -> Result<f32, Error> {
+async fn get_average_comment(subject_id: i32) -> Result<f32> {
     let mut offset = 0;
     let mut total_comments = 0;
     let mut aired_episodes = 0;
@@ -84,7 +82,7 @@ fn get_drop_rate(collection: Collection, collection_total: i32) -> f32 {
     collection.dropped as f32 / collection_total as f32
 }
 
-pub async fn get_bgm_tv_subject_detail(subject_id: i32) -> Result<Json<Subject>, Error> {
+pub async fn get_bgm_tv_subject_detail(subject_id: i32) -> Result<serde_json::Value> {
     let subject = get_subject(subject_id).await?;
     let mut air_weekday = "".to_string();
     for infobox_item in subject.infobox {
@@ -96,19 +94,19 @@ pub async fn get_bgm_tv_subject_detail(subject_id: i32) -> Result<Json<Subject>,
     let collection_total = get_total_collection(subject.collection);
     let average_comment = get_average_comment(subject_id).await?;
     let drop_rate = get_drop_rate(subject.collection, collection_total);
-    let subject_model = Subject {
-        subject_id: subject.id,
-        name: subject.name,
-        name_cn: subject.name_cn,
-        images_grid: subject.images.grid,
-        images_large: subject.images.large,
-        rank: subject.rating.rank,
-        score: score,
-        collection_total,
-        average_comment,
-        drop_rate,
-        air_weekday,
-        meta_tags: subject.meta_tags,
-    };
-    Ok(Json(subject_model))
+    let subject_model = serde_json::json!({
+        "subject_id": subject.id,
+        "name": subject.name,
+        "name_cn": subject.name_cn,
+        "images_grid": subject.images.grid,
+        "images_large": subject.images.large,
+        "rank": subject.rating.rank,
+        "score": score,
+        "collection_total": collection_total,
+        "average_comment": average_comment,
+        "drop_rate": drop_rate,
+        "air_weekday": air_weekday,
+        "meta_tags": subject.meta_tags,
+    });
+    Ok(subject_model)
 }
