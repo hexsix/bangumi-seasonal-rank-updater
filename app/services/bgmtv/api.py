@@ -58,6 +58,7 @@ async def get_episodes(
         ValueError: 当响应数据解析失败时
     """
     logger.info(f"正在获取条目 {subject_id} 的剧集信息")
+    await asyncio.sleep(0.2)
 
     url = f"{BASE_URL}/v0/episodes"
     params = {
@@ -112,6 +113,7 @@ async def get_index(
         ValueError: 当响应数据解析失败时
     """
     logger.info(f"正在获取索引 {index_id} 的条目信息")
+    await asyncio.sleep(0.2)
 
     url = f"{BASE_URL}/v0/indices/{index_id}/subjects"
     params = {
@@ -157,6 +159,7 @@ async def get_subject(subject_id: int) -> Subject:
         ValueError: 当响应数据解析失败时
     """
     logger.info(f"正在获取条目 {subject_id} 的详细信息")
+    await asyncio.sleep(0.2)
 
     url = f"{BASE_URL}/v0/subjects/{subject_id}"
 
@@ -204,6 +207,7 @@ async def search_subjects(
         ValueError: 当响应数据解析失败时
     """
     logger.info(f"正在搜索条目，关键字: {search_request.keyword}")
+    await asyncio.sleep(0.2)
 
     url = f"{BASE_URL}/v0/search/subjects"
     params = {
@@ -249,6 +253,7 @@ async def create_index() -> Index:
         ValueError: 当响应数据解析失败时
     """
     logger.info("正在创建新目录")
+    await asyncio.sleep(0.2)
 
     url = f"{BASE_URL}/v0/indices"
 
@@ -293,6 +298,7 @@ async def update_index(index_id: int, basic_info: IndexBasicInfo) -> None:
         ValueError: 当响应数据解析失败时
     """
     logger.info(f"正在修改目录 {index_id} 的信息")
+    await asyncio.sleep(0.2)
 
     url = f"{BASE_URL}/v0/indices/{index_id}"
 
@@ -330,6 +336,7 @@ async def add_subject_to_index(
         ValueError: 当响应数据解析失败时
     """
     logger.info(f"正在向目录 {index_id} 添加条目 {request.subject_id}")
+    await asyncio.sleep(0.2)
 
     url = f"{BASE_URL}/v0/indices/{index_id}/subjects"
 
@@ -370,6 +377,7 @@ async def remove_subject_from_index(index_id: int, subject_id: int) -> None:
         httpx.HTTPStatusError: 当API返回错误状态码时
     """
     logger.info(f"正在从目录 {index_id} 删除条目 {subject_id}")
+    await asyncio.sleep(0.2)
 
     url = f"{BASE_URL}/v0/indices/{index_id}/subjects/{subject_id}"
 
