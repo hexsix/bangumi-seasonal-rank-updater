@@ -3,14 +3,12 @@ import socket
 import sys
 from contextlib import asynccontextmanager
 
-from dotenv import load_dotenv
 from fastapi import APIRouter, FastAPI
 from loguru import logger
 
 from app.api.v0.routers import routers as v0_routers
 from app.config import config
-
-load_dotenv()
+from app.services.redis_client import RedisClient
 
 
 @asynccontextmanager
@@ -28,11 +26,15 @@ async def lifespan(app: FastAPI):
         enqueue=True,
     )
     logger.info("Starting up...")
-    logger.debug(config.pretty_print())
+
+    logger.info("Connecting to Redis...")
+    app.state.redis_client = RedisClient()
+    logger.info(f"Connected to Redis: {await app.state.redis_client.ping()}")
 
     yield
 
     logger.info("Shutting down...")
+    await app.state.redis_client.close()
     logger.stop()
     logger.complete()
 
