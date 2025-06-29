@@ -181,7 +181,7 @@ async def get_subject(subject_id: int) -> Subject:
 
 async def search_subjects(
     search_request: SearchRequest,
-    limit: int = 25,
+    limit: int = 10,
     offset: int = 0,
 ) -> PagedSubject:
     """
@@ -384,3 +384,28 @@ async def remove_subject_from_index(index_id: int, subject_id: int) -> None:
             response.raise_for_status()
 
         return None
+
+
+if __name__ == "__main__":
+    import asyncio
+    import json
+
+    from app.services.bgmtv.models import SearchFilter
+
+    keyword = "よふかしのうた 第2期"
+
+    response = asyncio.run(
+        search_subjects(
+            SearchRequest(
+                keyword=keyword,
+                filter=SearchFilter.from_type(2),
+            )
+        )
+    )
+
+    logger.info(response)
+    json.dump(
+        response.model_dump(),
+        open("response.json", "w", encoding="utf-8"),
+        ensure_ascii=False,
+    )

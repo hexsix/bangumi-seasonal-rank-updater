@@ -148,6 +148,18 @@ class SearchFilter(BaseModel):
     rank: Optional[List[str]] = Field(None, description="排名")
     nsfw: Optional[bool] = Field(None, description="是否包含NSFW内容")
 
+    @staticmethod
+    def from_type(type: int) -> "SearchFilter":
+        return SearchFilter(
+            type=[type],
+            meta_tags=None,
+            tag=None,
+            air_date=None,
+            rating=None,
+            rank=None,
+            nsfw=None,
+        )
+
 
 class SearchRequest(BaseModel):
     """搜索请求"""

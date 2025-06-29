@@ -1,7 +1,9 @@
-from .available_seasons import endpoints as available_seasons_endpoints
 from .health import router as health_router
+from .season import endpoints as season_endpoints
+from .update import endpoints as update_endpoints
 
 routers = [
-    available_seasons_endpoints.router,
+    season_endpoints.router,
+    update_endpoints.router,
     health_router,
 ]
