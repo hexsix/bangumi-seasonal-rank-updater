@@ -1,0 +1,2 @@
+# bangumi-seasonal-rank-updater
+
