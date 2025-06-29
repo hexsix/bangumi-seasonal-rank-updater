@@ -5,6 +5,16 @@ description = "Bangumi Seasonal Rank Updater"
 readme = "README.md"
 requires-python = ">=3.13"
 
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.setuptools.package-data]
+"*" = ["data/*"]
+
 dependencies = [
     "beautifulsoup4>=4.13.4",
     "dotenv>=0.9.9",
@@ -12,7 +22,6 @@ dependencies = [
     "httpx>=0.28.1",
     "loguru>=0.7.3",
     "pydantic>=2.11.7",
-    "redis>=6.2.0",
 ]
 
 [project.optional-dependencies]

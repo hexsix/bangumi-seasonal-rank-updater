@@ -1,12 +1,12 @@
+import sqlite3
 from datetime import datetime, timedelta
 
 from fastapi import APIRouter, Depends, Request
 from loguru import logger
-from redis.asyncio import Redis
 
 from app.api.v0.update import models
 from app.api.v0.utils import get_subject_detail
-from app.services import bgmtv, redis_client, youranimestw
+from app.services import bgmtv, db, youranimestw
 from app.utils import (
     future_season_ids,
     recent_season_ids,
@@ -15,19 +15,19 @@ from app.utils import (
 router = APIRouter(prefix="/update", tags=["update"])
 
 
-async def get_redis_client(request: Request) -> Redis:
+async def get_db_conn(request: Request) -> sqlite3.Connection:
     """获取Redis客户端的依赖注入函数"""
-    return request.app.state.redis_client.client
+    return request.app.state.db_conn
 
 
 @router.post("/future_seasons")
 async def update_future_seasons(
-    _: models.Empty, redis_client_instance: Redis = Depends(get_redis_client)
+    _: models.Empty, db_conn: sqlite3.Connection = Depends(get_db_conn)
 ):
     season_ids = future_season_ids()
     for season_id in season_ids:
-        index_id = await redis_client.get_index_id(redis_client_instance, season_id)
-        if index_id is None:
+        index = db.get_index(db_conn, season_id)
+        if index is None:
             try:
                 create_index_response = await bgmtv.create_index()
                 index_id = create_index_response.id
@@ -38,8 +38,8 @@ async def update_future_seasons(
                         description=f"auto updated at {datetime.now().isoformat()}",
                     ),
                 )
-                await redis_client.create_index(
-                    redis_client_instance, season_id, index_id
+                db.insert_index(
+                    db_conn, db.Index(season_id=season_id, index_id=index_id)
                 )
             except Exception as e:
                 logger.error(f"创建 {season_id} 索引失败: {e}")
@@ -67,14 +67,10 @@ async def update_future_seasons(
                         subject_id=target_subject_id, sort=0, comment=""
                     ),
                 )
-                if subject_data := await redis_client.get_subject(
-                    redis_client_instance, target_subject_id
-                ):
+                if subject_data := db.get_subject(db_conn, target_subject_id):
                     if subject_data.updated_at < datetime.now() - timedelta(days=1):
                         subject_data = await get_subject_detail(target_subject_id)
-                        await redis_client.update_subject(
-                            redis_client_instance, subject_data
-                        )
+                        db.update_subject(db_conn, subject_data)
         except Exception as e:
             logger.error(f"获取 {season_id} 动画列表失败: {e}")
             continue
@@ -83,25 +79,21 @@ async def update_future_seasons(
 
 @router.post("/recent_seasons")
 async def update_season(
-    _: models.Empty, redis_client_instance: Redis = Depends(get_redis_client)
+    _: models.Empty, db_conn: sqlite3.Connection = Depends(get_db_conn)
 ):
     season_ids = recent_season_ids()
     for season_id in season_ids:
-        index_id = await redis_client.get_index_id(redis_client_instance, season_id)
-        if index_id is None:
+        index = db.get_index(db_conn, season_id)
+        if index is None:
             logger.error(f"未找到 {season_id} 索引")
             continue
         try:
-            paged_index_subject = await bgmtv.get_index(index_id, 2, 100, 0)
+            paged_index_subject = await bgmtv.get_index(index.index_id, 2, 100, 0)
             for subject in paged_index_subject.data:
-                if subject_data := await redis_client.get_subject(
-                    redis_client_instance, subject.id
-                ):
+                if subject_data := db.get_subject(db_conn, subject.id):
                     if subject_data.updated_at < datetime.now() - timedelta(days=1):
                         subject_data = await get_subject_detail(subject.id)
-                        await redis_client.update_subject(
-                            redis_client_instance, subject_data
-                        )
+                        db.update_subject(db_conn, subject_data)
         except Exception as e:
             logger.error(f"获取 {season_id} 索引条目失败: {e}")
             continue
@@ -121,16 +113,16 @@ async def update_all_seasons(_: models.Empty):
 @router.post("/season2index")
 async def update_season2index(
     request: models.Season2IndexRequest,
-    redis_client_instance: Redis = Depends(get_redis_client),
+    db_conn: sqlite3.Connection = Depends(get_db_conn),
 ):
-    index_id = await redis_client.get_index_id(redis_client_instance, request.season_id)
-    if index_id is None:
+    index = db.get_index(db_conn, request.season_id)
+    if index is None:
         logger.error(f"未找到 {request.season_id} 索引")
-        await redis_client.create_index(
-            redis_client_instance, request.season_id, request.index_id
+        db.insert_index(
+            db_conn, db.Index(season_id=request.season_id, index_id=request.index_id)
         )
         return "created"
-    elif index_id == request.index_id:
-        return "exists"
+    elif index.index_id == request.index_id:
+        return "existed"
     else:
-        return f"error exsisted {index_id} != request {request.index_id}"
+        return f"error exsisted {index.index_id} != request {request.index_id}"

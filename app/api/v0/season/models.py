@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
-from app.services.redis_client import Subject
+from app.services.db import Subject
 
 
 class AvailableSeasonsResponse(BaseModel):

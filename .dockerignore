@@ -8,6 +8,7 @@ Dockerfile
 # 忽略本地开发文件
 .vscode/
 .idea/
+data/
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,pycharm,visualstudiocode,linux,windows,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,pycharm,visualstudiocode,linux,windows,macos

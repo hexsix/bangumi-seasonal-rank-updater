@@ -1,3 +1,5 @@
+import asyncio
+
 import httpx
 from loguru import logger
 

@@ -2,11 +2,11 @@ from datetime import datetime
 
 from loguru import logger
 
-from app.services import redis_client
+from app.services import db
 from app.services.bgmtv import get_episodes, get_subject
 
 
-async def get_subject_detail(subject_id: int) -> redis_client.Subject:
+async def get_subject_detail(subject_id: int) -> db.Subject:
     """获取条目详情"""
     subject = await get_subject(subject_id)
 
@@ -77,7 +77,7 @@ async def get_subject_detail(subject_id: int) -> redis_client.Subject:
         else:
             average_comment = 0
 
-    redis_subject = redis_client.Subject(
+    subject = db.Subject(
         id=subject.id,
         name=subject.name,
         name_cn=subject.name_cn,
@@ -92,7 +92,7 @@ async def get_subject_detail(subject_id: int) -> redis_client.Subject:
         meta_tags=subject.meta_tags,
         updated_at=datetime.now(),
     )
-    return redis_subject
+    return subject
 
 
 if __name__ == "__main__":

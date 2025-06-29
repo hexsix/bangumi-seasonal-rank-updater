@@ -9,9 +9,7 @@ class Config:
         load_dotenv()
         self.app_version = self.get_app_version()
         self.log_level = self.get_log_level()
-        self.redis_host = self.get_redis_host()
-        self.redis_port = self.get_redis_port()
-        self.redis_password = self.get_redis_password()
+        self.db_file = self.get_db_file()
         self.bgmtv_token = self.get_bgmtv_token()
         logger.info(self.pretty_print())
 
@@ -20,9 +18,7 @@ class Config:
         app_version: {self.app_version}
         log_level: {self.log_level}
         bgmtv_token: {self.bgmtv_token_masked()}
-        redis_host: {self.redis_host}
-        redis_port: {self.redis_port}
-        redis_password: {self.redis_password_masked()}
+        db_file: {self.db_file}
         """
 
     def get_log_level(self):
@@ -34,19 +30,8 @@ class Config:
     def get_bgmtv_token(self):
         return os.getenv("BGMTV_TOKEN")
 
-    def get_redis_host(self):
-        return os.getenv("REDIS_URL", "localhost")
-
-    def get_redis_port(self):
-        return int(os.getenv("REDIS_PORT", 6379))
-
-    def get_redis_password(self):
-        return os.getenv("REDIS_PASSWORD")
-
-    def redis_password_masked(self):
-        if self.redis_password is None:
-            return "Not set"
-        return "******"
+    def get_db_file(self):
+        return os.getenv("DB_FILE", "data/rank.db")
 
     def bgmtv_token_masked(self):
         if self.bgmtv_token is None:
