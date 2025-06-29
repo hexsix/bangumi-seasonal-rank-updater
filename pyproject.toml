@@ -1,7 +1,29 @@
 [project]
 name = "bangumi-seasonal-rank-updater"
 version = "0.1.0"
-description = "Add your description here"
+description = "Bangumi Seasonal Rank Updater"
 readme = "README.md"
-requires-python = ">=3.11"
-dependencies = []
+requires-python = ">=3.13"
+
+dependencies = [
+    "dotenv>=0.9.9",
+    "fastapi[standard]>=0.115.14",
+    "httpx>=0.28.1",
+    "loguru>=0.7.3",
+    "pydantic>=2.11.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=4.2.0",
+    "ruff>=0.12.1",
+]
+
+[tool.ruff]
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "Q"]
+
+[tool.ruff.lint.flake8-quotes]
+docstring-quotes = "double"

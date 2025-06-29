@@ -1,3 +1,14 @@
+# 忽略版本控制目录
+.git/
+
+# 忽略 Docker 自身文件
+Dockerfile
+.dockerignore
+
+# 忽略本地开发文件
+.vscode/
+.idea/
+
 # Created by https://www.toptal.com/developers/gitignore/api/python,pycharm,visualstudiocode,linux,windows,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,pycharm,visualstudiocode,linux,windows,macos
 

@@ -1,0 +1,20 @@
+services:
+  app:
+    container_name: rank-api
+    image: rank-api:${APP_VERSION}
+    env_file:
+      - .env
+    ports:
+      - ${BIND_PORT}:${PORT}
+    environment:
+      - LOG_LEVEL=DEBUG
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./app:/app/app
+    command: [
+      "/app/.venv/bin/fastapi",
+      "run", "app/main.py",
+      "--host", "::",
+      "--port", "${PORT}",
+      "--workers", "4",
+    ]
