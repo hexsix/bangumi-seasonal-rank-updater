@@ -1,4 +1,7 @@
 import asyncio
+import functools
+import random
+from typing import Callable, TypeVar
 
 import httpx
 from loguru import logger
@@ -22,6 +25,46 @@ DEFAULT_USER_AGENT = (
 
 BASE_URL = "https://api.bgm.tv"
 
+T = TypeVar("T")
+
+
+def retry_on_failure(max_retries: int = 3):
+    """
+    重试装饰器，在API调用失败时重试指定次数
+
+    Args:
+        max_retries: 最大重试次数，默认3次
+    """
+
+    def decorator(func: Callable[..., T]) -> Callable[..., T]:
+        @functools.wraps(func)
+        async def wrapper(*args, **kwargs) -> T:
+            last_exception = None
+
+            for attempt in range(max_retries + 1):  # +1 因为第一次不算重试
+                try:
+                    return await func(*args, **kwargs)
+                except (httpx.HTTPStatusError, httpx.RequestError, ValueError) as e:
+                    last_exception = e
+
+                    if attempt < max_retries:
+                        # 指数退避，增加随机性避免雷群效应
+                        delay = (2**attempt) + random.uniform(0, 1)
+                        logger.warning(
+                            f"API调用失败，第 {attempt + 1} 次重试，{delay:.2f}秒后重试: {e}"
+                        )
+                        await asyncio.sleep(delay)
+                    else:
+                        logger.error(f"API调用失败，已达到最大重试次数 {max_retries}")
+
+            # 如果所有重试都失败了，抛出最后一个异常
+            if last_exception:
+                raise last_exception
+
+        return wrapper
+
+    return decorator
+
 
 def _get_headers() -> dict:
     """获取请求头"""
@@ -35,6 +78,7 @@ def _get_headers() -> dict:
     return headers
 
 
+@retry_on_failure(max_retries=3)
 async def get_episodes(
     subject_id: int,
     episode_type: int,
@@ -90,6 +134,7 @@ async def get_episodes(
             raise ValueError(f"解析JSON失败: {e}")
 
 
+@retry_on_failure(max_retries=3)
 async def get_index(
     index_id: int,
     subject_type: int,
@@ -144,6 +189,7 @@ async def get_index(
             raise ValueError(f"解析JSON失败: {e}")
 
 
+@retry_on_failure(max_retries=3)
 async def get_subject(subject_id: int) -> Subject:
     """
     获取条目详细信息
@@ -184,6 +230,7 @@ async def get_subject(subject_id: int) -> Subject:
             raise ValueError(f"解析JSON失败: {e}")
 
 
+@retry_on_failure(max_retries=3)
 async def search_subjects(
     search_request: SearchRequest,
     limit: int = 10,
@@ -241,6 +288,7 @@ async def search_subjects(
             raise ValueError(f"解析JSON失败: {e}")
 
 
+@retry_on_failure(max_retries=3)
 async def create_index() -> Index:
     """
     创建新目录
@@ -282,6 +330,7 @@ async def create_index() -> Index:
             raise ValueError(f"解析JSON失败: {e}")
 
 
+@retry_on_failure(max_retries=3)
 async def update_index(index_id: int, basic_info: IndexBasicInfo) -> None:
     """
     修改目录信息
@@ -321,6 +370,7 @@ async def update_index(index_id: int, basic_info: IndexBasicInfo) -> None:
         return None
 
 
+@retry_on_failure(max_retries=3)
 async def add_subject_to_index(
     index_id: int, request: AddSubjectToIndexRequest
 ) -> IndexSubject:
@@ -365,6 +415,7 @@ async def add_subject_to_index(
             raise ValueError(f"解析JSON失败: {e}")
 
 
+@retry_on_failure(max_retries=3)
 async def remove_subject_from_index(index_id: int, subject_id: int) -> None:
     """
     从目录删除条目

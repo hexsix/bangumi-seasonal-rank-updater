@@ -94,6 +94,9 @@ async def update_season(
                     if subject_data.updated_at < datetime.now() - timedelta(days=1):
                         subject_data = await get_subject_detail(subject.id)
                         db.update_subject(db_conn, subject_data)
+                else:
+                    subject_data = await get_subject_detail(subject.id)
+                    db.insert_subject(db_conn, subject_data)
         except Exception as e:
             logger.error(f"获取 {season_id} 索引条目失败: {e}")
             continue

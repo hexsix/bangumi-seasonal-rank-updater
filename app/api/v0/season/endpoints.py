@@ -13,7 +13,6 @@ router = APIRouter(prefix="/season", tags=["season"])
 
 
 async def get_db_conn(request: Request) -> sqlite3.Connection:
-    """获取Redis客户端的依赖注入函数"""
     return request.app.state.db_conn
 
 
@@ -45,7 +44,7 @@ async def get_season(
                 updated_at = subject_data.updated_at
         else:
             subject_data = await get_subject_detail(subject.id)
-            db.update_subject(db_conn, subject_data)
+            db.insert_subject(db_conn, subject_data)
             subjects.append(subject_data)
             if updated_at is None or updated_at < subject_data.updated_at:
                 updated_at = subject_data.updated_at
