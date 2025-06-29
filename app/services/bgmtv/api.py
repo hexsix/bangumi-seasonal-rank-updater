@@ -6,6 +6,7 @@ from app.services.bgmtv.models import (
     AddSubjectToIndexRequest,
     Index,
     IndexBasicInfo,
+    IndexSubject,
     PagedEpisode,
     PagedIndexSubject,
     PagedSubject,
@@ -274,7 +275,7 @@ async def create_index() -> Index:
             raise ValueError(f"解析JSON失败: {e}")
 
 
-async def update_index(index_id: int, basic_info: IndexBasicInfo) -> Index:
+async def update_index(index_id: int, basic_info: IndexBasicInfo) -> None:
     """
     修改目录信息
 
@@ -285,7 +286,7 @@ async def update_index(index_id: int, basic_info: IndexBasicInfo) -> Index:
         basic_info: 目录基本信息，包含标题和描述
 
     Returns:
-        Index: 修改后的目录信息
+        None
 
     Raises:
         httpx.HTTPStatusError: 当API返回错误状态码时
@@ -309,18 +310,12 @@ async def update_index(index_id: int, basic_info: IndexBasicInfo) -> Index:
             logger.error(f"BGM API 返回状态码: {response.status_code}")
             response.raise_for_status()
 
-        try:
-            data = response.json()
-            return Index(**data)
-        except Exception as e:
-            logger.error(f"解析JSON失败: {e}")
-            logger.error(f"响应内容: {response.text}")
-            raise ValueError(f"解析JSON失败: {e}")
+        return None
 
 
 async def add_subject_to_index(
     index_id: int, request: AddSubjectToIndexRequest
-) -> None:
+) -> IndexSubject:
     """
     向目录添加条目
 
@@ -352,6 +347,14 @@ async def add_subject_to_index(
             logger.error(f"BGM API 返回状态码: {response.status_code}")
             response.raise_for_status()
 
+        try:
+            data = response.json()
+            return IndexSubject(**data)
+        except Exception as e:
+            logger.error(f"解析JSON失败: {e}")
+            logger.error(f"响应内容: {response.text}")
+            raise ValueError(f"解析JSON失败: {e}")
+
 
 async def remove_subject_from_index(index_id: int, subject_id: int) -> None:
     """
@@ -379,3 +382,5 @@ async def remove_subject_from_index(index_id: int, subject_id: int) -> None:
         if not response.is_success:
             logger.error(f"BGM API 返回状态码: {response.status_code}")
             response.raise_for_status()
+
+        return None

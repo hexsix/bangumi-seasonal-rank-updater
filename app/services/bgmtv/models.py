@@ -18,65 +18,63 @@ class Episode(BaseModel):
     """剧集信息"""
 
     id: int
-    episode_type: int = Field(
-        alias="type",
+    type: int = Field(
         description="本篇=0 特别篇=1 OP=2 ED=3 预告/宣传/广告=4 MAD=5 其他=6",
     )
-    name: str
-    name_cn: str
-    sort: float = Field(description="同类条目的排序和集数")
-    ep: float = Field(description="条目内的集数, 从1开始。非本篇剧集的此字段无意义")
-    airdate: str
-    comment: int
-    duration: str
-    desc: str = Field(description="简介")
-    disc: int = Field(description="音乐曲目的碟片数")
-    duration_seconds: int
-    subject_id: int
-
-    class Config:
-        populate_by_name = True
+    name: Optional[str] = Field(None, description="剧集名称")
+    name_cn: Optional[str] = Field(None, description="剧集中文名称")
+    sort: Optional[float] = Field(None, description="同类条目的排序和集数")
+    ep: Optional[float] = Field(
+        None, description="条目内的集数, 从1开始。非本篇剧集的此字段无意义"
+    )
+    airdate: Optional[str] = Field(None, description="播出日期 YYYY-MM-DD 格式")
+    comment: Optional[int] = Field(None, description="评论")
+    duration: Optional[str] = Field(None, description="时长")
+    desc: Optional[str] = Field(None, description="简介")
+    disc: Optional[int] = Field(None, description="音乐曲目的碟片数")
+    duration_seconds: Optional[int] = Field(None, description="时长秒数")
+    subject_id: Optional[int] = Field(None, description="条目ID")
 
 
 class ErrorDetail(BaseModel):
     """错误详情"""
 
-    title: str
-    description: str
-    details: str
+    title: Optional[str] = Field(None, description="错误标题")
+    description: Optional[str] = Field(None, description="错误描述")
+    details: Optional[str] = Field(None, description="错误详情")
 
 
 class Images(BaseModel):
     """图片信息"""
 
-    large: str
-    common: str
-    medium: str
-    small: str
-    grid: str
+    large: Optional[str] = Field(None, description="大图")
+    common: Optional[str] = Field(None, description="通用图")
+    medium: Optional[str] = Field(None, description="中图")
+    small: Optional[str] = Field(None, description="小图")
+    grid: Optional[str] = Field(None, description="网格图")
 
 
 class InfoboxItem(BaseModel):
     """信息框项目"""
 
-    key: str
-    value: Any
+    key: Optional[str] = Field(None, description="键")
+    value: Optional[Any] = Field(None, description="值")
 
 
 class IndexSubject(BaseModel):
     """索引条目"""
 
-    id: int
-    subject_type: int = Field(alias="type")
-    name: str
-    images: Images
-    infobox: List[InfoboxItem]
-    date: str
-    comment: str
-    added_at: str
-
-    class Config:
-        populate_by_name = True
+    id: int = Field(description="条目ID")
+    type: Optional[int] = Field(
+        None, description="1=book, 2=anime, 3=music, 4=game, 6=real"
+    )
+    name: Optional[str] = Field(None, description="条目名称")
+    name_cn: Optional[str] = Field(None, description="条目中文名称")
+    comment: Optional[str] = Field(None, description="评论")
+    images: Optional[Images] = Field(None, description="图片")
+    infobox: Optional[List[InfoboxItem]] = Field(None, description="信息框")
+    date: Optional[str] = Field(None, description="上映日期 YYYY-MM-DD 格式")
+    added_at: datetime = Field(description="创建时间")
 
 
 class PagedEpisode(BaseModel):
@@ -100,46 +98,43 @@ class PagedIndexSubject(BaseModel):
 class Rating(BaseModel):
     """评分信息"""
 
-    rank: int
-    total: int
-    count: Dict[int, int]
-    score: float
+    rank: Optional[int] = Field(None, description="排名")
+    total: Optional[int] = Field(None, description="总评分人数")
+    count: Optional[Dict[int, int]] = Field(None, description="评分人数")
+    score: Optional[float] = Field(None, description="评分")
 
 
 class Tag(BaseModel):
     """标签"""
 
-    name: str
-    count: int
+    name: Optional[str] = Field(None, description="标签名称")
+    count: Optional[int] = Field(None, description="标签数量")
 
 
 class Subject(BaseModel):
     """条目信息"""
 
-    id: int
-    subject_type: int = Field(
-        alias="type", description="1=book, 2=anime, 3=music, 4=game, 6=real"
+    id: int = Field(description="条目ID")
+    type: int = Field(description="1=book, 2=anime, 3=music, 4=game, 6=real")
+    name: Optional[str] = Field(None, description="条目名称")
+    name_cn: Optional[str] = Field(None, description="条目中文名称")
+    summary: Optional[str] = Field(None, description="简介")
+    series: Optional[bool] = Field(None, description="是否为系列")
+    nsfw: Optional[bool] = Field(None, description="是否包含NSFW内容")
+    locked: Optional[bool] = Field(None, description="是否锁定")
+    date: Optional[str] = Field(None, description="上映日期 YYYY-MM-DD 格式")
+    platform: Optional[str] = Field(
+        None, description="播放平台 TV, Web, 欧美剧, DLC..."
     )
-    name: str
-    name_cn: str
-    summary: str
-    series: bool
-    nsfw: bool
-    locked: bool
-    date: str = Field(description="上映日期 YYYY-MM-DD 格式")
-    platform: str = Field(description="播放平台 TV, Web, 欧美剧, DLC...")
-    images: Images
-    infobox: List[InfoboxItem]
-    volumes: int
-    eps: int
-    total_episodes: int
-    rating: Rating
-    collection: Collection
-    meta_tags: List[str]
-    tags: List[Tag]
-
-    class Config:
-        populate_by_name = True
+    images: Optional[Images] = Field(None, description="图片")
+    infobox: Optional[List[InfoboxItem]] = Field(None, description="信息框")
+    volumes: Optional[int] = Field(None, description="卷数")
+    eps: Optional[int] = Field(None, description="集数")
+    total_episodes: Optional[int] = Field(None, description="总集数")
+    rating: Optional[Rating] = Field(None, description="评分")
+    collection: Optional[Collection] = Field(None, description="收藏")
+    meta_tags: Optional[List[str]] = Field(None, description="元标签")
+    tags: Optional[List[Tag]] = Field(None, description="标签")
 
 
 class SearchFilter(BaseModel):
@@ -174,23 +169,11 @@ class PagedSubject(BaseModel):
     data: List[Subject]
 
 
-class Comments(BaseModel):
-    """评论统计"""
-
-    total: int = Field(description="评论总数")
-
-
-class Collects(BaseModel):
-    """收藏统计"""
-
-    total: int = Field(description="收藏总数")
-
-
 class Stat(BaseModel):
     """目录统计信息"""
 
-    comments: Comments = Field(description="评论统计")
-    collects: Collects = Field(description="收藏统计")
+    comments: int = Field(description="评论总数")
+    collects: int = Field(description="收藏总数")
 
 
 class Creator(BaseModel):
@@ -204,15 +187,17 @@ class Index(BaseModel):
     """目录信息"""
 
     id: int = Field(description="目录ID")
-    title: str = Field(description="目录标题")
-    desc: str = Field(description="目录描述")
-    total: int = Field(default=0, description="收录条目总数")
-    stat: Stat = Field(description="目录评论及收藏数")
-    created_at: datetime = Field(description="创建时间")
-    updated_at: datetime = Field(description="更新时间")
-    creator: Creator = Field(description="创建者信息")
-    ban: bool = Field(default=False, description="已弃用，始终为false", deprecated=True)
-    nsfw: bool = Field(description="目录是否包括 nsfw 条目")
+    title: Optional[str] = Field(None, description="目录标题")
+    desc: Optional[str] = Field(None, description="目录描述")
+    total: Optional[int] = Field(None, description="收录条目总数")
+    stat: Optional[Stat] = Field(None, description="目录评论及收藏数")
+    created_at: Optional[datetime] = Field(None, description="创建时间")
+    updated_at: Optional[datetime] = Field(None, description="更新时间")
+    creator: Optional[Creator] = Field(None, description="创建者信息")
+    ban: Optional[bool] = Field(
+        None, description="已弃用，始终为false", deprecated=True
+    )
+    nsfw: Optional[bool] = Field(None, description="目录是否包括 nsfw 条目")
 
 
 class IndexBasicInfo(BaseModel):
