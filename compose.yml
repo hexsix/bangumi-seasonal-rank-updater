@@ -1,7 +1,7 @@
 services:
   app:
     container_name: rank-api
-    image: rank-api:1.0.0
+    image: rank-api:2.0.0
     restart: always
     env_file:
       - .env
@@ -13,7 +13,7 @@ services:
       - ./app:/app/app
       - ./data:/app/data
     command: [
-      "/app/.venv/bin/fastapi",
+      "uv", "run", "fastapi",
       "run", "app/main.py",
       "--port", "8000",
       "--workers", "1",

@@ -8,4 +8,4 @@ COPY . /app
 
 RUN uv sync --frozen --no-cache
 
-CMD ["/app/.venv/bin/fastapi", "run", "app/main.py", "--host", "::", "--port", "8000", "--workers", "4"]
+CMD ["uv", "run", "fastapi", "run", "app/main.py", "--host", "::", "--port", "8000", "--workers", "4"]
