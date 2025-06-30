@@ -9,7 +9,7 @@ from loguru import logger
 
 from app.api.v0.routers import routers as v0_routers
 from app.config import config
-from app.services.db import create_connection
+from app.services.db.client import db_client
 
 
 @asynccontextmanager
@@ -28,14 +28,10 @@ async def lifespan(app: FastAPI):
     )
     logger.info("Starting up...")
 
-    logger.info("Connecting to SQLite...")
-    app.state.db_conn = create_connection(config.db_file)
-
     yield
 
     logger.info("Shutting down...")
-    if app.state.db_conn is not None:
-        app.state.db_conn.close()
+    db_client.close()
     logger.stop()
     logger.complete()
 
