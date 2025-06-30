@@ -11,6 +11,7 @@ class Config:
         self.log_level = self.get_log_level()
         self.db_file = self.get_db_file()
         self.bgmtv_token = self.get_bgmtv_token()
+        self.ds_api_key = self.get_ds_api_key()
         logger.info(self.pretty_print())
 
     def pretty_print(self):
@@ -19,6 +20,7 @@ class Config:
         log_level: {self.log_level}
         bgmtv_token: {self.bgmtv_token_masked()}
         db_file: {self.db_file}
+        ds_api_key: {self.ds_api_key_masked()}
         """
 
     def get_log_level(self):
@@ -37,6 +39,14 @@ class Config:
         if self.bgmtv_token is None:
             return "Not set"
         return self.bgmtv_token[:3] + "****" + self.bgmtv_token[-3:]
+
+    def ds_api_key_masked(self):
+        if self.ds_api_key is None:
+            return "Not set"
+        return self.ds_api_key[:3] + "****" + self.ds_api_key[-3:]
+
+    def get_ds_api_key(self):
+        return os.getenv("DS_API_KEY")
 
 
 config = Config()
