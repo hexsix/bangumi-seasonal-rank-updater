@@ -1,6 +1,7 @@
 import asyncio
 import functools
 import random
+from datetime import datetime
 from typing import Callable, TypeVar
 
 import httpx
@@ -15,6 +16,7 @@ from app.services.bgmtv.models import (
     PagedEpisode,
     PagedIndexSubject,
     PagedSubject,
+    SearchFilter,
     SearchRequest,
     Subject,
 )
@@ -230,6 +232,15 @@ async def get_subject(subject_id: int) -> Subject:
             raise ValueError(f"解析JSON失败: {e}")
 
 
+async def search_anime(keyword: str) -> PagedSubject:
+    return await search_subjects(
+        SearchRequest(
+            keyword=keyword,
+            filter=SearchFilter.from_type(2),
+        )
+    )
+
+
 @retry_on_failure(max_retries=3)
 async def search_subjects(
     search_request: SearchRequest,
@@ -371,7 +382,7 @@ async def update_index(index_id: int, basic_info: IndexBasicInfo) -> None:
 
 
 @retry_on_failure(max_retries=3)
-async def add_subject_to_index(
+async def _add_subject_to_index(
     index_id: int, request: AddSubjectToIndexRequest
 ) -> IndexSubject:
     """
@@ -415,6 +426,16 @@ async def add_subject_to_index(
             raise ValueError(f"解析JSON失败: {e}")
 
 
+async def add_subject_to_index(index_id: int, subject_id: int) -> IndexSubject:
+    """
+    向目录添加条目
+    """
+    return await _add_subject_to_index(
+        index_id,
+        AddSubjectToIndexRequest(subject_id=subject_id, sort=0, comment="auto updated"),
+    )
+
+
 @retry_on_failure(max_retries=3)
 async def remove_subject_from_index(index_id: int, subject_id: int) -> None:
     """
@@ -445,6 +466,28 @@ async def remove_subject_from_index(index_id: int, subject_id: int) -> None:
             response.raise_for_status()
 
         return None
+
+
+async def create_index_and_info(season_id: int) -> int:
+    index = await create_index()
+    await update_index(
+        index.id,
+        IndexBasicInfo(
+            title=f"Season {season_id}",
+            description=f"auto updated at {datetime.now().isoformat()}",
+        ),
+    )
+    return index.id
+
+
+async def search_subject_by_name(name: str) -> PagedSubject:
+    paged_subject = await search_subjects(
+        SearchRequest(
+            keyword=name,
+            filter=SearchFilter.from_type(2),
+        )
+    )
+    return paged_subject
 
 
 if __name__ == "__main__":
