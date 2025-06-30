@@ -1,9 +1,50 @@
+import json
 from datetime import datetime
 
 from loguru import logger
 
-from app.services import db
+from app.services import bgmtv, db, yucwiki
 from app.services.bgmtv import get_episodes, get_subject
+from app.services.db.client import db_client
+from app.services.ds.client import ds_client
+
+
+async def search_subjects_by_yucwiki(yucwiki_list: list[yucwiki.YucWiki]) -> list[int]:
+    subjects = []
+    for yuc_info in yucwiki_list:
+        # 先检查数据库中是否存在
+        db_yucwiki = db_client.get_yucwiki(yuc_info.jp_title)
+        if db_yucwiki is not None:
+            subjects.append(db_yucwiki.subject_id)
+            continue
+        # 如果数据库中不存在，则搜索 bangumi 并插入数据库
+        paged_subject = await bgmtv.search_subject_by_name(yuc_info.jp_title)
+        for subject in paged_subject.data:
+            if subject.name == yuc_info.jp_title:
+                subjects.append(subject.id)
+                db_client.insert_yucwiki(
+                    db.YucWiki(
+                        jp_title=yuc_info.jp_title,
+                        subject_id=subject.id,
+                    )
+                )
+                break
+        else:
+            # 如果 bangumi 中无法精准匹配，则搜索 ds 并插入数据库
+            subject_id = await ds_client.get_subject_id(yuc_info, paged_subject)
+            if subject_id != -1:
+                subjects.append(subject_id)
+                db_client.insert_yucwiki(
+                    db.YucWiki(
+                        jp_title=yuc_info.jp_title,
+                        subject_id=subject_id,
+                    )
+                )
+            else:
+                logger.error(
+                    f"获取 bangumi subject id 失败，请人工干预处理: {yuc_info}"
+                )
+    return subjects
 
 
 async def get_subject_detail(subject_id: int) -> db.Subject:
@@ -89,10 +130,76 @@ async def get_subject_detail(subject_id: int) -> db.Subject:
         average_comment=average_comment,
         drop_rate=drop_rate,
         air_weekday=air_weekday,
-        meta_tags=subject.meta_tags,
+        meta_tags=json.dumps(subject.meta_tags),
         updated_at=datetime.now(),
     )
     return subject
+
+
+def current_season_id() -> int:
+    now = datetime.now()
+    if now.month >= 10:
+        return int(f"{now.year}10")
+    elif now.month >= 7:
+        return int(f"{now.year}07")
+    elif now.month >= 4:
+        return int(f"{now.year}04")
+    else:
+        return int(f"{now.year}01")
+
+
+def recent_season_ids() -> set[int]:
+    now = datetime.now()
+    years = [now.year - 1, now.year]
+    months = [1, 4, 7, 10]
+    seasons = []
+    for year in years:
+        for month in months:
+            if month > now.month and year == now.year:
+                continue
+            seasons.append(int(f"{year}{month:02d}"))
+    return set(seasons[-4:])
+
+
+def older_season_ids() -> set[int]:
+    now = datetime.now()
+    years = [year for year in range(now.year - 4, now.year + 1, 1)]
+    months = [1, 4, 7, 10]
+    seasons = []
+    for year in years:
+        for month in months:
+            if month > now.month and year == now.year:
+                continue
+            seasons.append(int(f"{year}{month:02d}"))
+    return set(seasons[-16:]) - set(recent_season_ids())
+
+
+def all_season_ids() -> set[int]:
+    now = datetime.now()
+    years = [year for year in range(now.year, 2011, -1)]
+    months = [1, 4, 7, 10]
+    seasons = []
+    for year in years:
+        for month in months:
+            if month > now.month and year == now.year:
+                continue
+            seasons.append(int(f"{year}{month:02d}"))
+    return (
+        set(seasons) - set(recent_season_ids()) - set(older_season_ids()) - {"201201"}
+    )
+
+
+def future_season_ids() -> set[int]:
+    now = datetime.now()
+    years = [year for year in range(now.year, now.year + 2)]
+    months = [1, 4, 7, 10]
+    seasons = []
+    for year in years:
+        for month in months:
+            if month <= now.month and year == now.year:
+                continue
+            seasons.append(int(f"{year}{month:02d}"))
+    return set(seasons[:1])
 
 
 if __name__ == "__main__":
@@ -104,3 +211,9 @@ if __name__ == "__main__":
         print(subject_data)
 
     asyncio.run(main())
+
+    print(current_season_id())
+    print(sorted(list(future_season_ids())))
+    print(sorted(list(recent_season_ids())))
+    print(sorted(list(older_season_ids())))
+    print(sorted(list(all_season_ids())))

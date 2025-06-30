@@ -1,22 +1,16 @@
-import sqlite3
+from fastapi import APIRouter, HTTPException
 
-from fastapi import APIRouter, Depends, HTTPException, Request
-
-from app.services import db
+from app.services.db.client import db_client
 
 router = APIRouter(prefix="/subject", tags=["subject"])
 
 
-async def get_db_conn(request: Request) -> sqlite3.Connection:
-    return request.app.state.db_conn
-
-
 @router.get("/{subject_id}")
 async def get_subject(
-    subject_id: int, db_conn: sqlite3.Connection = Depends(get_db_conn)
+    subject_id: int,
 ):
-    subject = db.get_subject(db_conn, subject_id)
+    subject = db_client.get_subject(subject_id)
     if subject:
-        return subject.model_dump()
+        return subject.to_dict()
     else:
         raise HTTPException(status_code=404, detail="Subject not found")
