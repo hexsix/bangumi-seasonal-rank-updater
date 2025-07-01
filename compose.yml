@@ -1,7 +1,7 @@
 services:
   app:
     container_name: rank-api
-    image: rank-api:2.0.0
+    image: rank-api:2.1.0
     restart: always
     env_file:
       - .env
