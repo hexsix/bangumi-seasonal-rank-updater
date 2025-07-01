@@ -174,7 +174,7 @@ def older_season_ids() -> set[int]:
     return set(seasons[-16:]) - set(recent_season_ids())
 
 
-def all_season_ids() -> set[int]:
+def ancient_season_ids() -> set[int]:
     now = datetime.now()
     years = [year for year in range(now.year, 2011, -1)]
     months = [1, 4, 7, 10]
@@ -216,4 +216,4 @@ if __name__ == "__main__":
     print(sorted(list(future_season_ids())))
     print(sorted(list(recent_season_ids())))
     print(sorted(list(older_season_ids())))
-    print(sorted(list(all_season_ids())))
+    print(sorted(list(ancient_season_ids())))
