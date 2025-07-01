@@ -15,6 +15,10 @@ router = APIRouter(prefix="/season", tags=["season"])
 async def available_seasons() -> models.AvailableSeasonsResponse:
     logger.info("available_seasons")
     available_seasons = db_client.get_available_seasons()
+    available_seasons = sorted(
+        available_seasons,
+        reverse=True,
+    )
     return models.AvailableSeasonsResponse(
         current_season_id=current_season_id(),
         available_seasons=available_seasons,
