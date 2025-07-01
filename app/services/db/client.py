@@ -9,8 +9,8 @@ from app.services.db.schemas import Index, Subject, YucWiki
 
 
 class DBClient:
-    def __init__(self, db_file: str):
-        self.engine = create_engine(f"sqlite:///{db_file}")
+    def __init__(self, db_url: str):
+        self.engine = create_engine(db_url, echo=False)
         self.session = Session(self.engine)
 
     def insert_index(self, index: Index) -> int | None:
@@ -84,7 +84,7 @@ class DBClient:
         self.engine.dispose()
 
 
-db_client = DBClient(config.db_file)
+db_client = DBClient(config.db_url)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,5 @@
 import os
+import re
 
 from dotenv import load_dotenv
 from loguru import logger
@@ -9,7 +10,7 @@ class Config:
         load_dotenv()
         self.app_version = self.get_app_version()
         self.log_level = self.get_log_level()
-        self.db_file = self.get_db_file()
+        self.db_url = self.get_db_url()
         self.bgmtv_token = self.get_bgmtv_token()
         self.ds_api_key = self.get_ds_api_key()
         logger.info(self.pretty_print())
@@ -19,7 +20,7 @@ class Config:
         app_version: {self.app_version}
         log_level: {self.log_level}
         bgmtv_token: {self.bgmtv_token_masked()}
-        db_file: {self.db_file}
+        db_url: {self.db_url_masked()}
         ds_api_key: {self.ds_api_key_masked()}
         """
 
@@ -32,8 +33,22 @@ class Config:
     def get_bgmtv_token(self):
         return os.getenv("BGMTV_TOKEN")
 
-    def get_db_file(self):
-        return os.getenv("DB_FILE", "data/rank.db")
+    def get_db_url(self):
+        db_url = os.getenv(
+            "DB_URL", "postgresql://postgres:postgres@localhost:5432/bangumi_rank"
+        )
+        # 确保使用正确的SQLAlchemy驱动程序格式
+        if db_url.startswith("postgres://"):
+            db_url = db_url.replace("postgres://", "postgresql+psycopg://", 1)
+        elif db_url.startswith("postgresql://") and "+psycopg" not in db_url:
+            db_url = db_url.replace("postgresql://", "postgresql+psycopg://", 1)
+        return db_url
+
+    def db_url_masked(self):
+        if not self.db_url:
+            return "Not set"
+        masked_url = re.sub(r"://([^:]+):([^@]+)@", r"://\1:****@", self.db_url)
+        return masked_url
 
     def bgmtv_token_masked(self):
         if self.bgmtv_token is None:
