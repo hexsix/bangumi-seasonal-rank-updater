@@ -1,7 +1,7 @@
 import json
 from datetime import datetime, timedelta
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from loguru import logger
 
 from app.api.v0.update import models
@@ -12,6 +12,7 @@ from app.api.v0.utils import (
     older_season_ids,
     recent_season_ids,
     search_subjects_by_yucwiki,
+    verify_password,
 )
 from app.services import bgmtv, db, yucwiki
 from app.services.db.client import db_client
@@ -22,6 +23,7 @@ router = APIRouter(prefix="/update", tags=["update"])
 @router.post("/index")
 async def update_season2index(
     request: models.Season2IndexRequest,
+    _: bool = Depends(verify_password),
 ):
     index = db_client.get_index(request.season_id)
     if index is None:
@@ -60,6 +62,7 @@ async def update_season2index(
 @router.post("/index/from_yucwiki")
 async def update_from_yucwiki(
     request: models.Season2IndexRequest,
+    _: bool = Depends(verify_password),
 ):
     index = db_client.get_index(request.season_id)
     if index is None or index.index_id == request.index_id:
@@ -112,6 +115,7 @@ async def update_from_yucwiki(
 @router.post("/index/recent_seasons")
 async def update_season(
     _: models.Empty,
+    __: bool = Depends(verify_password),
 ):
     season_ids = recent_season_ids()
     for season_id in season_ids:
@@ -136,7 +140,10 @@ async def update_season(
 
 
 @router.post("/index/older_seasons")
-async def update_older_seasons(_: models.Empty):
+async def update_older_seasons(
+    _: models.Empty,
+    __: bool = Depends(verify_password),
+):
     season_ids = older_season_ids()
     for season_id in season_ids:
         index = db_client.get_index(season_id)
@@ -160,7 +167,10 @@ async def update_older_seasons(_: models.Empty):
 
 
 @router.post("/index/ancient_seasons")
-async def update_ancient_seasons(_: models.Empty):
+async def update_ancient_seasons(
+    _: models.Empty,
+    __: bool = Depends(verify_password),
+):
     season_ids = ancient_season_ids()
     for season_id in season_ids:
         index = db_client.get_index(season_id)
@@ -209,35 +219,45 @@ async def update_season_subjects(season_id: int):
 
 
 @router.post("/subjects/future_seasons")
-async def update_future_season_subjects():
+async def update_future_season_subjects(
+    _: bool = Depends(verify_password),
+):
     season_ids = future_season_ids()
     for season_id in season_ids:
         await update_season_subjects(season_id)
 
 
 @router.post("/subjects/recent_seasons")
-async def update_recent_season_subjects():
+async def update_recent_season_subjects(
+    _: bool = Depends(verify_password),
+):
     season_ids = recent_season_ids()
     for season_id in season_ids:
         await update_season_subjects(season_id)
 
 
 @router.post("/subjects/older_seasons")
-async def update_older_season_subjects():
+async def update_older_season_subjects(
+    _: bool = Depends(verify_password),
+):
     season_ids = older_season_ids()
     for season_id in season_ids:
         await update_season_subjects(season_id)
 
 
 @router.post("/subjects/ancient_seasons")
-async def update_ancient_season_subjects():
+async def update_ancient_season_subjects(
+    _: bool = Depends(verify_password),
+):
     season_ids = ancient_season_ids()
     for season_id in season_ids:
         await update_season_subjects(season_id)
 
 
 @router.post("/subjects/all")
-async def update_all_subjects():
+async def update_all_subjects(
+    _: bool = Depends(verify_password),
+):
     await update_recent_season_subjects()
     await update_older_season_subjects()
     await update_ancient_season_subjects()

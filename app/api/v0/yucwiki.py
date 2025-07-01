@@ -1,8 +1,9 @@
 from typing import Optional
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 
+from app.api.v0.utils import verify_password
 from app.services import db
 from app.services.db.client import db_client
 
@@ -17,6 +18,7 @@ class YucWikiRequest(BaseModel):
 @router.post("/get")
 async def get_yucwiki(
     request: YucWikiRequest,
+    _: bool = Depends(verify_password),
 ):
     yucwiki = db_client.get_yucwiki(request.jp_title)
     if yucwiki:
@@ -28,6 +30,7 @@ async def get_yucwiki(
 @router.post("/update")
 async def update_yucwiki(
     request: YucWikiRequest,
+    _: bool = Depends(verify_password),
 ):
     if request.subject_id is None:
         raise HTTPException(status_code=400, detail="Subject ID is required")

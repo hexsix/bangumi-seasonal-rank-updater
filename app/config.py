@@ -13,6 +13,7 @@ class Config:
         self.db_url = self.get_db_url()
         self.bgmtv_token = self.get_bgmtv_token()
         self.ds_api_key = self.get_ds_api_key()
+        self.api_password = self.get_api_password()
         logger.info(self.pretty_print())
 
     def pretty_print(self):
@@ -22,6 +23,7 @@ class Config:
         bgmtv_token: {self.bgmtv_token_masked()}
         db_url: {self.db_url_masked()}
         ds_api_key: {self.ds_api_key_masked()}
+        api_password: {self.api_password_masked()}
         """
 
     def get_log_level(self):
@@ -62,6 +64,14 @@ class Config:
 
     def get_ds_api_key(self):
         return os.getenv("DS_API_KEY")
+
+    def get_api_password(self):
+        return os.getenv("API_PASSWORD", "default_password")
+
+    def api_password_masked(self):
+        if self.api_password is None:
+            return "Not set"
+        return "****"
 
 
 config = Config()

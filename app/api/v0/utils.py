@@ -1,12 +1,28 @@
 import json
 from datetime import datetime
 
+from fastapi import Depends, HTTPException, status
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from loguru import logger
 
+from app.config import config
 from app.services import bgmtv, db, yucwiki
 from app.services.bgmtv import get_episodes, get_subject
 from app.services.db.client import db_client
 from app.services.ds.client import ds_client
+
+security = HTTPBasic()
+
+
+def verify_password(credentials: HTTPBasicCredentials = Depends(security)):
+    """验证API密码的依赖项"""
+    if credentials.password != config.api_password:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="密码错误",
+            headers={"WWW-Authenticate": "Basic"},
+        )
+    return True
 
 
 async def search_subjects_by_yucwiki(yucwiki_list: list[yucwiki.YucWiki]) -> list[int]:
