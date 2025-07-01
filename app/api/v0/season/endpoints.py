@@ -23,7 +23,9 @@ async def available_seasons() -> models.AvailableSeasonsResponse:
 async def get_season(season_id: int) -> models.SeasonResponse:
     logger.info(f"get_season {season_id}")
     subjects = db_client.get_season_subjects(season_id)
-    subjects = [db.Subject.to_dict(subject) for subject in subjects]
+    subjects = [
+        db.Subject.to_dict(subject) for subject in subjects if subject is not None
+    ]
     updated_at = max(subject["updated_at"] for subject in subjects)
 
     return models.SeasonResponse(
