@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from fastapi import APIRouter
 from loguru import logger
 
@@ -23,10 +25,11 @@ async def available_seasons() -> models.AvailableSeasonsResponse:
 async def get_season(season_id: int) -> models.SeasonResponse:
     logger.info(f"get_season {season_id}")
     subjects = db_client.get_season_subjects(season_id)
-    subjects = [
-        db.Subject.to_dict(subject) for subject in subjects if subject is not None
-    ]
-    updated_at = max(subject["updated_at"] for subject in subjects)
+    subjects = [db.Subject.to_dict(subject) for subject in subjects]
+    updated_at = max(
+        (subject["updated_at"] for subject in subjects),
+        default=datetime(2010, 1, 1),
+    )
 
     return models.SeasonResponse(
         season_id=season_id,
