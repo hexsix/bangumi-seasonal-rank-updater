@@ -1,4 +1,5 @@
 import json
+import re
 from datetime import datetime
 
 from fastapi import Depends, HTTPException, status
@@ -12,6 +13,47 @@ from app.services.db.client import db_client
 from app.services.ds.client import ds_client
 
 security = HTTPBasic()
+
+
+def parse_airdate(airdate_str: str) -> datetime.date | None:
+    """解析各种格式的播出日期"""
+    if not airdate_str:
+        return None
+
+    # 清理字符串：移除额外空格
+    cleaned = airdate_str.strip()
+
+    # 处理包含多个日期的情况，取第一个日期
+    if "/" in cleaned and ("(" in cleaned or "（" in cleaned):
+        # 格式如: "2015-02-01(一部地域のみ)/2015-02-08"
+        cleaned = cleaned.split("(")[0].split("（")[0].strip()
+
+    # 处理空格问题
+    cleaned = re.sub(r"\s+", "", cleaned)
+
+    # 尝试各种日期格式
+    date_formats = [
+        "%Y-%m-%d",  # 2015-02-01
+        "%Y/%m/%d",  # 2015/02/01
+        "%Y年%m月%d日",  # 2015年02月01日
+    ]
+
+    for fmt in date_formats:
+        try:
+            return datetime.strptime(cleaned, fmt).date()
+        except ValueError:
+            continue
+
+    # 处理不规范的格式，如 "2013/6/8"，"2013-6-8"，"2013年6月8日"
+    slash_match = re.match(r"^(\d{4})[/-年](\d{1,2})[/-月](\d{1,2})[/-日]?$", cleaned)
+    if slash_match:
+        try:
+            year, month, day = map(int, slash_match.groups())
+            return datetime(year, month, day).date()
+        except ValueError:
+            pass
+
+    return None
 
 
 def verify_password(credentials: HTTPBasicCredentials = Depends(security)):
@@ -117,9 +159,8 @@ async def get_subject_detail(subject_id: int) -> db.Subject:
             # 检查是否有播出日期
             if episode.airdate:
                 try:
-                    airdate = datetime.strptime(episode.airdate, "%Y-%m-%d").date()
-                    # 只统计已播出的集数
-                    if airdate <= current_date:
+                    airdate = parse_airdate(episode.airdate)
+                    if airdate and airdate <= current_date:
                         episode_info = {
                             "ep": episode.ep,
                             "comments": episode.comment,
@@ -127,7 +168,7 @@ async def get_subject_detail(subject_id: int) -> db.Subject:
                         aired_episodes.append(episode_info)
                         if episode.comment:
                             total_comments += episode.comment
-                except ValueError:
+                except Exception:
                     logger.warning(f"无效的播出日期格式: {episode.airdate}")
 
         if aired_episodes:
