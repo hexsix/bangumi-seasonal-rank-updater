@@ -200,22 +200,29 @@ async def update_season_subjects(season_id: int):
         return
     subject_ids: list[int] = json.loads(index.subject_ids)
     for subject_id in subject_ids:
-        subject = db_client.get_subject(subject_id)
-        if subject is None:
-            subject = await get_subject_detail(subject_id)
-            db_client.insert_subject(subject)
-            logger.info(f"不存在 {subject_id} 条目，已创建")
-        else:
-            updated_at = datetime.fromisoformat(subject.updated_at)
-            year = season_id // 100
-            month = season_id % 100
-            days = (datetime.now() - datetime(year, month, 1)).days // 90
-            if updated_at < datetime.now() - timedelta(days=days):
+        try:
+            subject = db_client.get_subject(subject_id)
+            if subject is None:
                 subject = await get_subject_detail(subject_id)
-                db_client.upgrade_subject(subject)
-                logger.info(f"已更新 {subject_id} 条目")
+                # redirect
+                if subject_id != subject.id:
+                    subject.id = subject_id
+                db_client.insert_subject(subject)
+                logger.info(f"不存在 {subject_id} 条目，已创建")
             else:
-                logger.info(f"{subject_id} 条目已是最新")
+                updated_at = datetime.fromisoformat(subject.updated_at)
+                year = season_id // 100
+                month = season_id % 100
+                days = (datetime.now() - datetime(year, month, 1)).days // 90
+                if updated_at < datetime.now() - timedelta(days=days):
+                    subject = await get_subject_detail(subject_id)
+                    db_client.upgrade_subject(subject)
+                    logger.info(f"已更新 {subject_id} 条目")
+                else:
+                    logger.info(f"{subject_id} 条目已是最新")
+        except Exception as e:
+            logger.error(f"更新 {subject_id} 条目失败: {e}")
+            continue
 
 
 @router.post("/subjects/future_seasons")
@@ -224,6 +231,7 @@ async def update_future_season_subjects(
     _: bool = Depends(verify_password),
 ):
     season_ids = list(future_season_ids())
+    season_ids = sorted(season_ids, reverse=True)
     background_tasks.add_task(update_multiple_seasons_subjects, season_ids, "future")
     logger.info("未来季度条目更新任务已启动")
     return {"message": "未来季度条目更新任务已在后台启动", "status": "started"}
@@ -235,6 +243,7 @@ async def update_recent_season_subjects(
     _: bool = Depends(verify_password),
 ):
     season_ids = list(recent_season_ids())
+    season_ids = sorted(season_ids, reverse=True)
     background_tasks.add_task(update_multiple_seasons_subjects, season_ids, "recent")
     logger.info("近期季度条目更新任务已启动")
     return {"message": "近期季度条目更新任务已在后台启动", "status": "started"}
@@ -246,6 +255,7 @@ async def update_older_season_subjects(
     _: bool = Depends(verify_password),
 ):
     season_ids = list(older_season_ids())
+    season_ids = sorted(season_ids, reverse=True)
     background_tasks.add_task(update_multiple_seasons_subjects, season_ids, "older")
     logger.info("较旧季度条目更新任务已启动")
     return {"message": "较旧季度条目更新任务已在后台启动", "status": "started"}
@@ -257,6 +267,7 @@ async def update_ancient_season_subjects(
     _: bool = Depends(verify_password),
 ):
     season_ids = list(ancient_season_ids())
+    season_ids = sorted(season_ids, reverse=True)
     background_tasks.add_task(update_multiple_seasons_subjects, season_ids, "ancient")
     logger.info("古老季度条目更新任务已启动")
     return {"message": "古老季度条目更新任务已在后台启动", "status": "started"}
@@ -267,6 +278,7 @@ async def update_multiple_seasons_subjects(season_ids: list[int], task_name: str
     logger.info(f"开始执行 {task_name} 季度条目更新任务，共 {len(season_ids)} 个季度")
     try:
         for season_id in season_ids:
+            logger.info(f"开始更新 {season_id} 季度条目")
             await update_season_subjects(season_id)
         logger.info(f"{task_name} 季度条目更新任务完成")
     except Exception as e:
@@ -283,6 +295,7 @@ async def scheduled_update_all_subjects():
             | older_season_ids()
             | ancient_season_ids()
         )
+        all_season_ids = sorted(all_season_ids, reverse=True)
         await update_multiple_seasons_subjects(all_season_ids, "scheduled_all")
         logger.info("定时任务：所有条目更新完成")
     except Exception as e:
@@ -301,6 +314,7 @@ async def update_all_subjects(
         | older_season_ids()
         | ancient_season_ids()
     )
+    all_season_ids = sorted(all_season_ids, reverse=True)
     background_tasks.add_task(update_multiple_seasons_subjects, all_season_ids, "all")
     logger.info("全部条目更新任务已启动")
     return {"message": "全部条目更新任务已在后台启动", "status": "started"}
