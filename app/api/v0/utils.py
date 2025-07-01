@@ -1,6 +1,6 @@
 import json
 import re
-from datetime import datetime
+from datetime import datetime, date
 
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
@@ -15,7 +15,7 @@ from app.services.ds.client import ds_client
 security = HTTPBasic()
 
 
-def parse_airdate(airdate_str: str) -> datetime.date | None:
+def parse_airdate(airdate_str: str) -> date | None:
     """解析各种格式的播出日期"""
     if not airdate_str:
         return None
