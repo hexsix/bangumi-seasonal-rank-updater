@@ -273,6 +273,22 @@ async def update_multiple_seasons_subjects(season_ids: list[int], task_name: str
         logger.error(f"{task_name} 季度条目更新任务失败: {e}")
 
 
+async def scheduled_update_all_subjects():
+    """供调度器调用的更新所有条目函数"""
+    logger.info("定时任务：开始更新所有条目")
+    try:
+        all_season_ids = list(
+            future_season_ids()
+            | recent_season_ids()
+            | older_season_ids()
+            | ancient_season_ids()
+        )
+        await update_multiple_seasons_subjects(all_season_ids, "scheduled_all")
+        logger.info("定时任务：所有条目更新完成")
+    except Exception as e:
+        logger.error(f"定时任务：更新所有条目失败: {e}")
+
+
 @router.post("/subjects/all")
 async def update_all_subjects(
     background_tasks: BackgroundTasks,

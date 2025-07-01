@@ -3,13 +3,17 @@ import socket
 import sys
 from contextlib import asynccontextmanager
 
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from fastapi import APIRouter, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 
 from app.api.v0.routers import routers as v0_routers
+from app.api.v0.update.endpoints import scheduled_update_all_subjects
 from app.config import config
 from app.services.db.client import db_client
+
+scheduler = AsyncIOScheduler()
 
 
 @asynccontextmanager
@@ -28,9 +32,22 @@ async def lifespan(app: FastAPI):
     )
     logger.info("Starting up...")
 
+    scheduler.add_job(
+        scheduled_update_all_subjects,
+        "interval",
+        hours=2,
+        id="update_all_subjects",
+        name="每2小时更新所有条目",
+        replace_existing=True,
+    )
+    scheduler.start()
+    logger.info("调度器已启动，每2小时执行一次全量更新任务")
+
     yield
 
     logger.info("Shutting down...")
+    scheduler.shutdown()
+    logger.info("调度器已停止")
     db_client.close()
     logger.stop()
     logger.complete()
