@@ -1,7 +1,7 @@
 import json
 from datetime import datetime, timedelta
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException
 from loguru import logger
 
 from app.api.v0.update import models
@@ -220,45 +220,71 @@ async def update_season_subjects(season_id: int):
 
 @router.post("/subjects/future_seasons")
 async def update_future_season_subjects(
+    background_tasks: BackgroundTasks,
     _: bool = Depends(verify_password),
 ):
-    season_ids = future_season_ids()
-    for season_id in season_ids:
-        await update_season_subjects(season_id)
+    season_ids = list(future_season_ids())
+    background_tasks.add_task(update_multiple_seasons_subjects, season_ids, "future")
+    logger.info("未来季度条目更新任务已启动")
+    return {"message": "未来季度条目更新任务已在后台启动", "status": "started"}
 
 
 @router.post("/subjects/recent_seasons")
 async def update_recent_season_subjects(
+    background_tasks: BackgroundTasks,
     _: bool = Depends(verify_password),
 ):
-    season_ids = recent_season_ids()
-    for season_id in season_ids:
-        await update_season_subjects(season_id)
+    season_ids = list(recent_season_ids())
+    background_tasks.add_task(update_multiple_seasons_subjects, season_ids, "recent")
+    logger.info("近期季度条目更新任务已启动")
+    return {"message": "近期季度条目更新任务已在后台启动", "status": "started"}
 
 
 @router.post("/subjects/older_seasons")
 async def update_older_season_subjects(
+    background_tasks: BackgroundTasks,
     _: bool = Depends(verify_password),
 ):
-    season_ids = older_season_ids()
-    for season_id in season_ids:
-        await update_season_subjects(season_id)
+    season_ids = list(older_season_ids())
+    background_tasks.add_task(update_multiple_seasons_subjects, season_ids, "older")
+    logger.info("较旧季度条目更新任务已启动")
+    return {"message": "较旧季度条目更新任务已在后台启动", "status": "started"}
 
 
 @router.post("/subjects/ancient_seasons")
 async def update_ancient_season_subjects(
+    background_tasks: BackgroundTasks,
     _: bool = Depends(verify_password),
 ):
-    season_ids = ancient_season_ids()
-    for season_id in season_ids:
-        await update_season_subjects(season_id)
+    season_ids = list(ancient_season_ids())
+    background_tasks.add_task(update_multiple_seasons_subjects, season_ids, "ancient")
+    logger.info("古老季度条目更新任务已启动")
+    return {"message": "古老季度条目更新任务已在后台启动", "status": "started"}
+
+
+async def update_multiple_seasons_subjects(season_ids: list[int], task_name: str):
+    """后台任务：批量更新多个季度的条目"""
+    logger.info(f"开始执行 {task_name} 季度条目更新任务，共 {len(season_ids)} 个季度")
+    try:
+        for season_id in season_ids:
+            await update_season_subjects(season_id)
+        logger.info(f"{task_name} 季度条目更新任务完成")
+    except Exception as e:
+        logger.error(f"{task_name} 季度条目更新任务失败: {e}")
 
 
 @router.post("/subjects/all")
 async def update_all_subjects(
+    background_tasks: BackgroundTasks,
     _: bool = Depends(verify_password),
 ):
-    await update_recent_season_subjects()
-    await update_older_season_subjects()
-    await update_ancient_season_subjects()
-    return "ok"
+    # 将所有季度的更新作为一个后台任务
+    all_season_ids = list(
+        future_season_ids()
+        | recent_season_ids()
+        | older_season_ids()
+        | ancient_season_ids()
+    )
+    background_tasks.add_task(update_multiple_seasons_subjects, all_season_ids, "all")
+    logger.info("全部条目更新任务已启动")
+    return {"message": "全部条目更新任务已在后台启动", "status": "started"}
