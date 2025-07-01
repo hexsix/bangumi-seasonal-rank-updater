@@ -88,7 +88,8 @@ async def get_subject_detail(subject_id: int) -> db.Subject:
             if item.key == "放送星期":
                 air_weekday = item.value
 
-    episodes = await get_episodes(subject_id, 0, 100, 0)
+    # cuz redirect, use subject.id instead of subject_id
+    episodes = await get_episodes(subject.id, 0, 100, 0)
     if not episodes or not episodes.data:
         average_comment = 0
     else:

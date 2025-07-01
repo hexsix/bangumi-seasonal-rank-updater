@@ -1,8 +1,9 @@
 import asyncio
 import functools
 import random
+import re
 from datetime import datetime
-from typing import Callable, TypeVar
+from typing import Any, Callable, Coroutine, TypeVar
 
 import httpx
 from loguru import logger
@@ -30,6 +31,32 @@ BASE_URL = "https://api.bgm.tv"
 T = TypeVar("T")
 
 
+def _extract_subject_id_from_redirect_url(redirect_url: str) -> int:
+    """
+    从重定向URL中提取subject_id
+
+    Args:
+        redirect_url: 重定向的URL
+
+    Returns:
+        int: 提取的subject_id
+
+    Raises:
+        ValueError: 当无法从URL中提取subject_id时
+    """
+    # 匹配 /v0/subjects/{subject_id} 模式
+    match = re.search(r"/v0/subjects/(\d+)", redirect_url)
+    if match:
+        return int(match.group(1))
+
+    # 如果是完整URL，尝试匹配完整路径
+    match = re.search(r"https?://[^/]+/v0/subjects/(\d+)", redirect_url)
+    if match:
+        return int(match.group(1))
+
+    raise ValueError(f"无法从重定向URL中提取subject_id: {redirect_url}")
+
+
 def retry_on_failure(max_retries: int = 3):
     """
     重试装饰器，在API调用失败时重试指定次数
@@ -38,7 +65,9 @@ def retry_on_failure(max_retries: int = 3):
         max_retries: 最大重试次数，默认3次
     """
 
-    def decorator(func: Callable[..., T]) -> Callable[..., T]:
+    def decorator(
+        func: Callable[..., Coroutine[Any, Any, T]],
+    ) -> Callable[..., Coroutine[Any, Any, T]]:
         @functools.wraps(func)
         async def wrapper(*args, **kwargs) -> T:
             last_exception = None
@@ -63,6 +92,9 @@ def retry_on_failure(max_retries: int = 3):
             if last_exception:
                 raise last_exception
 
+            # 这行代码理论上不会执行，但为了类型检查需要加上
+            raise RuntimeError("未知错误")
+
         return wrapper
 
     return decorator
@@ -86,6 +118,7 @@ async def get_episodes(
     episode_type: int,
     limit: int,
     offset: int,
+    _redirect_count: int = 0,
 ) -> PagedEpisode:
     """
     获取剧集信息
@@ -97,14 +130,19 @@ async def get_episodes(
         episode_type: 剧集类型 (本篇=0 特别篇=1 OP=2 ED=3 预告/宣传/广告=4 MAD=5 其他=6)
         limit: 每页数量
         offset: 偏移量
+        _redirect_count: 内部重定向计数，用于防止无限重定向
 
     Returns:
         PagedEpisode: 分页剧集数据
 
     Raises:
         httpx.HTTPStatusError: 当API返回错误状态码时
-        ValueError: 当响应数据解析失败时
+        ValueError: 当响应数据解析失败或重定向次数过多时
     """
+    # 防止无限重定向
+    if _redirect_count > 5:
+        raise ValueError(f"重定向次数过多，已达到最大限制: {_redirect_count}")
+
     logger.info(f"正在获取条目 {subject_id} 的剧集信息")
     await asyncio.sleep(0.2)
 
@@ -116,12 +154,33 @@ async def get_episodes(
         "offset": offset,
     }
 
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(follow_redirects=False) as client:
         response = await client.get(
             url,
             params=params,
             headers=_get_headers(),
         )
+
+        # 处理302重定向
+        if response.status_code == 302:
+            location = response.headers.get("location")
+            if location:
+                logger.info(
+                    f"检测到302重定向，从条目 {subject_id} 重定向到: {location}"
+                )
+                try:
+                    new_subject_id = _extract_subject_id_from_redirect_url(location)
+                    logger.info(f"提取到新的subject_id: {new_subject_id}")
+                    # 递归调用处理重定向
+                    return await get_episodes(
+                        new_subject_id, episode_type, limit, offset, _redirect_count + 1
+                    )
+                except ValueError as e:
+                    logger.error(f"处理重定向失败: {e}")
+                    raise ValueError(f"处理重定向失败: {e}")
+            else:
+                logger.error("收到302状态码但没有Location头部")
+                raise ValueError("收到302状态码但没有Location头部")
 
         if not response.is_success:
             logger.error(f"BGM API 返回状态码: {response.status_code}")
@@ -192,7 +251,7 @@ async def get_index(
 
 
 @retry_on_failure(max_retries=3)
-async def get_subject(subject_id: int) -> Subject:
+async def get_subject(subject_id: int, _redirect_count: int = 0) -> Subject:
     """
     获取条目详细信息
 
@@ -200,24 +259,48 @@ async def get_subject(subject_id: int) -> Subject:
 
     Args:
         subject_id: 条目ID
+        _redirect_count: 内部重定向计数，用于防止无限重定向
 
     Returns:
         Subject: 条目详细信息
 
     Raises:
         httpx.HTTPStatusError: 当API返回错误状态码时
-        ValueError: 当响应数据解析失败时
+        ValueError: 当响应数据解析失败或重定向次数过多时
     """
+    # 防止无限重定向
+    if _redirect_count > 5:
+        raise ValueError(f"重定向次数过多，已达到最大限制: {_redirect_count}")
+
     logger.info(f"正在获取条目 {subject_id} 的详细信息")
     await asyncio.sleep(0.2)
 
     url = f"{BASE_URL}/v0/subjects/{subject_id}"
 
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(follow_redirects=False) as client:
         response = await client.get(
             url,
             headers=_get_headers(),
         )
+
+        # 处理302重定向
+        if response.status_code == 302:
+            location = response.headers.get("location")
+            if location:
+                logger.info(
+                    f"检测到302重定向，从条目 {subject_id} 重定向到: {location}"
+                )
+                try:
+                    new_subject_id = _extract_subject_id_from_redirect_url(location)
+                    logger.info(f"提取到新的subject_id: {new_subject_id}")
+                    # 递归调用处理重定向
+                    return await get_subject(new_subject_id, _redirect_count + 1)
+                except ValueError as e:
+                    logger.error(f"处理重定向失败: {e}")
+                    raise ValueError(f"处理重定向失败: {e}")
+            else:
+                logger.error("收到302状态码但没有Location头部")
+                raise ValueError("收到302状态码但没有Location头部")
 
         if not response.is_success:
             logger.error(f"BGM API 返回状态码: {response.status_code}")
@@ -490,9 +573,8 @@ async def search_subject_by_name(name: str) -> PagedSubject:
     return paged_subject
 
 
-if __name__ == "__main__":
+def test_search_subject_by_name():
     import asyncio
-    import json
 
     from app.services.bgmtv.models import SearchFilter
 
@@ -508,8 +590,17 @@ if __name__ == "__main__":
     )
 
     logger.info(response)
-    json.dump(
-        response.model_dump(),
-        open("response.json", "w", encoding="utf-8"),
-        ensure_ascii=False,
-    )
+
+
+async def test_redirect():
+    response = await get_subject(174544)
+    logger.info(response)
+
+    response = await get_episodes(203861, 0, 10, 0)
+    logger.info(response)
+
+
+if __name__ == "__main__":
+    import asyncio
+
+    asyncio.run(test_redirect())
