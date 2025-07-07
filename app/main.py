@@ -35,13 +35,13 @@ async def lifespan(app: FastAPI):
     scheduler.add_job(
         scheduled_update_all_subjects,
         "interval",
-        hours=2,
+        hours=4,
         id="update_all_subjects",
-        name="每2小时更新所有条目",
+        name="每4小时更新所有条目",
         replace_existing=True,
     )
     scheduler.start()
-    logger.info("调度器已启动，每2小时执行一次全量更新任务")
+    logger.info("调度器已启动，每4小时执行一次全量更新任务")
 
     yield
 

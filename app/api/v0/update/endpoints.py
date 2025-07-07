@@ -219,7 +219,8 @@ async def update_season_subjects(season_id: int):
                     db_client.upgrade_subject(subject)
                     logger.info(f"已更新 {subject_id} 条目")
                 else:
-                    logger.info(f"{subject_id} 条目已是最新")
+                    # logger.info(f"{subject_id} 条目已是最新")
+                    pass
         except Exception as e:
             logger.error(f"更新 {subject_id} 条目失败: {e}")
             continue
