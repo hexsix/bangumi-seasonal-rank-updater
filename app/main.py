@@ -34,10 +34,10 @@ async def lifespan(app: FastAPI):
 
     scheduler.add_job(
         scheduled_update_all_subjects,
-        "interval",
-        hours=4,
+        "cron",
+        hour="0,4,8,12,16,20",
         id="update_all_subjects",
-        name="每4小时更新所有条目",
+        name="每天0、4、8、12、16、20点更新所有条目",
         replace_existing=True,
     )
     scheduler.start()
@@ -60,7 +60,9 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://rinshankaiho.fun",
+        "https://bangumi-seasonal-rank.pages.dev",
     ],
+    allow_origin_regex="https://.*\\.bangumi-seasonal-rank\\.pages\\.dev|http://localhost:\\d+",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
