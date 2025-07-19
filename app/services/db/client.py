@@ -2,44 +2,51 @@ import json
 
 from loguru import logger
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
 
 from app.config import config
 from app.services.db.schemas import Index, Subject, YucWiki
+from app.services.db.session import with_db_session
 
 
 class DBClient:
     def __init__(self, db_url: str):
+        # 移除长期会话，使用会话管理器
         self.engine = create_engine(db_url, echo=False)
-        self.session = Session(self.engine)
+        # 保留session属性用于装饰器访问，但不再长期持有
+        self.session = None
 
+    @with_db_session
     def insert_index(self, index: Index) -> int | None:
         self.session.add(index)
-        self.session.commit()
         return index.season_id
 
+    @with_db_session
     def insert_subject(self, subject: Subject) -> int | None:
         self.session.add(subject)
-        self.session.commit()
         return subject.id
 
+    @with_db_session
     def insert_yucwiki(self, yucwiki: YucWiki) -> int | None:
         self.session.add(yucwiki)
-        self.session.commit()
         return yucwiki.id
 
+    @with_db_session
     def get_index(self, season_id: int) -> Index | None:
         return self.session.query(Index).filter(Index.season_id == season_id).first()
 
+    @with_db_session
     def get_subject(self, id: int) -> Subject | None:
         return self.session.query(Subject).filter(Subject.id == id).first()
 
+    @with_db_session
     def get_yucwiki(self, jp_title: str) -> YucWiki | None:
         return self.session.query(YucWiki).filter(YucWiki.jp_title == jp_title).first()
 
+    @with_db_session
     def get_all_index(self) -> list[Index]:
         return self.session.query(Index).all()
 
+    @with_db_session
     def upgrade_index(self, index: Index) -> None:
         old_index = self.get_index(index.season_id)
         if old_index is None:
@@ -48,14 +55,14 @@ class DBClient:
         old_index.subject_ids = index.subject_ids if index.subject_ids else "[]"
         old_index.index_id = index.index_id
         self.session.merge(old_index)
-        self.session.commit()
         return None
 
+    @with_db_session
     def upgrade_subject(self, subject: Subject) -> None:
         self.session.merge(subject)
-        self.session.commit()
         return None
 
+    @with_db_session
     def upgrade_yucwiki(self, yucwiki: YucWiki) -> None:
         old_yucwiki = self.get_yucwiki(yucwiki.jp_title)
         if old_yucwiki is None:
@@ -63,14 +70,15 @@ class DBClient:
             return
         old_yucwiki.subject_id = yucwiki.subject_id
         self.session.merge(old_yucwiki)
-        self.session.commit()
         return None
 
     # Section: 业务
+    @with_db_session
     def get_available_seasons(self) -> list[int]:
         season_ids = self.session.query(Index.season_id).distinct().all()
         return [season_id[0] for season_id in season_ids]
 
+    @with_db_session
     def get_season_subjects(self, season_id: int) -> list[Subject]:
         index = self.get_index(season_id)
         if index is None:
@@ -80,8 +88,10 @@ class DBClient:
         return subjects
 
     def close(self) -> None:
-        self.session.close()
-        self.engine.dispose()
+        # 由于使用会话管理器，只需要处理引擎
+        if hasattr(self, "engine"):
+            self.engine.dispose()
+            logger.info("数据库引擎已关闭")
 
 
 db_client = DBClient(config.db_url)

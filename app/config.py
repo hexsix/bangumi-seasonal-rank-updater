@@ -83,5 +83,15 @@ class Config:
             return "Not set"
         return "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/xxxx"
 
+    def get_db_pool_config(self):
+        """获取数据库连接池配置"""
+        return {
+            "pool_size": int(os.getenv("DB_POOL_SIZE", "10")),
+            "max_overflow": int(os.getenv("DB_MAX_OVERFLOW", "20")),
+            "pool_timeout": int(os.getenv("DB_POOL_TIMEOUT", "30")),
+            "pool_recycle": int(os.getenv("DB_POOL_RECYCLE", "3600")),
+            "pool_pre_ping": True,  # 连接前ping测试
+        }
+
 
 config = Config()
