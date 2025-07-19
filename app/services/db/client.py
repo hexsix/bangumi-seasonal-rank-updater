@@ -48,9 +48,12 @@ class DBClient:
 
     @with_db_session
     def upgrade_index(self, index: Index) -> None:
-        old_index = self.get_index(index.season_id)
+        # 在同一个会话中完成所有操作，避免DetachedInstanceError
+        old_index = (
+            self.session.query(Index).filter(Index.season_id == index.season_id).first()
+        )
         if old_index is None:
-            self.insert_index(index)
+            self.session.add(index)
             return
         old_index.subject_ids = index.subject_ids if index.subject_ids else "[]"
         old_index.index_id = index.index_id
@@ -64,9 +67,14 @@ class DBClient:
 
     @with_db_session
     def upgrade_yucwiki(self, yucwiki: YucWiki) -> None:
-        old_yucwiki = self.get_yucwiki(yucwiki.jp_title)
+        # 在同一个会话中完成所有操作，避免DetachedInstanceError
+        old_yucwiki = (
+            self.session.query(YucWiki)
+            .filter(YucWiki.jp_title == yucwiki.jp_title)
+            .first()
+        )
         if old_yucwiki is None:
-            self.insert_yucwiki(yucwiki)
+            self.session.add(yucwiki)
             return
         old_yucwiki.subject_id = yucwiki.subject_id
         self.session.merge(old_yucwiki)
@@ -80,7 +88,8 @@ class DBClient:
 
     @with_db_session
     def get_season_subjects(self, season_id: int) -> list[Subject]:
-        index = self.get_index(season_id)
+        # 在同一个会话中完成所有操作，避免DetachedInstanceError
+        index = self.session.query(Index).filter(Index.season_id == season_id).first()
         if index is None:
             return []
         subject_ids = json.loads(index.subject_ids) if index.subject_ids else []
