@@ -12,6 +12,7 @@ from app.api.v0.utils import (
     older_season_ids,
     recent_season_ids,
     search_subjects_by_yucwiki,
+    trigger_deploy_hooks,
     verify_password,
 )
 from app.services import bgmtv, db, yucwiki
@@ -287,8 +288,8 @@ async def update_multiple_seasons_subjects(season_ids: list[int], task_name: str
 
 
 async def scheduled_update_all_subjects():
-    """供调度器调用的更新所有条目函数"""
-    logger.info("定时任务：开始更新所有条目")
+    logger.info("开始执行全量更新任务")
+    start_time = datetime.now()
     try:
         all_season_ids = list(
             future_season_ids()
@@ -298,7 +299,9 @@ async def scheduled_update_all_subjects():
         )
         all_season_ids = sorted(all_season_ids, reverse=True)
         await update_multiple_seasons_subjects(all_season_ids, "scheduled_all")
-        logger.info("定时任务：所有条目更新完成")
+        end_time = datetime.now()
+        logger.info(f"全量更新任务完成，耗时 {end_time - start_time}")
+        await trigger_deploy_hooks()
     except Exception as e:
         logger.error(f"定时任务：更新所有条目失败: {e}")
 

@@ -14,6 +14,7 @@ class Config:
         self.bgmtv_token = self.get_bgmtv_token()
         self.ds_api_key = self.get_ds_api_key()
         self.api_password = self.get_api_password()
+        self.cf_pages_hooks = self.get_cf_pages_hooks()
         logger.info(self.pretty_print())
 
     def pretty_print(self):
@@ -24,6 +25,7 @@ class Config:
         db_url: {self.db_url_masked()}
         ds_api_key: {self.ds_api_key_masked()}
         api_password: {self.api_password_masked()}
+        cf_pages_hooks: {self.cf_pages_hooks_masked()}
         """
 
     def get_log_level(self):
@@ -72,6 +74,14 @@ class Config:
         if self.api_password is None:
             return "Not set"
         return "****"
+
+    def get_cf_pages_hooks(self):
+        return os.getenv("CF_PAGES_HOOKS")
+
+    def cf_pages_hooks_masked(self):
+        if self.cf_pages_hooks is None:
+            return "Not set"
+        return "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/xxxx"
 
 
 config = Config()

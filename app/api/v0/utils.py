@@ -1,7 +1,8 @@
 import json
 import re
-from datetime import datetime, date
+from datetime import date, datetime
 
+import httpx
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from loguru import logger
@@ -258,6 +259,24 @@ def future_season_ids() -> set[int]:
                 continue
             seasons.append(int(f"{year}{month:02d}"))
     return set(seasons[:1])
+
+
+async def trigger_deploy_hooks():
+    """触发Cloudflare Pages的部署hooks"""
+    if not config.cf_pages_hooks:
+        logger.info("未配置Cloudflare Pages deploy hooks，跳过触发")
+        return
+
+    async with httpx.AsyncClient() as client:
+        payload = {}
+        results = await client.post(config.cf_pages_hooks, json=payload)
+
+        if results.is_success:
+            logger.success(f"成功触发hook, 状态码: {results.status_code}")
+        else:
+            logger.error(
+                f"触发hook失败, 状态码: {results.status_code}, 响应: {results.text}"
+            )
 
 
 if __name__ == "__main__":
