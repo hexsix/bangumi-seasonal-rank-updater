@@ -13,6 +13,6 @@ async def get_index(
 ):
     index = db_client.get_index(season_id)
     if index:
-        return index.to_dict()
+        return index  # index已经是字典
     else:
         raise HTTPException(status_code=404, detail="Index not found")

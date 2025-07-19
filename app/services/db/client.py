@@ -31,16 +31,21 @@ class DBClient:
         return yucwiki.id
 
     @with_db_session
-    def get_index(self, season_id: int) -> Index | None:
-        return self.session.query(Index).filter(Index.season_id == season_id).first()
+    def get_index(self, season_id: int) -> dict | None:
+        index = self.session.query(Index).filter(Index.season_id == season_id).first()
+        return index.to_dict() if index else None
 
     @with_db_session
-    def get_subject(self, id: int) -> Subject | None:
-        return self.session.query(Subject).filter(Subject.id == id).first()
+    def get_subject(self, id: int) -> dict | None:
+        subject = self.session.query(Subject).filter(Subject.id == id).first()
+        return subject.to_dict() if subject else None
 
     @with_db_session
-    def get_yucwiki(self, jp_title: str) -> YucWiki | None:
-        return self.session.query(YucWiki).filter(YucWiki.jp_title == jp_title).first()
+    def get_yucwiki(self, jp_title: str) -> dict | None:
+        yucwiki = (
+            self.session.query(YucWiki).filter(YucWiki.jp_title == jp_title).first()
+        )
+        return yucwiki.to_dict() if yucwiki else None
 
     @with_db_session
     def get_all_index(self) -> list[Index]:
@@ -87,14 +92,16 @@ class DBClient:
         return [season_id[0] for season_id in season_ids]
 
     @with_db_session
-    def get_season_subjects(self, season_id: int) -> list[Subject]:
+    def get_season_subjects(self, season_id: int) -> list[dict]:
         # 在同一个会话中完成所有操作，避免DetachedInstanceError
+        # 直接返回字典，避免跨会话访问对象
         index = self.session.query(Index).filter(Index.season_id == season_id).first()
         if index is None:
             return []
         subject_ids = json.loads(index.subject_ids) if index.subject_ids else []
         subjects = self.session.query(Subject).filter(Subject.id.in_(subject_ids)).all()
-        return subjects
+        # 在会话中转换为字典
+        return [subject.to_dict() for subject in subjects]
 
     def close(self) -> None:
         # 由于使用会话管理器，只需要处理引擎

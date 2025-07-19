@@ -22,7 +22,7 @@ async def get_yucwiki(
 ):
     yucwiki = db_client.get_yucwiki(request.jp_title)
     if yucwiki:
-        return yucwiki.to_dict()
+        return yucwiki  # yucwiki已经是字典
     else:
         raise HTTPException(status_code=404, detail="YucWiki not found")
 

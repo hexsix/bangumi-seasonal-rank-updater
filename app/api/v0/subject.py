@@ -13,6 +13,6 @@ async def get_subject(
 ):
     subject = db_client.get_subject(subject_id)
     if subject:
-        return subject.to_dict()
+        return subject  # subject已经是字典
     else:
         raise HTTPException(status_code=404, detail="Subject not found")

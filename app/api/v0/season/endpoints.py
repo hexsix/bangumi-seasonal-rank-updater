@@ -5,7 +5,6 @@ from loguru import logger
 
 from app.api.v0.season import models
 from app.api.v0.utils import current_season_id
-from app.services import db
 from app.services.db.client import db_client
 
 router = APIRouter(prefix="/season", tags=["season"])
@@ -29,7 +28,7 @@ async def available_seasons() -> models.AvailableSeasonsResponse:
 async def get_season(season_id: int) -> models.SeasonResponse:
     logger.info(f"get_season {season_id}")
     subjects = db_client.get_season_subjects(season_id)
-    subjects = [db.Subject.to_dict(subject) for subject in subjects]
+    # subjects已经是字典列表，不需要再次转换
     updated_at = max(
         (subject["updated_at"] for subject in subjects),
         default=datetime(2010, 1, 1),
