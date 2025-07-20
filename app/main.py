@@ -1,5 +1,4 @@
 import os
-import socket
 import sys
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
@@ -21,9 +20,7 @@ scheduler = AsyncIOScheduler()
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     logger.remove()
     logger.add(sys.stdout, level=config.app_log_level)
-    log_filename = os.path.join(
-        os.path.dirname(__file__), "logs", f"{socket.gethostname()}_{{time}}.log"
-    )
+    log_filename = os.path.join(os.path.dirname(__file__), "logs", "app.log")
     logger.add(
         log_filename,
         level=config.app_log_level,
@@ -37,8 +34,15 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
 
     logger.info("Starting up...")
 
+    async def scheduled_update_wrapper() -> None:
+        """异步包装函数，用于调度器执行定时更新任务"""
+        try:
+            await scheduled_update_all_subjects(app)
+        except Exception as e:
+            logger.error(f"调度器全量更新任务执行失败: {e}")
+
     scheduler.add_job(
-        lambda: scheduled_update_all_subjects(app),
+        scheduled_update_wrapper,
         "cron",
         hour="0,4,8,12,16,20",
         id="update_all_subjects",
