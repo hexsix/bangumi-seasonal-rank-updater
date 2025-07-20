@@ -2,23 +2,16 @@ import asyncio
 import functools
 import random
 import re
-from datetime import datetime
 from typing import Any, Callable, Coroutine, TypeVar
 
 import httpx
 from loguru import logger
+from returns.result import Failure, Result, Success
 
 from app.config import config
 from app.services.bgmtv.models import (
-    AddSubjectToIndexRequest,
-    Index,
-    IndexBasicInfo,
-    IndexSubject,
     PagedEpisode,
     PagedIndexSubject,
-    PagedSubject,
-    SearchFilter,
-    SearchRequest,
     Subject,
 )
 
@@ -29,6 +22,7 @@ DEFAULT_USER_AGENT = (
 BASE_URL = "https://api.bgm.tv"
 
 T = TypeVar("T")
+R = TypeVar("R")
 
 
 def _extract_subject_id_from_redirect_url(redirect_url: str) -> int:
@@ -57,7 +51,12 @@ def _extract_subject_id_from_redirect_url(redirect_url: str) -> int:
     raise ValueError(f"无法从重定向URL中提取subject_id: {redirect_url}")
 
 
-def retry_on_failure(max_retries: int = 3):
+def retry_on_failure(
+    max_retries: int = 3,
+) -> Callable[
+    [Callable[..., Coroutine[Any, Any, Result[T, Exception]]]],
+    Callable[..., Coroutine[Any, Any, Result[T, Exception]]],
+]:
     """
     重试装饰器，在API调用失败时重试指定次数
 
@@ -66,10 +65,10 @@ def retry_on_failure(max_retries: int = 3):
     """
 
     def decorator(
-        func: Callable[..., Coroutine[Any, Any, T]],
-    ) -> Callable[..., Coroutine[Any, Any, T]]:
+        func: Callable[..., Coroutine[Any, Any, Result[T, Exception]]],
+    ) -> Callable[..., Coroutine[Any, Any, Result[T, Exception]]]:
         @functools.wraps(func)
-        async def wrapper(*args, **kwargs) -> T:
+        async def wrapper(*args: Any, **kwargs: Any) -> Result[T, Exception]:
             last_exception = None
 
             for attempt in range(max_retries + 1):  # +1 因为第一次不算重试
@@ -119,7 +118,7 @@ async def get_episodes(
     limit: int,
     offset: int,
     _redirect_count: int = 0,
-) -> PagedEpisode:
+) -> Result[PagedEpisode, Exception]:
     """
     获取剧集信息
 
@@ -141,7 +140,7 @@ async def get_episodes(
     """
     # 防止无限重定向
     if _redirect_count > 5:
-        raise ValueError(f"重定向次数过多，已达到最大限制: {_redirect_count}")
+        return Failure(ValueError(f"重定向次数过多，已达到最大限制: {_redirect_count}"))
 
     logger.info(f"正在获取条目 {subject_id} 的剧集信息")
     await asyncio.sleep(0.2)
@@ -172,27 +171,34 @@ async def get_episodes(
                     new_subject_id = _extract_subject_id_from_redirect_url(location)
                     logger.info(f"提取到新的subject_id: {new_subject_id}")
                     # 递归调用处理重定向
-                    return await get_episodes(
+                    result = await get_episodes(
                         new_subject_id, episode_type, limit, offset, _redirect_count + 1
                     )
+                    return result
                 except ValueError as e:
                     logger.error(f"处理重定向失败: {e}")
-                    raise ValueError(f"处理重定向失败: {e}")
+                    return Failure(ValueError(f"处理重定向失败: {e}"))
             else:
                 logger.error("收到302状态码但没有Location头部")
-                raise ValueError("收到302状态码但没有Location头部")
+                return Failure(ValueError("收到302状态码但没有Location头部"))
 
         if not response.is_success:
             logger.error(f"BGM API 返回状态码: {response.status_code}")
-            response.raise_for_status()
+            return Failure(
+                httpx.HTTPStatusError(
+                    f"BGM API 返回状态码: {response.status_code}",
+                    request=response.request,
+                    response=response,
+                )
+            )
 
         try:
             data = response.json()
-            return PagedEpisode(**data)
+            return Success(PagedEpisode(**data))
         except Exception as e:
             logger.error(f"解析JSON失败: {e}")
             logger.error(f"响应内容: {response.text}")
-            raise ValueError(f"解析JSON失败: {e}")
+            return Failure(ValueError(f"解析JSON失败: {e}"))
 
 
 @retry_on_failure(max_retries=3)
@@ -201,7 +207,7 @@ async def get_index(
     subject_type: int,
     limit: int,
     offset: int,
-) -> PagedIndexSubject:
+) -> Result[PagedIndexSubject, Exception]:
     """
     获取索引中的条目
 
@@ -239,19 +245,27 @@ async def get_index(
 
         if not response.is_success:
             logger.error(f"BGM API 返回状态码: {response.status_code}")
-            response.raise_for_status()
+            return Failure(
+                httpx.HTTPStatusError(
+                    f"BGM API 返回状态码: {response.status_code}",
+                    request=response.request,
+                    response=response,
+                )
+            )
 
         try:
             data = response.json()
-            return PagedIndexSubject(**data)
+            return Success(PagedIndexSubject(**data))
         except Exception as e:
             logger.error(f"解析JSON失败: {e}")
             logger.error(f"响应内容: {response.text}")
-            raise ValueError(f"解析JSON失败: {e}")
+            return Failure(ValueError(f"解析JSON失败: {e}"))
 
 
 @retry_on_failure(max_retries=3)
-async def get_subject(subject_id: int, _redirect_count: int = 0) -> Subject:
+async def get_subject(
+    subject_id: int, _redirect_count: int = 0
+) -> Result[Subject, Exception]:
     """
     获取条目详细信息
 
@@ -270,7 +284,7 @@ async def get_subject(subject_id: int, _redirect_count: int = 0) -> Subject:
     """
     # 防止无限重定向
     if _redirect_count > 5:
-        raise ValueError(f"重定向次数过多，已达到最大限制: {_redirect_count}")
+        return Failure(ValueError(f"重定向次数过多，已达到最大限制: {_redirect_count}"))
 
     logger.info(f"正在获取条目 {subject_id} 的详细信息")
     await asyncio.sleep(0.2)
@@ -294,313 +308,29 @@ async def get_subject(subject_id: int, _redirect_count: int = 0) -> Subject:
                     new_subject_id = _extract_subject_id_from_redirect_url(location)
                     logger.info(f"提取到新的subject_id: {new_subject_id}")
                     # 递归调用处理重定向
-                    return await get_subject(new_subject_id, _redirect_count + 1)
+                    result = await get_subject(new_subject_id, _redirect_count + 1)
+                    return result
                 except ValueError as e:
                     logger.error(f"处理重定向失败: {e}")
-                    raise ValueError(f"处理重定向失败: {e}")
+                    return Failure(ValueError(f"处理重定向失败: {e}"))
             else:
                 logger.error("收到302状态码但没有Location头部")
-                raise ValueError("收到302状态码但没有Location头部")
+                return Failure(ValueError("收到302状态码但没有Location头部"))
 
         if not response.is_success:
             logger.error(f"BGM API 返回状态码: {response.status_code}")
-            response.raise_for_status()
-
-        try:
-            data = response.json()
-            return Subject(**data)
-        except Exception as e:
-            logger.error(f"解析JSON失败: {e}")
-            logger.error(f"响应内容: {response.text}")
-            raise ValueError(f"解析JSON失败: {e}")
-
-
-async def search_anime(keyword: str) -> PagedSubject:
-    return await search_subjects(
-        SearchRequest(
-            keyword=keyword,
-            filter=SearchFilter.from_type(2),
-        )
-    )
-
-
-@retry_on_failure(max_retries=3)
-async def search_subjects(
-    search_request: SearchRequest,
-    limit: int = 10,
-    offset: int = 0,
-) -> PagedSubject:
-    """
-    搜索条目
-
-    POST /v0/search/subjects
-
-    实验性 API，本 schema 和实际的 API 行为都可能随时发生改动
-
-    Args:
-        search_request: 搜索请求，包含关键字、排序和筛选条件
-        limit: 每页数量，默认25
-        offset: 偏移量，默认0
-
-    Returns:
-        PagedSubject: 分页条目搜索结果
-
-    Raises:
-        httpx.HTTPStatusError: 当API返回错误状态码时
-        ValueError: 当响应数据解析失败时
-    """
-    logger.info(f"正在搜索条目，关键字: {search_request.keyword}")
-    await asyncio.sleep(0.2)
-
-    url = f"{BASE_URL}/v0/search/subjects"
-    params = {
-        "limit": limit,
-        "offset": offset,
-    }
-
-    # 构建请求体
-    request_body = search_request.model_dump(exclude_none=True)
-
-    async with httpx.AsyncClient() as client:
-        response = await client.post(
-            url,
-            params=params,
-            json=request_body,
-            headers=_get_headers(),
-        )
-
-        if not response.is_success:
-            logger.error(f"BGM API 返回状态码: {response.status_code}")
-            response.raise_for_status()
-
-        try:
-            data = response.json()
-            return PagedSubject(**data)
-        except Exception as e:
-            logger.error(f"解析JSON失败: {e}")
-            logger.error(f"响应内容: {response.text}")
-            raise ValueError(f"解析JSON失败: {e}")
-
-
-@retry_on_failure(max_retries=3)
-async def create_index() -> Index:
-    """
-    创建新目录
-
-    POST /v0/indices
-
-    Returns:
-        Index: 创建的目录信息
-
-    Raises:
-        httpx.HTTPStatusError: 当API返回错误状态码时
-        ValueError: 当响应数据解析失败时
-    """
-    logger.info("正在创建新目录")
-    await asyncio.sleep(0.2)
-
-    url = f"{BASE_URL}/v0/indices"
-
-    # 构建请求体
-    request_body = {}
-
-    async with httpx.AsyncClient() as client:
-        response = await client.post(
-            url,
-            json=request_body,
-            headers=_get_headers(),
-        )
-
-        if not response.is_success:
-            logger.error(f"BGM API 返回状态码: {response.status_code}")
-            response.raise_for_status()
-
-        try:
-            data = response.json()
-            return Index(**data)
-        except Exception as e:
-            logger.error(f"解析JSON失败: {e}")
-            logger.error(f"响应内容: {response.text}")
-            raise ValueError(f"解析JSON失败: {e}")
-
-
-@retry_on_failure(max_retries=3)
-async def update_index(index_id: int, basic_info: IndexBasicInfo) -> None:
-    """
-    修改目录信息
-
-    PUT /v0/indices/{index_id}
-
-    Args:
-        index_id: 目录ID
-        basic_info: 目录基本信息，包含标题和描述
-
-    Returns:
-        None
-
-    Raises:
-        httpx.HTTPStatusError: 当API返回错误状态码时
-        ValueError: 当响应数据解析失败时
-    """
-    logger.info(f"正在修改目录 {index_id} 的信息")
-    await asyncio.sleep(0.2)
-
-    url = f"{BASE_URL}/v0/indices/{index_id}"
-
-    # 构建请求体
-    request_body = basic_info.model_dump(exclude_none=True)
-
-    async with httpx.AsyncClient() as client:
-        response = await client.put(
-            url,
-            json=request_body,
-            headers=_get_headers(),
-        )
-
-        if not response.is_success:
-            logger.error(f"BGM API 返回状态码: {response.status_code}")
-            response.raise_for_status()
-
-        return None
-
-
-@retry_on_failure(max_retries=3)
-async def _add_subject_to_index(
-    index_id: int, request: AddSubjectToIndexRequest
-) -> IndexSubject:
-    """
-    向目录添加条目
-
-    POST /v0/indices/{index_id}/subjects
-
-    Args:
-        index_id: 目录ID
-        request: 添加条目请求，包含条目ID、排序和评论
-
-    Raises:
-        httpx.HTTPStatusError: 当API返回错误状态码时
-        ValueError: 当响应数据解析失败时
-    """
-    logger.info(f"正在向目录 {index_id} 添加条目 {request.subject_id}")
-    await asyncio.sleep(0.2)
-
-    url = f"{BASE_URL}/v0/indices/{index_id}/subjects"
-
-    # 构建请求体
-    request_body = request.model_dump(exclude_none=True)
-
-    async with httpx.AsyncClient() as client:
-        response = await client.post(
-            url,
-            json=request_body,
-            headers=_get_headers(),
-        )
-
-        if not response.is_success:
-            logger.error(f"BGM API 返回状态码: {response.status_code}")
-            response.raise_for_status()
-
-        try:
-            data = response.json()
-            return IndexSubject(**data)
-        except Exception as e:
-            logger.error(f"解析JSON失败: {e}")
-            logger.error(f"响应内容: {response.text}")
-            raise ValueError(f"解析JSON失败: {e}")
-
-
-async def add_subject_to_index(index_id: int, subject_id: int) -> IndexSubject:
-    """
-    向目录添加条目
-    """
-    return await _add_subject_to_index(
-        index_id,
-        AddSubjectToIndexRequest(subject_id=subject_id, sort=0, comment="auto updated"),
-    )
-
-
-@retry_on_failure(max_retries=3)
-async def remove_subject_from_index(index_id: int, subject_id: int) -> None:
-    """
-    从目录删除条目
-
-    DELETE /v0/indices/{index_id}/subjects/{subject_id}
-
-    Args:
-        index_id: 目录ID
-        subject_id: 条目ID
-
-    Raises:
-        httpx.HTTPStatusError: 当API返回错误状态码时
-    """
-    logger.info(f"正在从目录 {index_id} 删除条目 {subject_id}")
-    await asyncio.sleep(0.2)
-
-    url = f"{BASE_URL}/v0/indices/{index_id}/subjects/{subject_id}"
-
-    async with httpx.AsyncClient() as client:
-        response = await client.delete(
-            url,
-            headers=_get_headers(),
-        )
-
-        if not response.is_success:
-            logger.error(f"BGM API 返回状态码: {response.status_code}")
-            response.raise_for_status()
-
-        return None
-
-
-async def create_index_and_info(season_id: int) -> int:
-    index = await create_index()
-    await update_index(
-        index.id,
-        IndexBasicInfo(
-            title=f"Season {season_id}",
-            description=f"auto updated at {datetime.now().isoformat()}",
-        ),
-    )
-    return index.id
-
-
-async def search_subject_by_name(name: str) -> PagedSubject:
-    paged_subject = await search_subjects(
-        SearchRequest(
-            keyword=name,
-            filter=SearchFilter.from_type(2),
-        )
-    )
-    return paged_subject
-
-
-def test_search_subject_by_name():
-    import asyncio
-
-    from app.services.bgmtv.models import SearchFilter
-
-    keyword = "よふかしのうた 第2期"
-
-    response = asyncio.run(
-        search_subjects(
-            SearchRequest(
-                keyword=keyword,
-                filter=SearchFilter.from_type(2),
+            return Failure(
+                httpx.HTTPStatusError(
+                    f"BGM API 返回状态码: {response.status_code}",
+                    request=response.request,
+                    response=response,
+                )
             )
-        )
-    )
 
-    logger.info(response)
-
-
-async def test_redirect():
-    response = await get_subject(174544)
-    logger.info(response)
-
-    response = await get_episodes(203861, 0, 10, 0)
-    logger.info(response)
-
-
-if __name__ == "__main__":
-    import asyncio
-
-    asyncio.run(test_redirect())
+        try:
+            data = response.json()
+            return Success(Subject(**data))
+        except Exception as e:
+            logger.error(f"解析JSON失败: {e}")
+            logger.error(f"响应内容: {response.text}")
+            return Failure(ValueError(f"解析JSON失败: {e}"))

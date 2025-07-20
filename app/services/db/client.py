@@ -1,107 +1,193 @@
-import json
+import asyncio
+from typing import Awaitable, Callable, Sequence, TypeVar
 
 from loguru import logger
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from returns.result import Failure, Result, Success
+from sqlalchemy import Column
+from sqlalchemy.exc import (
+    OperationalError,
+    PendingRollbackError,
+)
+from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
+from sqlmodel import select
 
 from app.config import config
-from app.services.db.schemas import Index, Subject, YucWiki
+from app.services.db.schemas import Index, Subject
+
+T = TypeVar("T")
 
 
 class DBClient:
+    """数据库客户端，集成会话管理和数据访问功能"""
+
     def __init__(self, db_url: str):
-        self.engine = create_engine(db_url, echo=False)
-        self.session = Session(self.engine)
+        pool_config = config.get_db_pool_config()
+        self.engine = create_async_engine(db_url, echo=False, **pool_config)
+        self._max_retries = 3
+        self._retry_delays = [1, 2, 4]  # 指数退避延迟
 
-    def insert_index(self, index: Index) -> int | None:
-        self.session.add(index)
-        self.session.commit()
-        return index.season_id
+    async def _get_session(self) -> AsyncSession:
+        """创建新的数据库会话"""
+        session = AsyncSession(self.engine, autoflush=False, autocommit=False)
+        logger.debug("创建新的数据库会话")
+        return session
 
-    def insert_subject(self, subject: Subject) -> int | None:
-        self.session.add(subject)
-        self.session.commit()
-        return subject.id
+    async def _close_session(self, session: AsyncSession) -> None:
+        """安全关闭数据库会话"""
+        try:
+            if session.is_active:
+                await session.close()
+            logger.debug("数据库会话已关闭")
+        except Exception as e:
+            logger.warning(f"关闭会话时发生错误: {e}")
 
-    def insert_yucwiki(self, yucwiki: YucWiki) -> int | None:
-        self.session.add(yucwiki)
-        self.session.commit()
-        return yucwiki.id
+    async def _rollback_session(self, session: AsyncSession) -> None:
+        """安全回滚数据库会话"""
+        try:
+            if session.is_active:
+                await session.rollback()
+                logger.debug("数据库会话已回滚")
+        except Exception as e:
+            logger.warning(f"回滚会话时发生错误: {e}")
 
-    def get_index(self, season_id: int) -> Index | None:
-        return self.session.query(Index).filter(Index.season_id == season_id).first()
+    def _should_retry(self, exception: Exception) -> bool:
+        """判断是否应该重试操作"""
+        retryable_exceptions = (
+            PendingRollbackError,
+            OperationalError,
+        )
+        return isinstance(exception, retryable_exceptions)
 
-    def get_subject(self, id: int) -> Subject | None:
-        return self.session.query(Subject).filter(Subject.id == id).first()
+    def _log_retry_attempt(self, attempt: int, exception: Exception) -> None:
+        """记录重试尝试"""
+        logger.warning(
+            f"数据库操作失败，第 {attempt} 次重试: {type(exception).__name__}: {exception}"
+        )
 
-    def get_yucwiki(self, jp_title: str) -> YucWiki | None:
-        return self.session.query(YucWiki).filter(YucWiki.jp_title == jp_title).first()
+    async def _execute_with_retry(
+        self, operation: Callable[[AsyncSession], Awaitable[T]]
+    ) -> Result[T, Exception]:
+        """执行数据库操作，支持重试机制"""
+        last_exception = Exception("未知错误")
 
-    def get_all_index(self) -> list[Index]:
-        return self.session.query(Index).all()
+        for attempt in range(self._max_retries + 1):
+            session = None
+            try:
+                session = await self._get_session()
+                result = await operation(session)
+                if session.dirty or session.new or session.deleted:
+                    await session.commit()
+                    logger.debug("数据库事务已提交")
+                return Success(result)
 
-    def upgrade_index(self, index: Index) -> None:
-        old_index = self.get_index(index.season_id)
-        if old_index is None:
-            self.insert_index(index)
-            return
-        old_index.subject_ids = index.subject_ids if index.subject_ids else "[]"
-        old_index.index_id = index.index_id
-        self.session.merge(old_index)
-        self.session.commit()
-        return None
+            except Exception as e:
+                last_exception = e
+                logger.error(f"数据库操作失败: {type(e).__name__}: {e}")
 
-    def upgrade_subject(self, subject: Subject) -> None:
-        self.session.merge(subject)
-        self.session.commit()
-        return None
+                if session:
+                    await self._rollback_session(session)
 
-    def upgrade_yucwiki(self, yucwiki: YucWiki) -> None:
-        old_yucwiki = self.get_yucwiki(yucwiki.jp_title)
-        if old_yucwiki is None:
-            self.insert_yucwiki(yucwiki)
-            return
-        old_yucwiki.subject_id = yucwiki.subject_id
-        self.session.merge(old_yucwiki)
-        self.session.commit()
-        return None
+                if attempt < self._max_retries and self._should_retry(e):
+                    self._log_retry_attempt(attempt + 1, e)
+                    await asyncio.sleep(self._retry_delays[attempt])
+                    continue
+                else:
+                    break
+            finally:
+                if session:
+                    await self._close_session(session)
 
-    # Section: 业务
-    def get_available_seasons(self) -> list[int]:
-        season_ids = self.session.query(Index.season_id).distinct().all()
-        return [season_id[0] for season_id in season_ids]
+        if last_exception:
+            return Failure(last_exception)
 
-    def get_season_subjects(self, season_id: int) -> list[Subject]:
-        index = self.get_index(season_id)
-        if index is None:
-            return []
-        subject_ids = json.loads(index.subject_ids) if index.subject_ids else []
-        subjects = self.session.query(Subject).filter(Subject.id.in_(subject_ids)).all()
-        return subjects
+        return Failure(RuntimeError("未知错误"))
 
-    def close(self) -> None:
-        self.session.close()
-        self.engine.dispose()
+    async def close(self) -> None:
+        """关闭数据库引擎"""
+        await self.engine.dispose()
+        logger.info("数据库引擎已关闭")
 
+    async def get_available_season_ids(self) -> Result[list[int], Exception]:
+        async def operation(session: AsyncSession) -> list[int]:
+            stmt = select(Index.season_id).distinct()
+            result = await session.execute(stmt)
+            season_ids = result.scalars().all()
+            return list(season_ids)
 
-db_client = DBClient(config.db_url)
+        return await self._execute_with_retry(operation)
 
+    async def get_season_subjects(
+        self, season_id: int
+    ) -> Result[list[Subject], Exception]:
+        async def operation(session: AsyncSession) -> list[Subject]:
+            stmt = select(Index.subject_ids).where(Index.season_id == season_id)
+            result = await session.execute(stmt)
+            subject_ids = result.scalar_one_or_none()
+            if subject_ids:
+                subject_stmt = select(Subject).where(Column("id").in_(subject_ids))
+                result = await session.execute(subject_stmt)
+                subjects: Sequence[Subject] = result.scalars().all()
+                return [subject for subject in subjects if subject is not None]
+            else:
+                return []
 
-if __name__ == "__main__":
-    import asyncio
+        return await self._execute_with_retry(operation)
 
-    from app.api.v0.utils import get_subject_detail
+    async def get_subject(self, id: int) -> Result[Subject, Exception]:
+        async def operation(session: AsyncSession) -> Subject:
+            stmt = select(Subject).where(Subject.id == id)
+            result = await session.execute(stmt)
+            subject = result.scalar_one_or_none()
+            if subject:
+                return subject
+            else:
+                raise Exception(f"Subject with id {id} not found")
 
-    async def main():
-        if db_client is not None:
-            subject_id = 398951
-            subject_data = await get_subject_detail(subject_id)
-            db_client.upgrade_subject(subject_data)
+        return await self._execute_with_retry(operation)
 
-            subject = db_client.get_subject(subject_id)
-            logger.info(subject)
+    async def get_index(self, season_id: int) -> Result[Index, Exception]:
+        async def operation(session: AsyncSession) -> Index:
+            stmt = select(Index).where(Index.season_id == season_id)
+            result = await session.execute(stmt)
+            index = result.scalar_one_or_none()
+            if index:
+                return index
+            else:
+                raise Exception(f"Index with season_id {season_id} not found")
 
-            db_client.close()
-            logger.info("数据库连接已关闭")
+        return await self._execute_with_retry(operation)
 
-    asyncio.run(main())
+    async def get_all_index(self) -> Result[list[Index], Exception]:
+        async def operation(session: AsyncSession) -> list[Index]:
+            stmt = select(Index)
+            result = await session.execute(stmt)
+            return [index for index in result.scalars().all()]
+
+        return await self._execute_with_retry(operation)
+
+    async def upsert_index(
+        self, season_id: int, index_id: int, subject_ids: list[int]
+    ) -> Result[None, Exception]:
+        async def operation(session: AsyncSession) -> None:
+            index = Index(
+                season_id=season_id, index_id=index_id, subject_ids=subject_ids
+            )
+            await session.merge(index)
+
+        return await self._execute_with_retry(operation)
+
+    async def get_all_subjects(self) -> Result[dict[int, list[int]], Exception]:
+        async def operation(session: AsyncSession) -> dict[int, list[int]]:
+            stmt = select(Index.season_id, Index.subject_ids)
+            result = await session.execute(stmt)
+            index_lists = result.all()
+
+            return {season_id: subject_ids for season_id, subject_ids in index_lists}
+
+        return await self._execute_with_retry(operation)
+
+    async def upsert_subject(self, subject: Subject) -> Result[None, Exception]:
+        async def operation(session: AsyncSession) -> None:
+            await session.merge(subject)
+
+        return await self._execute_with_retry(operation)

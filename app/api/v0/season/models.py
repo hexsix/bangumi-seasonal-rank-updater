@@ -2,6 +2,8 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
+from app.services.db.schemas import Subject
+
 
 class AvailableSeasonsResponse(BaseModel):
     current_season_id: int
@@ -10,5 +12,5 @@ class AvailableSeasonsResponse(BaseModel):
 
 class SeasonResponse(BaseModel):
     season_id: int
-    subjects: list[dict]
+    subjects: list[Subject]
     updated_at: datetime

@@ -1,7 +1,8 @@
-from .schemas import Index, Subject, YucWiki
+from .client import DBClient
+from .schemas import Index, Subject
 
 __all__ = [
+    "DBClient",
     "Index",
     "Subject",
-    "YucWiki",
 ]
