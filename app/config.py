@@ -58,7 +58,7 @@ class Config:
 
     def get_db_url(self) -> str:
         db_url = os.getenv(
-            "DB_URL", "postgresql://postgres:postgres@localhost:5432/bangumi_rank"
+            "DB_URL", "postgresql://postgres:postgres@localhost:5432/rank"
         )
         # 确保使用正确的SQLAlchemy驱动程序格式
         if db_url.startswith("postgres://"):

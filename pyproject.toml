@@ -17,6 +17,7 @@ dependencies = [
     "pydantic>=2.11.7",
     "returns>=0.25.0",
     "sqlalchemy>=2.0.41",
+    "sqlmodel>=0.0.24",
 ]
 
 [project.optional-dependencies]

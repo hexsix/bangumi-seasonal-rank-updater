@@ -12,7 +12,7 @@ from loguru import logger
 from app.api.v0.routers import routers as v0_routers
 from app.api.v0.update.endpoints import scheduled_update_all_subjects
 from app.config import config
-from app.services.db.client import DBClient
+from app.services import BGMTVClient, DBClient
 
 scheduler = AsyncIOScheduler()
 
@@ -33,6 +33,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     )
 
     app.state.db_client = DBClient(config.db_url)
+    app.state.bgmtv_client = BGMTVClient()
 
     logger.info("Starting up...")
 

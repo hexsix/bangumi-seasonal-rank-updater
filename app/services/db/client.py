@@ -1,14 +1,15 @@
 import asyncio
-from typing import Any, Awaitable, Callable, Dict, TypeVar
+from typing import Awaitable, Callable, Sequence, TypeVar
 
 from loguru import logger
 from returns.result import Failure, Result, Success
-from sqlalchemy import select
+from sqlalchemy import Column
 from sqlalchemy.exc import (
     OperationalError,
     PendingRollbackError,
 )
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
+from sqlmodel import select
 
 from app.config import config
 from app.services.db.schemas import Index, Subject
@@ -115,34 +116,51 @@ class DBClient:
 
         return await self._execute_with_retry(operation)
 
-    async def get_subject(self, id: int) -> Result[Dict[str, Any], Exception]:
-        async def operation(session: AsyncSession) -> Dict[str, Any]:
+    async def get_season_subjects(
+        self, season_id: int
+    ) -> Result[list[Subject], Exception]:
+        async def operation(session: AsyncSession) -> list[Subject]:
+            stmt = select(Index.subject_ids).where(Index.season_id == season_id)
+            result = await session.execute(stmt)
+            subject_ids = result.scalar_one_or_none()
+            if subject_ids:
+                subject_stmt = select(Subject).where(Column("id").in_(subject_ids))
+                result = await session.execute(subject_stmt)
+                subjects: Sequence[Subject] = result.scalars().all()
+                return [subject for subject in subjects if subject is not None]
+            else:
+                return []
+
+        return await self._execute_with_retry(operation)
+
+    async def get_subject(self, id: int) -> Result[Subject, Exception]:
+        async def operation(session: AsyncSession) -> Subject:
             stmt = select(Subject).where(Subject.id == id)
             result = await session.execute(stmt)
             subject = result.scalar_one_or_none()
             if subject:
-                return subject.to_dict()
+                return subject
             else:
                 raise Exception(f"Subject with id {id} not found")
 
         return await self._execute_with_retry(operation)
 
-    async def get_index(self, season_id: int) -> Result[Dict[str, Any], Exception]:
-        async def operation(session: AsyncSession) -> Dict[str, Any]:
+    async def get_index(self, season_id: int) -> Result[Index, Exception]:
+        async def operation(session: AsyncSession) -> Index:
             stmt = select(Index).where(Index.season_id == season_id)
             result = await session.execute(stmt)
             index = result.scalar_one_or_none()
             if index:
-                return index.to_dict()
+                return index
             else:
                 raise Exception(f"Index with season_id {season_id} not found")
 
         return await self._execute_with_retry(operation)
 
-    async def get_all_index(self) -> Result[list[Dict[str, Any]], Exception]:
-        async def operation(session: AsyncSession) -> list[Dict[str, Any]]:
+    async def get_all_index(self) -> Result[list[Index], Exception]:
+        async def operation(session: AsyncSession) -> list[Index]:
             stmt = select(Index)
             result = await session.execute(stmt)
-            return [index.to_dict() for index in result.scalars().all()]
+            return [index for index in result.scalars().all()]
 
         return await self._execute_with_retry(operation)

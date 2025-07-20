@@ -1,26 +1,34 @@
 from datetime import datetime
+from typing import List, Sequence
 
-from fastapi import APIRouter, Depends, FastAPI
+from fastapi import APIRouter, Depends, HTTPException
 from loguru import logger
-from sqlalchemy.orm import Session
+from returns.result import Failure, Success
 
 from app.api.v0.season import models
 from app.api.v0.utils import current_season_id
-from app.services.db.session import get_db
+from app.dependencies import get_db_client
+from app.services.db import DBClient, Subject
 
 router = APIRouter(prefix="/season", tags=["season"])
 
 
 @router.get("/available")
-async def available_seasons(
-    db: Session = Depends(get_db),
+async def get_available_seasons(
+    db: DBClient = Depends(get_db_client),
 ) -> models.AvailableSeasonsResponse:
     logger.info("available_seasons")
-    available_seasons = db.get_available_seasons()
-    available_seasons = sorted(
-        available_seasons,
-        reverse=True,
-    )
+    wrapped_available_seasons = await db.get_available_seasons()
+    match wrapped_available_seasons:
+        case Failure(e):
+            raise HTTPException(
+                status_code=500, detail=f"Failed to get available seasons: {e}"
+            )
+        case Success(available_seasons):
+            available_seasons = sorted(
+                available_seasons,
+                reverse=True,
+            )
     return models.AvailableSeasonsResponse(
         current_season_id=current_season_id(),
         available_seasons=available_seasons,
@@ -28,11 +36,22 @@ async def available_seasons(
 
 
 @router.get("/{season_id}")
-async def get_season(app: FastAPI, season_id: int) -> models.SeasonResponse:
+async def get_season_subjects(
+    season_id: int,
+    db: DBClient = Depends(get_db_client),
+) -> models.SeasonResponse:
     logger.info(f"get_season {season_id}")
-    subjects = app.state.db_client.get_season_subjects(season_id)
+    wrapped_subjects = await db.get_season_subjects(season_id)
+    match wrapped_subjects:
+        case Failure(e):
+            raise HTTPException(
+                status_code=500, detail=f"Failed to get season subjects: {e}"
+            )
+        case Success(db_subjects):
+            db_subjects: Sequence[Subject] = db_subjects
+    subjects: List[Subject] = [subject for subject in db_subjects]
     updated_at = max(
-        (subject["updated_at"] for subject in subjects),
+        (subject.updated_at for subject in subjects),
         default=datetime(2010, 1, 1),
     )
 

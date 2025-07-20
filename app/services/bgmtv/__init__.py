@@ -3,6 +3,7 @@ from .api import (
     get_index,
     get_subject,
 )
+from .client import BGMTVClient
 from .models import (
     AddSubjectToIndexRequest,
     IndexBasicInfo,
@@ -13,13 +14,14 @@ from .models import (
 )
 
 __all__ = [
+    "get_episodes",
+    "get_index",
+    "get_subject",
+    "BGMTVClient",
     "AddSubjectToIndexRequest",
     "IndexBasicInfo",
     "PagedSubject",
     "SearchRequest",
     "SearchFilter",
     "Subject",
-    "get_episodes",
-    "get_index",
-    "get_subject",
 ]
