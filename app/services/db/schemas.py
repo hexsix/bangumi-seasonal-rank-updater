@@ -16,7 +16,7 @@ class Index(Base):
     index_id: Mapped[int] = mapped_column(Integer, primary_key=True)
     subject_ids: Mapped[Optional[str]] = mapped_column(String, nullable=True)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"Index(season_id={self.season_id}, index_id={self.index_id}, subject_ids={self.subject_ids})"
 
     @classmethod
@@ -51,7 +51,7 @@ class Subject(Base):
     meta_tags: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     updated_at: Mapped[str] = mapped_column(String, nullable=False)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"Subject(id={self.id}, name={self.name}, name_cn={self.name_cn}, images_grid={self.images_grid}, images_large={self.images_large}, rank={self.rank}, score={self.score}, collection_total={self.collection_total}, average_comment={self.average_comment}, drop_rate={self.drop_rate}, air_weekday={self.air_weekday}, meta_tags={self.meta_tags}, updated_at={self.updated_at})"
 
     @classmethod
@@ -96,7 +96,7 @@ class YucWiki(Base):
     jp_title: Mapped[str] = mapped_column(String, nullable=False)
     subject_id: Mapped[int] = mapped_column(Integer, nullable=False)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"YucWiki(id={self.id}, jp_title={self.jp_title}, subject_id={self.subject_id})"
 
     @classmethod

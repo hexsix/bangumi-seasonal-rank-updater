@@ -1,19 +1,22 @@
 from datetime import datetime
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends, FastAPI
 from loguru import logger
+from sqlalchemy.orm import Session
 
 from app.api.v0.season import models
 from app.api.v0.utils import current_season_id
-from app.services.db.client import db_client
+from app.services.db.session import get_db
 
 router = APIRouter(prefix="/season", tags=["season"])
 
 
 @router.get("/available")
-async def available_seasons() -> models.AvailableSeasonsResponse:
+async def available_seasons(
+    db: Session = Depends(get_db),
+) -> models.AvailableSeasonsResponse:
     logger.info("available_seasons")
-    available_seasons = db_client.get_available_seasons()
+    available_seasons = db.get_available_seasons()
     available_seasons = sorted(
         available_seasons,
         reverse=True,
@@ -25,10 +28,9 @@ async def available_seasons() -> models.AvailableSeasonsResponse:
 
 
 @router.get("/{season_id}")
-async def get_season(season_id: int) -> models.SeasonResponse:
+async def get_season(app: FastAPI, season_id: int) -> models.SeasonResponse:
     logger.info(f"get_season {season_id}")
-    subjects = db_client.get_season_subjects(season_id)
-    # subjects已经是字典列表，不需要再次转换
+    subjects = app.state.db_client.get_season_subjects(season_id)
     updated_at = max(
         (subject["updated_at"] for subject in subjects),
         default=datetime(2010, 1, 1),

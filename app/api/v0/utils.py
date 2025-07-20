@@ -1,25 +1,24 @@
 import json
 import re
 from datetime import date, datetime
+from typing import Any
 
 import httpx
+from returns.result import Result, Success, Failure
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from loguru import logger
 
 from app.config import config
-from app.services import bgmtv, db, yucwiki
-from app.services.bgmtv import get_episodes, get_subject
-from app.services.db.client import db_client
-from app.services.ds.client import ds_client
+from app.services import bgmtv, db
 
 security = HTTPBasic()
 
 
-def parse_airdate(airdate_str: str) -> date | None:
+def parse_airdate(airdate_str: str) -> Result[date, Exception]:
     """解析各种格式的播出日期"""
     if not airdate_str:
-        return None
+        return Failure(Exception("Invalid airdate"))
 
     # 清理字符串：移除额外空格
     cleaned = airdate_str.strip()
@@ -41,7 +40,7 @@ def parse_airdate(airdate_str: str) -> date | None:
 
     for fmt in date_formats:
         try:
-            return datetime.strptime(cleaned, fmt).date()
+            return Success(datetime.strptime(cleaned, fmt).date())
         except ValueError:
             continue
 
@@ -50,16 +49,16 @@ def parse_airdate(airdate_str: str) -> date | None:
     if slash_match:
         try:
             year, month, day = map(int, slash_match.groups())
-            return datetime(year, month, day).date()
+            return Success(datetime(year, month, day).date())
         except ValueError:
             pass
 
-    return None
+    return Failure(Exception("Invalid airdate"))
 
 
-def verify_password(credentials: HTTPBasicCredentials = Depends(security)):
+def verify_password(credentials: HTTPBasicCredentials = Depends(security)) -> bool:
     """验证API密码的依赖项"""
-    if credentials.password != config.api_password:
+    if credentials.password != config.app_api_password:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="密码错误",
@@ -68,47 +67,9 @@ def verify_password(credentials: HTTPBasicCredentials = Depends(security)):
     return True
 
 
-async def search_subjects_by_yucwiki(yucwiki_list: list[yucwiki.YucWiki]) -> list[int]:
-    subjects = []
-    for yuc_info in yucwiki_list:
-        # 先检查数据库中是否存在
-        db_yucwiki = db_client.get_yucwiki(yuc_info.jp_title)
-        if db_yucwiki is not None:
-            subjects.append(db_yucwiki.subject_id)
-            continue
-        # 如果数据库中不存在，则搜索 bangumi 并插入数据库
-        paged_subject = await bgmtv.search_subject_by_name(yuc_info.jp_title)
-        for subject in paged_subject.data:
-            if subject.name == yuc_info.jp_title:
-                subjects.append(subject.id)
-                db_client.insert_yucwiki(
-                    db.YucWiki(
-                        jp_title=yuc_info.jp_title,
-                        subject_id=subject.id,
-                    )
-                )
-                break
-        else:
-            # 如果 bangumi 中无法精准匹配，则搜索 ds 并插入数据库
-            subject_id = await ds_client.get_subject_id(yuc_info, paged_subject)
-            if subject_id != -1:
-                subjects.append(subject_id)
-                db_client.insert_yucwiki(
-                    db.YucWiki(
-                        jp_title=yuc_info.jp_title,
-                        subject_id=subject_id,
-                    )
-                )
-            else:
-                logger.error(
-                    f"获取 bangumi subject id 失败，请人工干预处理: {yuc_info}"
-                )
-    return subjects
-
-
 async def get_subject_detail(subject_id: int) -> db.Subject:
     """获取条目详情"""
-    subject = await get_subject(subject_id)
+    subject = await bgmtv.get_subject(subject_id)
 
     if subject.images:
         grid = subject.images.grid
@@ -148,13 +109,13 @@ async def get_subject_detail(subject_id: int) -> db.Subject:
                 air_weekday = item.value
 
     # cuz redirect, use subject.id instead of subject_id
-    episodes = await get_episodes(subject.id, 0, 100, 0)
+    episodes = await bgmtv.get_episodes(subject.id, 0, 100, 0)
     if not episodes or not episodes.data:
-        average_comment = 0
+        average_comment = 0.0
     else:
         current_date = datetime.now().date()
         aired_episodes = []
-        total_comments = 0
+        total_comments = 0.0
 
         for episode in episodes.data:
             # 检查是否有播出日期
@@ -173,9 +134,9 @@ async def get_subject_detail(subject_id: int) -> db.Subject:
                     logger.warning(f"无效的播出日期格式: {episode.airdate}")
 
         if aired_episodes:
-            average_comment = total_comments / len(aired_episodes)
+            average_comment = total_comments / float(len(aired_episodes))
         else:
-            average_comment = 0
+            average_comment = 0.0
 
     subject = db.Subject(
         id=subject.id,
@@ -243,9 +204,7 @@ def ancient_season_ids() -> set[int]:
             if month > now.month and year == now.year:
                 continue
             seasons.append(int(f"{year}{month:02d}"))
-    return (
-        set(seasons) - set(recent_season_ids()) - set(older_season_ids()) - {"201201"}
-    )
+    return set(seasons) - set(recent_season_ids()) - set(older_season_ids()) - {201201}
 
 
 def future_season_ids() -> set[int]:
@@ -261,14 +220,14 @@ def future_season_ids() -> set[int]:
     return set(seasons[:1])
 
 
-async def trigger_deploy_hooks():
+async def trigger_deploy_hooks() -> None:
     """触发Cloudflare Pages的部署hooks"""
     if not config.cf_pages_hooks:
         logger.info("未配置Cloudflare Pages deploy hooks，跳过触发")
         return
 
     async with httpx.AsyncClient() as client:
-        payload = {}
+        payload: dict[str, Any] = {}
         results = await client.post(config.cf_pages_hooks, json=payload)
 
         if results.is_success:
@@ -282,7 +241,7 @@ async def trigger_deploy_hooks():
 if __name__ == "__main__":
     import asyncio
 
-    async def main():
+    async def main() -> None:
         subject_id = 486347
         subject_data = await get_subject_detail(subject_id)
         print(subject_data)
