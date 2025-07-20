@@ -182,7 +182,9 @@ class BGMTVClient:
     async def get_index_subject_ids(
         self, index_id: int
     ) -> Result[list[int], Exception]:
-        wrapped_index = await get_index(index_id)
+        wrapped_index = await get_index(
+            index_id=index_id, subject_type=2, limit=100, offset=0
+        )
         match wrapped_index:
             case Failure(e):
                 return Failure(e)
