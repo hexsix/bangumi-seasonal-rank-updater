@@ -18,6 +18,6 @@ async def get_subject(
     match wrapped_subject:
         case Failure(e):
             raise HTTPException(status_code=404, detail=f"Subject not found: {e}")
-        case Success(subject):
-            return subject
-    raise HTTPException(status_code=404, detail="Subject not found")
+        case Success(_subject):
+            subject: Subject = _subject
+    return subject

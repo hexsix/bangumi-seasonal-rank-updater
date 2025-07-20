@@ -18,7 +18,7 @@ async def get_available_seasons(
     db: DBClient = Depends(get_db_client),
 ) -> models.AvailableSeasonsResponse:
     logger.info("available_seasons")
-    wrapped_available_seasons = await db.get_available_seasons()
+    wrapped_available_seasons = await db.get_available_season_ids()
     match wrapped_available_seasons:
         case Failure(e):
             raise HTTPException(
@@ -47,8 +47,8 @@ async def get_season_subjects(
             raise HTTPException(
                 status_code=500, detail=f"Failed to get season subjects: {e}"
             )
-        case Success(db_subjects):
-            db_subjects: Sequence[Subject] = db_subjects
+        case Success(_db_subjects):
+            db_subjects: Sequence[Subject] = _db_subjects
     subjects: List[Subject] = [subject for subject in db_subjects]
     updated_at = max(
         (subject.updated_at for subject in subjects),

@@ -107,7 +107,7 @@ class DBClient:
         await self.engine.dispose()
         logger.info("数据库引擎已关闭")
 
-    async def get_available_seasons(self) -> Result[list[int], Exception]:
+    async def get_available_season_ids(self) -> Result[list[int], Exception]:
         async def operation(session: AsyncSession) -> list[int]:
             stmt = select(Index.season_id).distinct()
             result = await session.execute(stmt)
@@ -162,5 +162,38 @@ class DBClient:
             stmt = select(Index)
             result = await session.execute(stmt)
             return [index for index in result.scalars().all()]
+
+        return await self._execute_with_retry(operation)
+
+    async def upsert_index(
+        self, season_id: int, index_id: int, subject_ids: list[int]
+    ) -> Result[None, Exception]:
+        async def operation(session: AsyncSession) -> None:
+            index = Index(
+                season_id=season_id, index_id=index_id, subject_ids=subject_ids
+            )
+            await session.merge(index)
+
+        return await self._execute_with_retry(operation)
+
+    async def get_all_subjects(self) -> Result[list[int], Exception]:
+        async def operation(session: AsyncSession) -> list[int]:
+            index_stmt = select(Index.subject_ids)
+            result = await session.execute(index_stmt)
+            subject_ids_lists = result.scalars().all()
+
+            # 展平所有 subject_ids 数组并去重
+            all_subject_ids = []
+            for subject_ids in subject_ids_lists:
+                if subject_ids:  # 检查是否为 None 或空列表
+                    all_subject_ids.extend(subject_ids)
+
+            return list(set(all_subject_ids))
+
+        return await self._execute_with_retry(operation)
+
+    async def upsert_subject(self, subject: Subject) -> Result[None, Exception]:
+        async def operation(session: AsyncSession) -> None:
+            await session.merge(subject)
 
         return await self._execute_with_retry(operation)

@@ -18,6 +18,6 @@ async def get_index(
     match wrapped_index:
         case Failure(e):
             raise HTTPException(status_code=404, detail=f"Index not found: {e}")
-        case Success(index):
-            return index
-    raise HTTPException(status_code=404, detail="Index not found")
+        case Success(_index):
+            index: Index = _index
+    return index

@@ -7,6 +7,7 @@ from .client import BGMTVClient
 from .models import (
     AddSubjectToIndexRequest,
     IndexBasicInfo,
+    PagedIndexSubject,
     PagedSubject,
     SearchFilter,
     SearchRequest,
@@ -20,6 +21,7 @@ __all__ = [
     "BGMTVClient",
     "AddSubjectToIndexRequest",
     "IndexBasicInfo",
+    "PagedIndexSubject",
     "PagedSubject",
     "SearchRequest",
     "SearchFilter",

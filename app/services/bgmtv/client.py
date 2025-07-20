@@ -4,8 +4,10 @@ from datetime import date, datetime
 from loguru import logger
 from returns.result import Failure, Result, Success
 
-from app.services import bgmtv, db
-from app.services.bgmtv.api import get_episodes, get_subject
+from app.services.bgmtv.api import get_episodes, get_index, get_subject
+from app.services.bgmtv.models import PagedIndexSubject
+from app.services.bgmtv.models import Subject as BGMTVSubject
+from app.services.db import Subject as DBSubject
 
 
 class BGMTVClient:
@@ -14,13 +16,13 @@ class BGMTVClient:
 
     async def get_subject_details(
         self, subject_id: int
-    ) -> Result[db.Subject, Exception]:
+    ) -> Result[DBSubject, Exception]:
         wrapped_subject = await get_subject(subject_id)
         match wrapped_subject:
             case Failure(e):
                 return Failure(e)
-            case Success(subject):
-                subject: bgmtv.Subject = subject
+            case Success(_subject):
+                subject: BGMTVSubject = _subject
 
         if subject.images:
             grid = subject.images.grid
@@ -118,7 +120,7 @@ class BGMTVClient:
                         average_comment = 0.0
 
         return Success(
-            db.Subject(
+            DBSubject(
                 id=subject.id,
                 name=subject.name,
                 name_cn=subject.name_cn,
@@ -176,3 +178,15 @@ class BGMTVClient:
                 pass
 
         return Failure(Exception("Invalid airdate"))
+
+    async def get_index_subject_ids(
+        self, index_id: int
+    ) -> Result[list[int], Exception]:
+        wrapped_index = await get_index(index_id)
+        match wrapped_index:
+            case Failure(e):
+                return Failure(e)
+            case Success(_index):
+                index: PagedIndexSubject = _index
+
+        return Success([subject.id for subject in index.data])

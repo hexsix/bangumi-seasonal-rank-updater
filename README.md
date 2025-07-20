@@ -41,3 +41,18 @@ run app product
 ```bash
 fastapi run app/main.py --port 8000 --worker 4
 ```
+
+## alembic
+
+```bash
+# check current
+alembic current
+# upgrade
+alembic upgrade head
+# downgrade
+alembic downgrade
+# drop alembic_version
+docker exec postgres psql -U postgres -d rank -c "DROP TABLE IF EXISTS alembic_version;"
+# check tables
+docker exec postgres psql -U postgres -d rank -c "\dt"
+```

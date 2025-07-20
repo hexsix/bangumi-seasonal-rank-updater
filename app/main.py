@@ -38,7 +38,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     logger.info("Starting up...")
 
     scheduler.add_job(
-        scheduled_update_all_subjects,
+        lambda: scheduled_update_all_subjects(app),
         "cron",
         hour="0,4,8,12,16,20",
         id="update_all_subjects",
