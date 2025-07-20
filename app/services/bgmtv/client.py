@@ -5,7 +5,7 @@ from loguru import logger
 from returns.result import Failure, Result, Success
 
 from app.services.bgmtv.api import get_episodes, get_index, get_subject
-from app.services.bgmtv.models import PagedIndexSubject
+from app.services.bgmtv.models import PagedEpisode, PagedIndexSubject
 from app.services.bgmtv.models import Subject as BGMTVSubject
 from app.services.db import Subject as DBSubject
 
@@ -14,23 +14,16 @@ class BGMTVClient:
     def __init__(self) -> None:
         pass
 
-    async def get_subject_details(
-        self, subject_id: int
-    ) -> Result[DBSubject, Exception]:
-        wrapped_subject = await get_subject(subject_id)
-        match wrapped_subject:
-            case Failure(e):
-                return Failure(e)
-            case Success(_subject):
-                subject: BGMTVSubject = _subject
-
+    def _parse_image(self, subject: BGMTVSubject) -> tuple[str | None, str | None]:
         if subject.images:
             grid = subject.images.grid
             large = subject.images.large
         else:
             grid = None
             large = None
+        return grid, large
 
+    def _parse_rating(self, subject: BGMTVSubject) -> tuple[int | None, float | None]:
         if subject.rating:
             rank = subject.rating.rank
             if subject.rating.count and subject.rating.total:
@@ -45,7 +38,11 @@ class BGMTVClient:
         else:
             rank = None
             score = None
+        return rank, score
 
+    def _parse_collection(
+        self, subject: BGMTVSubject
+    ) -> tuple[int | None, float | None]:
         if subject.collection:
             total = (
                 subject.collection.collect
@@ -58,66 +55,66 @@ class BGMTVClient:
         else:
             total = None
             drop_rate = None
+        return total, drop_rate
 
-        # 处理infobox字段，仅保留"放送星期"
-        air_weekday = None
+    def _parse_air_weekday(self, subject: BGMTVSubject) -> str | None:
         if subject.infobox:
             for item in subject.infobox:
                 if item.key == "放送星期":
-                    air_weekday = item.value
-        else:
-            air_weekday = None
+                    return item.value
+        return None
 
+    def _parse_episodes(self, episodes: PagedEpisode) -> float:
+        if not episodes or not episodes.data:
+            return 0.0
+
+        current_date = datetime.now().date()
+        total_aired = 0.0
+        total_comments = 0.0
+        for episode in episodes.data:
+            if episode.airdate:
+                wrapped_airdate = self._parse_airdate(episode.airdate)
+                match wrapped_airdate:
+                    case Failure(e):
+                        logger.warning(f"无效的播出日期格式: {episode.airdate}, {e}")
+                        continue
+                    case Success(airdate):
+                        if airdate <= current_date and episode.comment:
+                            total_aired += 1.0
+                            total_comments += float(episode.comment)
+            else:
+                continue
+        if total_aired > 0:
+            return total_comments / total_aired
+        else:
+            return 0.0
+
+    async def _parse_average_comment(self, subject: BGMTVSubject) -> float:
         # cuz redirect, use subject.id instead of subject_id
         wrapped_episodes = await get_episodes(subject.id, 0, 100, 0)
         match wrapped_episodes:
             case Failure(e):
+                logger.warning(f"获取 {subject.id} 集数失败: {e}")
                 average_comment = 0.0
             case Success(episodes):
-                if not episodes or not episodes.data:
-                    average_comment = 0.0
-                else:
-                    current_date = datetime.now().date()
-                    aired_episodes = []
-                    total_comments = 0.0
+                average_comment = self._parse_episodes(episodes)
+        return average_comment
 
-                    for episode in episodes.data:
-                        # 检查是否有播出日期
-                        if episode.airdate:
-                            try:
-                                wrapped_airdate = self._parse_airdate(episode.airdate)
-                                match wrapped_airdate:
-                                    case Failure(e):
-                                        logger.warning(
-                                            f"无效的播出日期格式: {episode.airdate}, {e}"
-                                        )
-                                        continue
-                                    case Success(airdate):
-                                        if airdate and airdate <= current_date:
-                                            episode_info = {
-                                                "ep": episode.ep,
-                                                "comments": episode.comment,
-                                            }
-                                            aired_episodes.append(episode_info)
-                                            if episode.comment:
-                                                total_comments += float(episode.comment)
-                            except Exception as e:
-                                logger.warning(
-                                    f"无效的播出日期格式: {episode.airdate}, {e}"
-                                )
-                                if airdate and airdate <= current_date:
-                                    episode_info = {
-                                        "ep": episode.ep,
-                                        "comments": episode.comment,
-                                    }
-                                    aired_episodes.append(episode_info)
-                                    if episode.comment:
-                                        total_comments += float(episode.comment)
+    async def get_subject_details(
+        self, subject_id: int
+    ) -> Result[DBSubject, Exception]:
+        wrapped_subject = await get_subject(subject_id)
+        match wrapped_subject:
+            case Failure(e):
+                return Failure(e)
+            case Success(_subject):
+                subject: BGMTVSubject = _subject
 
-                    if aired_episodes:
-                        average_comment = total_comments / float(len(aired_episodes))
-                    else:
-                        average_comment = 0.0
+        grid, large = self._parse_image(subject)
+        rank, score = self._parse_rating(subject)
+        total, drop_rate = self._parse_collection(subject)
+        air_weekday = self._parse_air_weekday(subject)
+        average_comment = await self._parse_average_comment(subject)
 
         return Success(
             DBSubject(

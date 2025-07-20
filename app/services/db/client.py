@@ -176,19 +176,13 @@ class DBClient:
 
         return await self._execute_with_retry(operation)
 
-    async def get_all_subjects(self) -> Result[list[int], Exception]:
-        async def operation(session: AsyncSession) -> list[int]:
-            index_stmt = select(Index.subject_ids)
-            result = await session.execute(index_stmt)
-            subject_ids_lists = result.scalars().all()
+    async def get_all_subjects(self) -> Result[dict[int, list[int]], Exception]:
+        async def operation(session: AsyncSession) -> dict[int, list[int]]:
+            stmt = select(Index.season_id, Index.subject_ids)
+            result = await session.execute(stmt)
+            index_lists = result.all()
 
-            # 展平所有 subject_ids 数组并去重
-            all_subject_ids = []
-            for subject_ids in subject_ids_lists:
-                if subject_ids:  # 检查是否为 None 或空列表
-                    all_subject_ids.extend(subject_ids)
-
-            return list(set(all_subject_ids))
+            return {season_id: subject_ids for season_id, subject_ids in index_lists}
 
         return await self._execute_with_retry(operation)
 
