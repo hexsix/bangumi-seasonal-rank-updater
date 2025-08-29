@@ -1,0 +1,187 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 2129,
+          "title": {
+            "romaji": "true tears",
+            "english": "True Tears",
+            "native": "true tears"
+          }
+        },
+        {
+          "id": 2966,
+          "title": {
+            "romaji": "Ookami to Koushinryou",
+            "english": "Spice and Wolf",
+            "native": "狼と香辛料"
+          }
+        },
+        {
+          "id": 2993,
+          "title": {
+            "romaji": "Rosario to Vampire",
+            "english": "Rosario + Vampire",
+            "native": "ロザリオとバンパイア"
+          }
+        },
+        {
+          "id": 3225,
+          "title": {
+            "romaji": "Minami-ke: Okawari",
+            "english": null,
+            "native": "みなみけ～おかわり～"
+          }
+        },
+        {
+          "id": 3226,
+          "title": {
+            "romaji": "Major S4",
+            "english": null,
+            "native": "メジャー（第4シリーズ)"
+          }
+        },
+        {
+          "id": 3228,
+          "title": {
+            "romaji": "Zoku Sayonara Zetsubou Sensei",
+            "english": "Zoku Sayonara, Zetsubou-Sensei",
+            "native": "俗・さよなら絶望先生"
+          }
+        },
+        {
+          "id": 3229,
+          "title": {
+            "romaji": "Kimi ga Aruji de Shitsuji ga Ore de",
+            "english": null,
+            "native": "君が主で執事が俺で"
+          }
+        },
+        {
+          "id": 3231,
+          "title": {
+            "romaji": "GUNSLINGER GIRL -IL TEATRINO-",
+            "english": "Gunslinger Girl -Il Teatrino-",
+            "native": "GUNSLINGER GIRL -IL TEATRINO-"
+          }
+        },
+        {
+          "id": 3295,
+          "title": {
+            "romaji": "Yatterman",
+            "english": null,
+            "native": "ヤッターマン"
+          }
+        },
+        {
+          "id": 3297,
+          "title": {
+            "romaji": "ARIA The ORIGINATION",
+            "english": "ARIA The ORIGINATION",
+            "native": "ARIA The ORIGINATION"
+          }
+        },
+        {
+          "id": 3298,
+          "title": {
+            "romaji": "Hatenkou Yuugi",
+            "english": "Hatenkou Yugi",
+            "native": "破天荒遊戯"
+          }
+        },
+        {
+          "id": 3299,
+          "title": {
+            "romaji": "H2O: FOOTPRINTS IN THE SAND",
+            "english": "H2O: Footprints in the Sand",
+            "native": "H2O ~FOOTPRINTS IN THE SAND~"
+          }
+        },
+        {
+          "id": 3342,
+          "title": {
+            "romaji": "Mnemosyne: Mnemosyne no Musume-tachi",
+            "english": "RIN ~Daughters of Mnemosyne~",
+            "native": "Mnemosyne－ムネモシュネの娘たち－"
+          }
+        },
+        {
+          "id": 3366,
+          "title": {
+            "romaji": "PERSONA -trinity soul-",
+            "english": "Persona -trinity soul-",
+            "native": "PERSONA -trinity soul-"
+          }
+        },
+        {
+          "id": 3389,
+          "title": {
+            "romaji": "BUS GAMER",
+            "english": null,
+            "native": "BUS GAMER"
+          }
+        },
+        {
+          "id": 3420,
+          "title": {
+            "romaji": "Shigofumi",
+            "english": "Shigofumi",
+            "native": "シゴフミ"
+          }
+        },
+        {
+          "id": 3424,
+          "title": {
+            "romaji": "Porfy no Nagai Tabi",
+            "english": "The Orphans of Simitra",
+            "native": "ポルフィの長い旅"
+          }
+        },
+        {
+          "id": 3501,
+          "title": {
+            "romaji": "Wellber no Monogatari: Sisters of Wellber Zwei",
+            "english": "Sisters of Wellber Zwei",
+            "native": "ウエルベールの物語 ～Sisters of Wellber～ 第二幕"
+          }
+        },
+        {
+          "id": 3514,
+          "title": {
+            "romaji": "Noramimi",
+            "english": null,
+            "native": "のらみみ"
+          }
+        },
+        {
+          "id": 3692,
+          "title": {
+            "romaji": "Yes! Precure 5 GoGo!",
+            "english": null,
+            "native": "Yes!プリキュア5GoGo!"
+          }
+        },
+        {
+          "id": 3710,
+          "title": {
+            "romaji": "Hakaba Kitarou",
+            "english": "Graveyard Kitaro",
+            "native": "墓場鬼太郎"
+          }
+        },
+        {
+          "id": 5725,
+          "title": {
+            "romaji": "Kodai Ouja Kyouryuu King: D-Kids Adventure - Yokuryuu Densetsu",
+            "english": "Dinosaur King Season 2",
+            "native": "古代王者恐竜キング Dキッズ・アドベンチャー翼竜伝説"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 73,
+          "title": {
+            "romaji": "Full Metal Panic! The Second Raid",
+            "english": "Full Metal Panic! The Second Raid",
+            "native": "フルメタル パニック！The Second Raid"
+          }
+        },
+        {
+          "id": 79,
+          "title": {
+            "romaji": "SHUFFLE!",
+            "english": null,
+            "native": "SHUFFLE!"
+          }
+        },
+        {
+          "id": 291,
+          "title": {
+            "romaji": "D.C.S.S.: Da Capo Second Season",
+            "english": "D.C.S.S. ~Da Capo Second Season~",
+            "native": "D.C.S.S. ～ダ・カーポ セカンドシーズン～"
+          }
+        },
+        {
+          "id": 390,
+          "title": {
+            "romaji": "Suzuka",
+            "english": "Suzuka",
+            "native": "涼風"
+          }
+        },
+        {
+          "id": 411,
+          "title": {
+            "romaji": "Gun x Sword",
+            "english": "Gun x Sword",
+            "native": "ガン×ソード"
+          }
+        },
+        {
+          "id": 470,
+          "title": {
+            "romaji": "Okusama wa Joshikousei",
+            "english": null,
+            "native": "おくさまは女子高生"
+          }
+        },
+        {
+          "id": 473,
+          "title": {
+            "romaji": "Tide-Line Blue",
+            "english": null,
+            "native": "タイドライン・ブルー"
+          }
+        },
+        {
+          "id": 488,
+          "title": {
+            "romaji": "Ichigo Mashimaro",
+            "english": "Strawberry Marshmallow",
+            "native": "苺ましまろ"
+          }
+        },
+        {
+          "id": 489,
+          "title": {
+            "romaji": "Kamichu!",
+            "english": "Kamichu!",
+            "native": "かみちゅ!"
+          }
+        },
+        {
+          "id": 490,
+          "title": {
+            "romaji": "Paniponi Dash!",
+            "english": "Pani Poni Dash!",
+            "native": "ぱにぽにだっしゅ！"
+          }
+        },
+        {
+          "id": 491,
+          "title": {
+            "romaji": "Akahori Gedou Hour Rabuge",
+            "english": null,
+            "native": "あかほり外道アワーらぶげ"
+          }
+        },
+        {
+          "id": 511,
+          "title": {
+            "romaji": "Kidou Shinsengumi Moeyo Ken TV",
+            "english": "Moeyo Ken",
+            "native": "機動新撰組 萌えよ剣 TV"
+          }
+        },
+        {
+          "id": 591,
+          "title": {
+            "romaji": "Amaenaide yo!!",
+            "english": "Ah My Buddha!!",
+            "native": "あまえないでよっ!!"
+          }
+        },
+        {
+          "id": 612,
+          "title": {
+            "romaji": "PetoPeto-san",
+            "english": null,
+            "native": "ぺとぺとさん"
+          }
+        },
+        {
+          "id": 614,
+          "title": {
+            "romaji": "Okusama wa Mahou Shoujo",
+            "english": "Madam is a Magical Girl",
+            "native": "奥さまは魔法少女"
+          }
+        },
+        {
+          "id": 1374,
+          "title": {
+            "romaji": "Kyoushoku Soukou Guyver (TV)",
+            "english": "Guyver: The Bioboosted Armor",
+            "native": "強殖装甲ガイバー (TV)"
+          }
+        },
+        {
+          "id": 1642,
+          "title": {
+            "romaji": "Sugar Sugar Rune",
+            "english": null,
+            "native": "シュガシュガルーン"
+          }
+        },
+        {
+          "id": 3768,
+          "title": {
+            "romaji": "Play Ball",
+            "english": "Play Ball",
+            "native": "プレイボール"
+          }
+        }
+      ]
+    }
+  }
+}

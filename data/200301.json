@@ -1,0 +1,139 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 202,
+          "title": {
+            "romaji": "Wolf's Rain",
+            "english": "Wolf's Rain",
+            "native": "ウルフズレイン"
+          }
+        },
+        {
+          "id": 266,
+          "title": {
+            "romaji": "Gunparade March: Arata Naru Kougunka",
+            "english": "Gunparade March",
+            "native": "ガンパレード・マーチ -新たなる行軍歌-"
+          }
+        },
+        {
+          "id": 273,
+          "title": {
+            "romaji": "Mahoutsukai ni Taisetsu na Koto",
+            "english": "Someday's Dreamers",
+            "native": "魔法遣いに大切なこと"
+          }
+        },
+        {
+          "id": 298,
+          "title": {
+            "romaji": ".hack//Tasogare no Udewa Densetsu",
+            "english": ".hack//Legend Of The Twilight",
+            "native": ".hack//黄昏の腕輪伝説"
+          }
+        },
+        {
+          "id": 421,
+          "title": {
+            "romaji": "Stratos 4",
+            "english": null,
+            "native": "ストラトス・フォー"
+          }
+        },
+        {
+          "id": 776,
+          "title": {
+            "romaji": "Nanaka 6/17",
+            "english": "Nanaka 6/17",
+            "native": "ななか６／１７"
+          }
+        },
+        {
+          "id": 1097,
+          "title": {
+            "romaji": "Lime-iro Senkitan",
+            "english": null,
+            "native": "らいむいろ戦奇譚"
+          }
+        },
+        {
+          "id": 1456,
+          "title": {
+            "romaji": "L/R -Licensed by Royal-",
+            "english": "L/R: Licensed by Royalty",
+            "native": "L/R -Licensed by Royal-"
+          }
+        },
+        {
+          "id": 1668,
+          "title": {
+            "romaji": "Bakuten Shoot Beyblade G Revolution",
+            "english": "Beyblade G Revolution",
+            "native": "爆転シュート　ベイブレードＧレボリューション"
+          }
+        },
+        {
+          "id": 1675,
+          "title": {
+            "romaji": "Chou Robot Seimeitai Transformers Micron Densetsu",
+            "english": "Transformers: Armada",
+            "native": "超ロボット生命体トランスフォーマー マイクロン伝説"
+          }
+        },
+        {
+          "id": 1708,
+          "title": {
+            "romaji": "Majuu Sensen: THE APOCALYPSE",
+            "english": "Beast Fighter: The Apocalypse",
+            "native": "魔獣戦線 THE APOCALYPSE"
+          }
+        },
+        {
+          "id": 1946,
+          "title": {
+            "romaji": "Ashita no Nadja",
+            "english": null,
+            "native": "明日のナージャ"
+          }
+        },
+        {
+          "id": 3098,
+          "title": {
+            "romaji": "Shutsugeki! Machine Robo Rescue",
+            "english": null,
+            "native": "出撃！マシンロボレスキュー"
+          }
+        },
+        {
+          "id": 7048,
+          "title": {
+            "romaji": "Crush Gear Nitro",
+            "english": null,
+            "native": "クラッシュギア ニトロ"
+          }
+        },
+        {
+          "id": 18447,
+          "title": {
+            "romaji": "Spheres",
+            "english": null,
+            "native": "스피어즈"
+          }
+        },
+        {
+          "id": 129608,
+          "title": {
+            "romaji": "THE Big O (2003)",
+            "english": "The Big O II",
+            "native": "THEビッグオー (2003)"
+          }
+        }
+      ]
+    }
+  }
+}

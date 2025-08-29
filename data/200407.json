@@ -1,0 +1,131 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 63,
+          "title": {
+            "romaji": "DearS",
+            "english": "DearS",
+            "native": "ディアーズ"
+          }
+        },
+        {
+          "id": 75,
+          "title": {
+            "romaji": "Soukyuu no Fafner",
+            "english": "Fafner",
+            "native": "蒼穹のファフナー"
+          }
+        },
+        {
+          "id": 166,
+          "title": {
+            "romaji": "Samurai 7",
+            "english": "Samurai 7",
+            "native": "サムライセブン"
+          }
+        },
+        {
+          "id": 226,
+          "title": {
+            "romaji": "Elfen Lied",
+            "english": "Elfen Lied",
+            "native": "エルフェンリート"
+          }
+        },
+        {
+          "id": 229,
+          "title": {
+            "romaji": "Ninin ga Shinobuden",
+            "english": "Ninja Nonsense",
+            "native": "ニニンがシノブ伝"
+          }
+        },
+        {
+          "id": 241,
+          "title": {
+            "romaji": "GIRLS Bravo: first season",
+            "english": "Girls Bravo",
+            "native": "GIRLSブラボー first season"
+          }
+        },
+        {
+          "id": 244,
+          "title": {
+            "romaji": "Agatha Christie no Meitantei Poirot to Marple",
+            "english": "Agatha Christie's Great Detectives Poirot and Marple",
+            "native": "アガサ・クリスティーの名探偵ポワロとマープル"
+          }
+        },
+        {
+          "id": 395,
+          "title": {
+            "romaji": "GANTZ 2",
+            "english": "Gantz: Second Stage",
+            "native": "GANTZ 2"
+          }
+        },
+        {
+          "id": 444,
+          "title": {
+            "romaji": "Maria-sama ga Miteru: Haru",
+            "english": "Maria Watches Over Us: Printemps",
+            "native": "マリア様がみてる～春～"
+          }
+        },
+        {
+          "id": 483,
+          "title": {
+            "romaji": "Kurau Phantom Memory",
+            "english": "Kurau Phantom Memory",
+            "native": "クラウ ファントムメモリー"
+          }
+        },
+        {
+          "id": 525,
+          "title": {
+            "romaji": "Otogizoushi",
+            "english": "Otogi Zoshi: The Legend of Magatama",
+            "native": "お伽草子"
+          }
+        },
+        {
+          "id": 655,
+          "title": {
+            "romaji": "Galaxy Angel X",
+            "english": "Galaxy Angel X",
+            "native": "ギャラクシーエンジェル X"
+          }
+        },
+        {
+          "id": 1377,
+          "title": {
+            "romaji": "Uchuu Koukyoushi Maetel: Ginga Tetsudou 999 Gaiden",
+            "english": "Space Symphonic Poem Maetel ~Galaxy Express 999 Side Story~",
+            "native": "宇宙交響詩メーテル ～銀河鉄道999外伝～"
+          }
+        },
+        {
+          "id": 2741,
+          "title": {
+            "romaji": "Monkey Turn V",
+            "english": null,
+            "native": "モンキー ターン V"
+          }
+        },
+        {
+          "id": 5343,
+          "title": {
+            "romaji": "Monkey Punch Manga Katsudou Dai Shashin",
+            "english": "Mankatsu",
+            "native": "モンキー・パンチ　漫画活動大写真"
+          }
+        }
+      ]
+    }
+  }
+}

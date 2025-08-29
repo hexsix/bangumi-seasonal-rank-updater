@@ -1,0 +1,155 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 5277,
+          "title": {
+            "romaji": "Sekirei: Pure Engagement",
+            "english": null,
+            "native": "セキレイ～Pure Engagement～"
+          }
+        },
+        {
+          "id": 6166,
+          "title": {
+            "romaji": "Asobi ni Iku yo!",
+            "english": "Cat Planet Cuties",
+            "native": "あそびにいくヨ!"
+          }
+        },
+        {
+          "id": 6381,
+          "title": {
+            "romaji": "Strike Witches 2",
+            "english": "Strike Witches 2",
+            "native": "ストライクウィッチーズ 2"
+          }
+        },
+        {
+          "id": 6634,
+          "title": {
+            "romaji": "Sengoku BASARA Ni",
+            "english": "Sengoku Basara: Samurai Kings 2",
+            "native": "戦国BASARA弐"
+          }
+        },
+        {
+          "id": 6707,
+          "title": {
+            "romaji": "Kuroshitsuji II",
+            "english": "Black Butler II",
+            "native": "黒執事II"
+          }
+        },
+        {
+          "id": 6974,
+          "title": {
+            "romaji": "Seikimatsu Occult Gakuin",
+            "english": "Occult Academy",
+            "native": "世紀末オカルト学院"
+          }
+        },
+        {
+          "id": 6979,
+          "title": {
+            "romaji": "Shukufuku no Campanella",
+            "english": "Blessing of the Campanella",
+            "native": "祝福のカンパネラ"
+          }
+        },
+        {
+          "id": 7592,
+          "title": {
+            "romaji": "Nurarihyon no Mago",
+            "english": "Nura: Rise of the Yokai Clan",
+            "native": "ぬらりひょんの孫"
+          }
+        },
+        {
+          "id": 7627,
+          "title": {
+            "romaji": "Mitsudomoe",
+            "english": null,
+            "native": "みつどもえ"
+          }
+        },
+        {
+          "id": 7724,
+          "title": {
+            "romaji": "Shiki",
+            "english": "Shiki",
+            "native": "屍鬼"
+          }
+        },
+        {
+          "id": 7769,
+          "title": {
+            "romaji": "Ookami-san to Shichinin no Nakama-tachi",
+            "english": "Okami-san and Her Seven Companions",
+            "native": "オオカミさんと七人の仲間たち"
+          }
+        },
+        {
+          "id": 8074,
+          "title": {
+            "romaji": "Gakuen Mokushiroku: HIGHSCHOOL OF THE DEAD",
+            "english": "High School of the Dead",
+            "native": "学園黙示録HIGHSCHOOL OF THE DEAD"
+          }
+        },
+        {
+          "id": 8086,
+          "title": {
+            "romaji": "Densetsu no Yuusha no Densetsu",
+            "english": "The Legend of the Legendary Heroes",
+            "native": "伝説の勇者の伝説"
+          }
+        },
+        {
+          "id": 8624,
+          "title": {
+            "romaji": "Digimon Xros Wars",
+            "english": "Digimon Fusion",
+            "native": "デジモンクロスウォーズ"
+          }
+        },
+        {
+          "id": 8675,
+          "title": {
+            "romaji": "Seitokai Yakuindomo",
+            "english": "Seitokai Yakuindomo",
+            "native": "生徒会役員共"
+          }
+        },
+        {
+          "id": 8676,
+          "title": {
+            "romaji": "Amagami SS",
+            "english": "Amagami SS",
+            "native": "アマガミSS"
+          }
+        },
+        {
+          "id": 8964,
+          "title": {
+            "romaji": "Stitch!: Zutto Saikou no Tomodachi",
+            "english": "Stitch! ~Best Friends Forever~",
+            "native": "スティッチ! ～ずっと最高のトモダチ～"
+          }
+        },
+        {
+          "id": 10869,
+          "title": {
+            "romaji": "Scan2Go",
+            "english": "Scan2Go",
+            "native": "스캔2고"
+          }
+        }
+      ]
+    }
+  }
+}

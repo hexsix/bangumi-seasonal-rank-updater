@@ -1,0 +1,315 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 8,
+          "title": {
+            "romaji": "Bouken Ou Beet",
+            "english": "Beet the Vandel Buster",
+            "native": "冒険王ビィト"
+          }
+        },
+        {
+          "id": 23,
+          "title": {
+            "romaji": "Ring ni Kakero 1",
+            "english": null,
+            "native": "リングにかけろ１"
+          }
+        },
+        {
+          "id": 24,
+          "title": {
+            "romaji": "School Rumble",
+            "english": "School Rumble",
+            "native": "スクールランブル"
+          }
+        },
+        {
+          "id": 25,
+          "title": {
+            "romaji": "Sunabouzu",
+            "english": "Desert Punk",
+            "native": "砂ぼうず"
+          }
+        },
+        {
+          "id": 28,
+          "title": {
+            "romaji": "Yakitate!! Japan",
+            "english": null,
+            "native": "焼きたて!! ジャぱん"
+          }
+        },
+        {
+          "id": 29,
+          "title": {
+            "romaji": "Zipang",
+            "english": null,
+            "native": "ジパング"
+          }
+        },
+        {
+          "id": 57,
+          "title": {
+            "romaji": "BECK",
+            "english": "Beck: Mongolian Chop Squad",
+            "native": "BECK"
+          }
+        },
+        {
+          "id": 64,
+          "title": {
+            "romaji": "Rozen Maiden",
+            "english": "Rozen Maiden",
+            "native": "ローゼンメイデン"
+          }
+        },
+        {
+          "id": 74,
+          "title": {
+            "romaji": "Gakuen Alice",
+            "english": null,
+            "native": "学園アリス"
+          }
+        },
+        {
+          "id": 76,
+          "title": {
+            "romaji": "Mahou Shoujo Lyrical Nanoha",
+            "english": "Magical Girl Lyrical Nanoha",
+            "native": "魔法少女リリカルなのは"
+          }
+        },
+        {
+          "id": 94,
+          "title": {
+            "romaji": "Kidou Senshi Gundam SEED DESTINY",
+            "english": "Mobile Suit Gundam Seed Destiny",
+            "native": "機動戦士ガンダムSEED DESTINY"
+          }
+        },
+        {
+          "id": 98,
+          "title": {
+            "romaji": "Mai-HiME",
+            "english": "My-HiME",
+            "native": "舞-HiME"
+          }
+        },
+        {
+          "id": 125,
+          "title": {
+            "romaji": "Futakoi",
+            "english": "Futakoi",
+            "native": "双恋"
+          }
+        },
+        {
+          "id": 143,
+          "title": {
+            "romaji": "Kannazuki no Miko",
+            "english": "Destiny of the Shrine Maiden",
+            "native": "神無月の巫女"
+          }
+        },
+        {
+          "id": 173,
+          "title": {
+            "romaji": "tactics",
+            "english": null,
+            "native": "tactics"
+          }
+        },
+        {
+          "id": 239,
+          "title": {
+            "romaji": "Gankutsuou",
+            "english": "Gankutsuou: The Count of Monte Cristo",
+            "native": "巌窟王"
+          }
+        },
+        {
+          "id": 240,
+          "title": {
+            "romaji": "Genshiken",
+            "english": "Genshiken",
+            "native": "げんしけん"
+          }
+        },
+        {
+          "id": 247,
+          "title": {
+            "romaji": "Harukanaru Toki no Naka de: Hachiyou Shou",
+            "english": "Haruka: Beyond the Stream of Time – A Tale of the Eight Guardians",
+            "native": "遙かなる時空の中で〜八葉抄〜"
+          }
+        },
+        {
+          "id": 269,
+          "title": {
+            "romaji": "BLEACH",
+            "english": "Bleach",
+            "native": "BLEACH"
+          }
+        },
+        {
+          "id": 278,
+          "title": {
+            "romaji": "Viewtiful Joe",
+            "english": "Viewtiful Joe",
+            "native": "ビューティフル  ジョー"
+          }
+        },
+        {
+          "id": 297,
+          "title": {
+            "romaji": "Grenadier: Hohoemi no Senshi",
+            "english": "Grenadier: The Beautiful Warrior",
+            "native": "グレネーダー 〜ほほえみの閃士〜"
+          }
+        },
+        {
+          "id": 336,
+          "title": {
+            "romaji": "Ginyuu Mokushiroku Meine Liebe",
+            "english": null,
+            "native": "吟遊黙示録 マイネリーベ"
+          }
+        },
+        {
+          "id": 343,
+          "title": {
+            "romaji": "Tsukuyomi: MOON PHASE",
+            "english": "MoonPhase",
+            "native": "月詠 −MOON PHASE−"
+          }
+        },
+        {
+          "id": 455,
+          "title": {
+            "romaji": "Fantastic Children",
+            "english": "Fantastic Children",
+            "native": "ファンタジックチルドレン"
+          }
+        },
+        {
+          "id": 482,
+          "title": {
+            "romaji": "Yu☆Gi☆Oh! Duel Monsters GX",
+            "english": "Yu-Gi-Oh! GX",
+            "native": "遊☆戯☆王デュエルモンスターズＧＸ"
+          }
+        },
+        {
+          "id": 510,
+          "title": {
+            "romaji": "Kakyuusei 2: Hitomi no Naka no Shoujo-tachi",
+            "english": null,
+            "native": "下級生２ ～瞳の中の少女たち～"
+          }
+        },
+        {
+          "id": 613,
+          "title": {
+            "romaji": "Onmyou Tai Senki",
+            "english": null,
+            "native": "陰陽大戦記"
+          }
+        },
+        {
+          "id": 627,
+          "title": {
+            "romaji": "Major S1",
+            "english": null,
+            "native": "メジャー (第1シリーズ)"
+          }
+        },
+        {
+          "id": 685,
+          "title": {
+            "romaji": "ToHeart: Remember my memories",
+            "english": null,
+            "native": "ToHeart ～Remember my memories～"
+          }
+        },
+        {
+          "id": 688,
+          "title": {
+            "romaji": "Uta∽Kata",
+            "english": "Uta∞Kata",
+            "native": "うた∽かた"
+          }
+        },
+        {
+          "id": 1167,
+          "title": {
+            "romaji": "Samurai Gun",
+            "english": null,
+            "native": "サムライガン"
+          }
+        },
+        {
+          "id": 1524,
+          "title": {
+            "romaji": "Fuujin Monogatari",
+            "english": "Windy Tales",
+            "native": "風人物語"
+          }
+        },
+        {
+          "id": 1711,
+          "title": {
+            "romaji": "Ryuusei Sentai Musumet",
+            "english": null,
+            "native": "流星戦隊ムスメット"
+          }
+        },
+        {
+          "id": 1746,
+          "title": {
+            "romaji": "Zoids Fuzors",
+            "english": "Zoids Fuzors",
+            "native": "ゾイド・フューザース"
+          }
+        },
+        {
+          "id": 2109,
+          "title": {
+            "romaji": "Rockman.EXE Stream",
+            "english": null,
+            "native": "ロックマンエクゼStream"
+          }
+        },
+        {
+          "id": 2213,
+          "title": {
+            "romaji": "Black Jack (TV)",
+            "english": null,
+            "native": "ブラックジャック"
+          }
+        },
+        {
+          "id": 10242,
+          "title": {
+            "romaji": "Ton-Ton Atta to Niigata no Mukashi Banashi",
+            "english": null,
+            "native": "トントンあったと にいがたの昔ばなし"
+          }
+        },
+        {
+          "id": 108744,
+          "title": {
+            "romaji": "Akuei to Gacchinpo",
+            "english": null,
+            "native": "アークエとガッチンポー"
+          }
+        }
+      ]
+    }
+  }
+}

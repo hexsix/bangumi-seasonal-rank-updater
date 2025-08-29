@@ -1,0 +1,211 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 1292,
+          "title": {
+            "romaji": "Afro Samurai",
+            "english": "Afro Samurai",
+            "native": "アフロサムライ"
+          }
+        },
+        {
+          "id": 1607,
+          "title": {
+            "romaji": "Venus Versus Virus",
+            "english": "Venus Versus Virus",
+            "native": "Venus Versus Virus"
+          }
+        },
+        {
+          "id": 1693,
+          "title": {
+            "romaji": "REIDEEN",
+            "english": null,
+            "native": "REIDEEN"
+          }
+        },
+        {
+          "id": 1695,
+          "title": {
+            "romaji": "Les Misérables: Shoujo Cosette",
+            "english": null,
+            "native": "レ・ミゼラブル 少女コゼット"
+          }
+        },
+        {
+          "id": 1698,
+          "title": {
+            "romaji": "Nodame Cantabile",
+            "english": null,
+            "native": "のだめカンタービレ"
+          }
+        },
+        {
+          "id": 1724,
+          "title": {
+            "romaji": "Saint October",
+            "english": null,
+            "native": "セイントオクトーバー"
+          }
+        },
+        {
+          "id": 1735,
+          "title": {
+            "romaji": "NARUTO: Shippuuden",
+            "english": "Naruto: Shippuden",
+            "native": "NARUTO -ナルト- 疾風伝"
+          }
+        },
+        {
+          "id": 1810,
+          "title": {
+            "romaji": "Kyoshiro to Towa no Sora",
+            "english": "Shattered Angels",
+            "native": "京四郎と永遠の空"
+          }
+        },
+        {
+          "id": 1826,
+          "title": {
+            "romaji": "Deltora Quest",
+            "english": "Deltora Quest",
+            "native": "デルトラクエスト"
+          }
+        },
+        {
+          "id": 1836,
+          "title": {
+            "romaji": "Shuffle! Memories",
+            "english": null,
+            "native": "シャッフル！メモリーズ"
+          }
+        },
+        {
+          "id": 1842,
+          "title": {
+            "romaji": "Major S3",
+            "english": null,
+            "native": "メジャー  (第3シリーズ)"
+          }
+        },
+        {
+          "id": 1852,
+          "title": {
+            "romaji": "Hidamari Sketch",
+            "english": "Hidamari Sketch",
+            "native": "ひだまりスケッチ"
+          }
+        },
+        {
+          "id": 1858,
+          "title": {
+            "romaji": "Gakuen Utopia Manabi Straight!",
+            "english": null,
+            "native": "がくえんゆーとぴあ まなびストレート！"
+          }
+        },
+        {
+          "id": 1860,
+          "title": {
+            "romaji": "Tokyo Majin Gakuen Kenpucho: Tou",
+            "english": "Tokyo Majin",
+            "native": "東京魔人學園剣風帖　龖（トウ）"
+          }
+        },
+        {
+          "id": 1864,
+          "title": {
+            "romaji": "Koi Suru Tenshi Angelique: Kagayaki no Ashita",
+            "english": "Loving Angel Angelique: Radiant Tomorrow",
+            "native": "恋する天使アンジェリーク ～かがやきの明日～"
+          }
+        },
+        {
+          "id": 1865,
+          "title": {
+            "romaji": "Getsumen To Heiki Mina",
+            "english": "Mina",
+            "native": "月面兎兵器ミーナ"
+          }
+        },
+        {
+          "id": 1885,
+          "title": {
+            "romaji": "Master of Epic: The Animation Age",
+            "english": null,
+            "native": "マスター オブ エピック The Animation Age"
+          }
+        },
+        {
+          "id": 1932,
+          "title": {
+            "romaji": "Yes! Precure 5",
+            "english": "Yes! Pretty Cure 5",
+            "native": "Yes! プリキュア5"
+          }
+        },
+        {
+          "id": 1941,
+          "title": {
+            "romaji": "MOONLIGHT MILE 1st Season -Lift off-",
+            "english": null,
+            "native": "MOONLIGHT MILE 1stシーズン -Lift off-"
+          }
+        },
+        {
+          "id": 1942,
+          "title": {
+            "romaji": "Rocket Girls",
+            "english": null,
+            "native": "ロケットガール"
+          }
+        },
+        {
+          "id": 1956,
+          "title": {
+            "romaji": "Ikkitousen: Dragon Destiny",
+            "english": "Ikki Tousen: Dragon Destiny",
+            "native": "一騎当千 Dragon Destiny"
+          }
+        },
+        {
+          "id": 1988,
+          "title": {
+            "romaji": "Himawari!!",
+            "english": "Himawari Too!!",
+            "native": "ひまわりっ！！"
+          }
+        },
+        {
+          "id": 1991,
+          "title": {
+            "romaji": "Juusou Kikou Dancougar Nova",
+            "english": null,
+            "native": "獣装機攻ダンクーガノヴァ"
+          }
+        },
+        {
+          "id": 3146,
+          "title": {
+            "romaji": "GR: Giant Robo",
+            "english": null,
+            "native": "GR -ジャイアントロボ-"
+          }
+        },
+        {
+          "id": 3576,
+          "title": {
+            "romaji": "Kodai Ouja Kyouryuu King: D-Kids Adventure",
+            "english": "Dinosaur King",
+            "native": "古代王者 恐竜キング Ｄキッズアドベンチャー"
+          }
+        }
+      ]
+    }
+  }
+}

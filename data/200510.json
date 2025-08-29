@@ -1,0 +1,283 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 65,
+          "title": {
+            "romaji": "Rozen Maiden: Träumend",
+            "english": "Rozen Maiden: Dreaming",
+            "native": "ローゼンメイデン ~ トロイメント"
+          }
+        },
+        {
+          "id": 68,
+          "title": {
+            "romaji": "Black Cat",
+            "english": "Black Cat",
+            "native": "ブラックキャット"
+          }
+        },
+        {
+          "id": 69,
+          "title": {
+            "romaji": "CLUSTER EDGE",
+            "english": null,
+            "native": "CLUSTER EDGE"
+          }
+        },
+        {
+          "id": 77,
+          "title": {
+            "romaji": "Mahou Shoujo Lyrical Nanoha A's",
+            "english": "Magical Girl Lyrical Nanoha A's",
+            "native": "魔法少女リリカルなのはＡ’ｓ"
+          }
+        },
+        {
+          "id": 99,
+          "title": {
+            "romaji": "Mai-Otome",
+            "english": "My-Otome",
+            "native": "舞-乙HiME"
+          }
+        },
+        {
+          "id": 150,
+          "title": {
+            "romaji": "BLOOD+",
+            "english": "Blood+",
+            "native": "BLOOD+"
+          }
+        },
+        {
+          "id": 152,
+          "title": {
+            "romaji": "Solty Rei",
+            "english": "Solty Rei",
+            "native": "ソルティレイ"
+          }
+        },
+        {
+          "id": 228,
+          "title": {
+            "romaji": "Jigoku Shoujo",
+            "english": "Hell Girl",
+            "native": "地獄少女"
+          }
+        },
+        {
+          "id": 280,
+          "title": {
+            "romaji": "Animal Yokochou",
+            "english": "Animal Lane",
+            "native": "アニマル横町"
+          }
+        },
+        {
+          "id": 282,
+          "title": {
+            "romaji": "Angel Heart",
+            "english": null,
+            "native": "エンジェル・ハート"
+          }
+        },
+        {
+          "id": 322,
+          "title": {
+            "romaji": "Paradise Kiss",
+            "english": null,
+            "native": "パラダイス・キス"
+          }
+        },
+        {
+          "id": 355,
+          "title": {
+            "romaji": "Shakugan no Shana",
+            "english": "Shakugan no Shana",
+            "native": "灼眼のシャナ"
+          }
+        },
+        {
+          "id": 388,
+          "title": {
+            "romaji": "capeta",
+            "english": null,
+            "native": "capeta"
+          }
+        },
+        {
+          "id": 457,
+          "title": {
+            "romaji": "Mushishi",
+            "english": "MUSHI-SHI",
+            "native": "蟲師"
+          }
+        },
+        {
+          "id": 469,
+          "title": {
+            "romaji": "Karin",
+            "english": "Karin: Chibi Vampire",
+            "native": "かりん"
+          }
+        },
+        {
+          "id": 471,
+          "title": {
+            "romaji": "ToHeart2",
+            "english": "To Heart 2",
+            "native": "ToHeart2"
+          }
+        },
+        {
+          "id": 476,
+          "title": {
+            "romaji": "Ginban Kaleidoscope",
+            "english": "Skating Rink Kaleidoscope",
+            "native": "銀盤カレイドスコープ"
+          }
+        },
+        {
+          "id": 477,
+          "title": {
+            "romaji": "ARIA The ANIMATION",
+            "english": "ARIA The ANIMATION",
+            "native": "ARIA The ANIMATION"
+          }
+        },
+        {
+          "id": 584,
+          "title": {
+            "romaji": "Noein: Mou Hitori no Kimi e",
+            "english": "Noein: To Your Other Self",
+            "native": "ノエイン もうひとりの君へ"
+          }
+        },
+        {
+          "id": 658,
+          "title": {
+            "romaji": "Touhai Densetsu Akagi: Yami ni Maiorita Tensai",
+            "english": "Akagi",
+            "native": "闘牌伝説アカギ 闇に舞い降りた天才"
+          }
+        },
+        {
+          "id": 670,
+          "title": {
+            "romaji": "Lamune",
+            "english": null,
+            "native": "ラムネ"
+          }
+        },
+        {
+          "id": 694,
+          "title": {
+            "romaji": "Canvas 2: Niji-iro no Sketch",
+            "english": "Canvas 2: Rainbow Colored Sketch",
+            "native": "Canvas2 ～虹色のスケッチ～"
+          }
+        },
+        {
+          "id": 858,
+          "title": {
+            "romaji": "Gunparade Orchestra",
+            "english": null,
+            "native": "ガンパレード・オーケストラ"
+          }
+        },
+        {
+          "id": 913,
+          "title": {
+            "romaji": "Fighting Beauty Wulong",
+            "english": "Fighting Beauty Wulong",
+            "native": "格闘美神 武龍"
+          }
+        },
+        {
+          "id": 915,
+          "title": {
+            "romaji": "Ginga Densetsu Weed",
+            "english": null,
+            "native": "銀牙伝説ウィード"
+          }
+        },
+        {
+          "id": 1123,
+          "title": {
+            "romaji": "Bouken Ou Beet Excellion",
+            "english": "Beet the Vandel Buster Excellion",
+            "native": "冒険王ビィト エクセリオン"
+          }
+        },
+        {
+          "id": 1193,
+          "title": {
+            "romaji": "Happy Seven: The TV Manga",
+            "english": null,
+            "native": "はっぴぃセブン ～ざ・テレビまんが～"
+          }
+        },
+        {
+          "id": 1316,
+          "title": {
+            "romaji": "Idaten Jump",
+            "english": "Idaten Jump",
+            "native": "韋駄天翔(ジャンプ)"
+          }
+        },
+        {
+          "id": 1845,
+          "title": {
+            "romaji": "Gaiking: Legend of Daiku-Maryu",
+            "english": null,
+            "native": "ガイキング Legend of Daiku-Maryu"
+          }
+        },
+        {
+          "id": 2110,
+          "title": {
+            "romaji": "Rockman.EXE BEAST",
+            "english": null,
+            "native": "ロックマンエグゼ BEAST"
+          }
+        },
+        {
+          "id": 2285,
+          "title": {
+            "romaji": "D.I.C.E.",
+            "english": null,
+            "native": "ディノブレイカー"
+          }
+        },
+        {
+          "id": 3270,
+          "title": {
+            "romaji": "IGPX Immortal Grand Prix",
+            "english": "IGPX",
+            "native": "新格斗竞速大赛"
+          }
+        },
+        {
+          "id": 8595,
+          "title": {
+            "romaji": "Kotencotenco",
+            "english": null,
+            "native": "こてんこてんこ"
+          }
+        },
+        {
+          "id": 129610,
+          "title": {
+            "romaji": "Sonic X Season 2",
+            "english": "Sonic X: The Metarex Saga",
+            "native": "ソニックX 第2期"
+          }
+        }
+      ]
+    }
+  }
+}

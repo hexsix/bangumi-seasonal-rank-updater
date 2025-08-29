@@ -1,0 +1,163 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 6918,
+          "title": {
+            "romaji": "Wolverine",
+            "english": null,
+            "native": "ウルヴァリン"
+          }
+        },
+        {
+          "id": 8241,
+          "title": {
+            "romaji": "Rio: Rainbow Gate!",
+            "english": null,
+            "native": "リオ レインボーゲート"
+          }
+        },
+        {
+          "id": 8425,
+          "title": {
+            "romaji": "GOSICK",
+            "english": "Gosick",
+            "native": "GOSICK"
+          }
+        },
+        {
+          "id": 8426,
+          "title": {
+            "romaji": "Hourou Musuko",
+            "english": "Wandering Son",
+            "native": "放浪息子"
+          }
+        },
+        {
+          "id": 8841,
+          "title": {
+            "romaji": "Kore wa Zombie desu ka?",
+            "english": "Is this a Zombie?",
+            "native": "これはゾンビですか?"
+          }
+        },
+        {
+          "id": 9041,
+          "title": {
+            "romaji": "IS: Infinite Stratos",
+            "english": "Infinite Stratos",
+            "native": "IS〈インフィニット・ストラトス〉"
+          }
+        },
+        {
+          "id": 9314,
+          "title": {
+            "romaji": "Fractale",
+            "english": "Fractale",
+            "native": "フラクタル"
+          }
+        },
+        {
+          "id": 9330,
+          "title": {
+            "romaji": "Dragon Crisis!",
+            "english": "Dragon Crisis",
+            "native": "ドラゴンクライシス!"
+          }
+        },
+        {
+          "id": 9331,
+          "title": {
+            "romaji": "Yumekui Merry",
+            "english": "Dream Eater Merry",
+            "native": "夢喰いメリー"
+          }
+        },
+        {
+          "id": 9367,
+          "title": {
+            "romaji": "Freezing",
+            "english": "Freezing",
+            "native": "フリージング"
+          }
+        },
+        {
+          "id": 9510,
+          "title": {
+            "romaji": "Mitsudomoe Zouryouchuu!",
+            "english": null,
+            "native": "みつどもえ増量中！"
+          }
+        },
+        {
+          "id": 9513,
+          "title": {
+            "romaji": "Beelzebub",
+            "english": "Beelzebub",
+            "native": "べるぜバブ"
+          }
+        },
+        {
+          "id": 9539,
+          "title": {
+            "romaji": "Cardfight!! Vanguard",
+            "english": "Cardfight Vanguard",
+            "native": "カードファイト!! ヴァンガード"
+          }
+        },
+        {
+          "id": 9587,
+          "title": {
+            "romaji": "Onii-chan no Koto nanka Zenzen Suki Janain Dakara ne!!",
+            "english": "I don't like my big brother at all!!",
+            "native": "お兄ちゃんのことなんかぜんぜん好きじゃないんだからねっ!!"
+          }
+        },
+        {
+          "id": 9656,
+          "title": {
+            "romaji": "Kimi ni Todoke 2ND SEASON",
+            "english": "Kimi ni Todoke: From Me to You Season 2",
+            "native": "君に届け 2ND SEASON"
+          }
+        },
+        {
+          "id": 9756,
+          "title": {
+            "romaji": "Mahou Shoujo Madoka☆Magica",
+            "english": "Puella Magi Madoka Magica",
+            "native": "魔法少女まどか☆マギカ"
+          }
+        },
+        {
+          "id": 9834,
+          "title": {
+            "romaji": "Level E",
+            "english": "Level E",
+            "native": "レベルE"
+          }
+        },
+        {
+          "id": 9893,
+          "title": {
+            "romaji": "Suite Precure♪",
+            "english": null,
+            "native": "スイート プリキュア♪"
+          }
+        },
+        {
+          "id": 10330,
+          "title": {
+            "romaji": "Bakugan Battle Brawlers: Mechtanium Surge",
+            "english": "Bakugan: Mechtanium Surge",
+            "native": "爆丸 バトルブローラーズ メクタニウムサージ"
+          }
+        }
+      ]
+    }
+  }
+}

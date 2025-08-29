@@ -1,0 +1,219 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 22,
+          "title": {
+            "romaji": "Tennis no Ouji-sama",
+            "english": "The Prince of Tennis",
+            "native": "テニスの王子様"
+          }
+        },
+        {
+          "id": 135,
+          "title": {
+            "romaji": "Hikaru no Go",
+            "english": "Hikaru no Go",
+            "native": "ヒカルの碁"
+          }
+        },
+        {
+          "id": 156,
+          "title": {
+            "romaji": "X (TV)",
+            "english": "X (TV)",
+            "native": "X−エックス− (TV)"
+          }
+        },
+        {
+          "id": 181,
+          "title": {
+            "romaji": "Vandread: the second stage",
+            "english": "Vandread: The Second Stage",
+            "native": "ヴァンドレッド the second stage"
+          }
+        },
+        {
+          "id": 246,
+          "title": {
+            "romaji": "GROOVE ADVENTURE RAVE",
+            "english": "Rave Master",
+            "native": "GROOVE ADVENTURE RAVE"
+          }
+        },
+        {
+          "id": 270,
+          "title": {
+            "romaji": "HELLSING",
+            "english": "Hellsing",
+            "native": "HELLSING"
+          }
+        },
+        {
+          "id": 276,
+          "title": {
+            "romaji": "Mahoromatic",
+            "english": "Mahoromatic: Automatic Maiden",
+            "native": "まほろまてぃっく"
+          }
+        },
+        {
+          "id": 321,
+          "title": {
+            "romaji": "Najica Dengeki Sakusen",
+            "english": "Najica Blitz Tactics",
+            "native": "ナジカ電撃作戦"
+          }
+        },
+        {
+          "id": 682,
+          "title": {
+            "romaji": "Otogi Story Tenshi no Shippo",
+            "english": "Angel Tales",
+            "native": "おとぎストーリー　天使のしっぽ"
+          }
+        },
+        {
+          "id": 799,
+          "title": {
+            "romaji": "Kokoro Toshokan",
+            "english": null,
+            "native": "ココロ図書館"
+          }
+        },
+        {
+          "id": 831,
+          "title": {
+            "romaji": "Chicchana Yukitsukai Sugar",
+            "english": "A Little Snow Fairy Sugar",
+            "native": "ちっちゃな雪使いシュガー"
+          }
+        },
+        {
+          "id": 1145,
+          "title": {
+            "romaji": "Kaze no Youjinbou",
+            "english": "Kaze no Yojimbo",
+            "native": "旋風の用心棒"
+          }
+        },
+        {
+          "id": 1156,
+          "title": {
+            "romaji": "i -wish you were here-: Anata ga Koko ni Itehoshii",
+            "english": "Zaion: I Wish You Were Here",
+            "native": "i -wish you were here- ～あなたがここにいてほしい～"
+          }
+        },
+        {
+          "id": 1157,
+          "title": {
+            "romaji": "Final Fantasy: Unlimited",
+            "english": null,
+            "native": "ファイナルファンタジー：アンリミテッド"
+          }
+        },
+        {
+          "id": 1493,
+          "title": {
+            "romaji": "Project ARMS: The 2nd Chapter",
+            "english": "Project ARMS: The 2nd Chapter",
+            "native": null
+          }
+        },
+        {
+          "id": 1614,
+          "title": {
+            "romaji": "Captain Tsubasa: Road to 2002",
+            "english": "Captain Tsubasa",
+            "native": "キャプテン翼 (2001)"
+          }
+        },
+        {
+          "id": 1664,
+          "title": {
+            "romaji": "Babel Nisei (2001)",
+            "english": "Babel II: Beyond Infinity",
+            "native": "バビル2世"
+          }
+        },
+        {
+          "id": 1678,
+          "title": {
+            "romaji": "Cyborg 009: THE CYBORG SOLDIER",
+            "english": "Cyborg 009: The Cyborg Soldier",
+            "native": "サイボーグ009 THE CYBORG SOLDIER"
+          }
+        },
+        {
+          "id": 2287,
+          "title": {
+            "romaji": "Kakutou Ryouri Densetsu Bistro Recipe",
+            "english": "Fighting Foodons",
+            "native": "格闘料理伝説ビストロレシピ"
+          }
+        },
+        {
+          "id": 2390,
+          "title": {
+            "romaji": "Hoshi no Kirby",
+            "english": "Kirby: Right Back at Ya!",
+            "native": "星のカービィ"
+          }
+        },
+        {
+          "id": 2934,
+          "title": {
+            "romaji": "Shiawase Sou no Okojo-san",
+            "english": null,
+            "native": "しあわせソウのオコジョさん"
+          }
+        },
+        {
+          "id": 3012,
+          "title": {
+            "romaji": "Gekitou! Crush Gear TURBO",
+            "english": null,
+            "native": "激闘! クラッシュギアTURBO"
+          }
+        },
+        {
+          "id": 3104,
+          "title": {
+            "romaji": "Geisters: Fractions of the Earth",
+            "english": null,
+            "native": "ガイスターズ"
+          }
+        },
+        {
+          "id": 3290,
+          "title": {
+            "romaji": "Vampiyan Kids",
+            "english": "Vampiyan Kids",
+            "native": "なんちゃってバンパイヤン"
+          }
+        },
+        {
+          "id": 5474,
+          "title": {
+            "romaji": "Yobarete Tobidete Akubi-chan",
+            "english": null,
+            "native": "よばれてとびでて！アクビちゃん"
+          }
+        },
+        {
+          "id": 20858,
+          "title": {
+            "romaji": "Kasumin 1st Series",
+            "english": "Mistin",
+            "native": "カスミン (第1シリーズ)"
+          }
+        }
+      ]
+    }
+  }
+}

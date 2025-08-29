@@ -1,0 +1,227 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 17,
+          "title": {
+            "romaji": "Hungry Heart: Wild Striker",
+            "english": null,
+            "native": "ハングリーハート Wild Striker"
+          }
+        },
+        {
+          "id": 20,
+          "title": {
+            "romaji": "NARUTO",
+            "english": "Naruto",
+            "native": "NARUTO -ナルト-"
+          }
+        },
+        {
+          "id": 93,
+          "title": {
+            "romaji": "Kidou Senshi Gundam SEED",
+            "english": "Mobile Suit Gundam Seed",
+            "native": "機動戦士ガンダムSEED"
+          }
+        },
+        {
+          "id": 132,
+          "title": {
+            "romaji": "GetBackers: Dakkanya",
+            "english": "GetBackers",
+            "native": "GetBackers 奪還屋"
+          }
+        },
+        {
+          "id": 274,
+          "title": {
+            "romaji": "Kiddy Grade",
+            "english": "Kiddy Grade",
+            "native": "キディ・グレイド"
+          }
+        },
+        {
+          "id": 277,
+          "title": {
+            "romaji": "Mahoromatic: Motto Utsukushii Mono",
+            "english": "Mahoromatic: Something More Beautiful",
+            "native": "まほろまてぃっく～もっと 美しいもの"
+          }
+        },
+        {
+          "id": 327,
+          "title": {
+            "romaji": "Puchi Puri * Yuushi",
+            "english": "Petite Princess Yucie",
+            "native": "ぷちぷり*ユーシィ"
+          }
+        },
+        {
+          "id": 328,
+          "title": {
+            "romaji": "PIANO",
+            "english": "Piano: The Melody of a Young Girl's Heart",
+            "native": "PIANO"
+          }
+        },
+        {
+          "id": 341,
+          "title": {
+            "romaji": "Spiral: Suiri no Kizuna",
+            "english": "Spiral: Bond of Reasoning",
+            "native": "スパイラル -推理の絆-"
+          }
+        },
+        {
+          "id": 387,
+          "title": {
+            "romaji": "Haibane Renmei",
+            "english": "Haibane Renmei",
+            "native": "灰羽連盟"
+          }
+        },
+        {
+          "id": 446,
+          "title": {
+            "romaji": "Weiß Kreuz Glühen",
+            "english": "Knight Hunters Eternity",
+            "native": "ヴァイスクロイツ・グリーエン"
+          }
+        },
+        {
+          "id": 467,
+          "title": {
+            "romaji": "Koukaku Kidoutai: STAND ALONE COMPLEX",
+            "english": "Ghost in the Shell: Stand Alone Complex",
+            "native": "攻殻機動隊 STAND ALONE COMPLEX"
+          }
+        },
+        {
+          "id": 653,
+          "title": {
+            "romaji": "Galaxy Angel A",
+            "english": "Galaxy Angel A",
+            "native": "ギャラクシーエンジェルA"
+          }
+        },
+        {
+          "id": 751,
+          "title": {
+            "romaji": "Bomberman Jetters",
+            "english": null,
+            "native": "ボンバーマン ジェッターズ"
+          }
+        },
+        {
+          "id": 833,
+          "title": {
+            "romaji": "Choujuushin Gravion",
+            "english": "Gravion",
+            "native": "超重神グラヴィオン"
+          }
+        },
+        {
+          "id": 835,
+          "title": {
+            "romaji": "Sister Princess RePure",
+            "english": null,
+            "native": "シスター・プリンセス ～リピュア～"
+          }
+        },
+        {
+          "id": 958,
+          "title": {
+            "romaji": "HeatGuy J",
+            "english": "Heat Guy J",
+            "native": "ヒートガイジェイ"
+          }
+        },
+        {
+          "id": 1564,
+          "title": {
+            "romaji": "Pocket Monsters Advanced Generation",
+            "english": "Pokémon the Series: Ruby and Sapphire",
+            "native": "ポケットモンスター　アドバンスジェネレーション"
+          }
+        },
+        {
+          "id": 1667,
+          "title": {
+            "romaji": "Barom One",
+            "english": "Barom One",
+            "native": "バロムワン"
+          }
+        },
+        {
+          "id": 1685,
+          "title": {
+            "romaji": "Duel Masters",
+            "english": null,
+            "native": "デュエル・マスターズ"
+          }
+        },
+        {
+          "id": 1712,
+          "title": {
+            "romaji": "Shin Seiki Den Mars",
+            "english": null,
+            "native": "神世紀伝　マーズ"
+          }
+        },
+        {
+          "id": 1792,
+          "title": {
+            "romaji": "OVERMAN King Gainer",
+            "english": null,
+            "native": "OVERMANキングゲイナー"
+          }
+        },
+        {
+          "id": 2004,
+          "title": {
+            "romaji": "Hanada Shounen-shi",
+            "english": null,
+            "native": "花田少年史"
+          }
+        },
+        {
+          "id": 3193,
+          "title": {
+            "romaji": "Asobot Senki Gokuu",
+            "english": "Monkey Typhoon",
+            "native": "アソボット戦記五九"
+          }
+        },
+        {
+          "id": 4068,
+          "title": {
+            "romaji": "Shin Megami Tensei: Devil Children - Light & Dark",
+            "english": null,
+            "native": "真･女神転生Ｄチルドレン ライト＆ダーク"
+          }
+        },
+        {
+          "id": 5473,
+          "title": {
+            "romaji": "Tsuri Baka Nisshi",
+            "english": null,
+            "native": "釣りバカ日誌"
+          }
+        },
+        {
+          "id": 20857,
+          "title": {
+            "romaji": "Kasumin 2nd Series",
+            "english": null,
+            "native": "カスミン (第2シリーズ)"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 2904,
+          "title": {
+            "romaji": "Code Geass: Hangyaku no Lelouch R2",
+            "english": "Code Geass: Lelouch of the Rebellion R2",
+            "native": "コードギアス 反逆のルルーシュ R2"
+          }
+        },
+        {
+          "id": 3091,
+          "title": {
+            "romaji": "xxxHOLiC◆Kei",
+            "english": null,
+            "native": "xxxHOLiC◆継"
+          }
+        },
+        {
+          "id": 3092,
+          "title": {
+            "romaji": "Junjou Romantica",
+            "english": "Junjo Romantica",
+            "native": "純情ロマンチカ"
+          }
+        },
+        {
+          "id": 3230,
+          "title": {
+            "romaji": "Druaga no Tou: the Aegis of URUK",
+            "english": "Tower of Druaga: The Aegis of Uruk",
+            "native": "ドルアーガの塔 〜the Aegis of URUK〜"
+          }
+        },
+        {
+          "id": 3322,
+          "title": {
+            "romaji": "Wagaya no Oinari-sama.",
+            "english": "Our Home's Fox Deity",
+            "native": "我が家のお稲荷さま。"
+          }
+        },
+        {
+          "id": 3358,
+          "title": {
+            "romaji": "Kure-nai",
+            "english": "Kurenai",
+            "native": "紅"
+          }
+        },
+        {
+          "id": 3359,
+          "title": {
+            "romaji": "Amatsuki",
+            "english": null,
+            "native": "あまつき"
+          }
+        },
+        {
+          "id": 3363,
+          "title": {
+            "romaji": "RD Sennou Chousashitsu",
+            "english": null,
+            "native": "RD 潜脳調査室"
+          }
+        },
+        {
+          "id": 3407,
+          "title": {
+            "romaji": "Blassreiter",
+            "english": null,
+            "native": "ブラスレイター"
+          }
+        },
+        {
+          "id": 3455,
+          "title": {
+            "romaji": "To LOVE-Ru",
+            "english": "To Love Ru",
+            "native": "To LOVEる -とらぶる-"
+          }
+        },
+        {
+          "id": 3457,
+          "title": {
+            "romaji": "Vampire Knight",
+            "english": "Vampire Knight",
+            "native": "ヴァンパイア騎士"
+          }
+        },
+        {
+          "id": 3470,
+          "title": {
+            "romaji": "Special A",
+            "english": "S.A: Special A",
+            "native": "スペシャル・エー"
+          }
+        },
+        {
+          "id": 3503,
+          "title": {
+            "romaji": "Kanokon",
+            "english": "Kanokon: The Girl Who Cried Fox",
+            "native": "かのこん"
+          }
+        },
+        {
+          "id": 3549,
+          "title": {
+            "romaji": "Allison to Lillia",
+            "english": "Allison & Lillia",
+            "native": "アリソンとリリア"
+          }
+        },
+        {
+          "id": 3572,
+          "title": {
+            "romaji": "Macross Frontier",
+            "english": "Macross Frontier",
+            "native": "マクロスF"
+          }
+        },
+        {
+          "id": 3577,
+          "title": {
+            "romaji": "Kyouran Kazoku Nikki",
+            "english": null,
+            "native": "狂乱家族日記"
+          }
+        },
+        {
+          "id": 3588,
+          "title": {
+            "romaji": "Soul Eater",
+            "english": "Soul Eater",
+            "native": "ソウルイーター"
+          }
+        },
+        {
+          "id": 3613,
+          "title": {
+            "romaji": "Toshokan Sensou",
+            "english": "Library War",
+            "native": "図書館戦争"
+          }
+        },
+        {
+          "id": 3615,
+          "title": {
+            "romaji": "Neo Angelique Abyss",
+            "english": null,
+            "native": "ネオアンジェリーク Abyss"
+          }
+        },
+        {
+          "id": 3616,
+          "title": {
+            "romaji": "Kamen no Maid Guy",
+            "english": null,
+            "native": "仮面のメイドガイ"
+          }
+        },
+        {
+          "id": 3627,
+          "title": {
+            "romaji": "D.C.II S.S.: Da Capo II Second Season",
+            "english": null,
+            "native": "D.C.II S.S. ～ダ・カーポII セカンドシーズン～"
+          }
+        },
+        {
+          "id": 3655,
+          "title": {
+            "romaji": "Nabari no Ou",
+            "english": null,
+            "native": "隠の王"
+          }
+        },
+        {
+          "id": 3656,
+          "title": {
+            "romaji": "Monochrome Factor",
+            "english": null,
+            "native": "モノクローム･ファクター"
+          }
+        },
+        {
+          "id": 3673,
+          "title": {
+            "romaji": "Nijuu Mensou no Musume",
+            "english": "The Daughter of 20 Faces",
+            "native": "二十面相の娘"
+          }
+        },
+        {
+          "id": 3701,
+          "title": {
+            "romaji": "Kaiba",
+            "english": "Kaiba",
+            "native": "カイバ"
+          }
+        },
+        {
+          "id": 3731,
+          "title": {
+            "romaji": "Itazura na Kiss",
+            "english": "ItaKiss",
+            "native": "イタズラなKiss"
+          }
+        },
+        {
+          "id": 3840,
+          "title": {
+            "romaji": "Crystal Blaze",
+            "english": "Glass Maiden",
+            "native": "クリスタル ブレイズ"
+          }
+        },
+        {
+          "id": 3859,
+          "title": {
+            "romaji": "Himitsu: Top Secret - The Revelation",
+            "english": null,
+            "native": "秘密 トップ・シークレット"
+          }
+        },
+        {
+          "id": 3972,
+          "title": {
+            "romaji": "Yu☆Gi☆Oh! 5D's",
+            "english": "Yu-Gi-Oh! 5D's",
+            "native": "遊☆戯☆王5D's（ファイブディーズ）"
+          }
+        },
+        {
+          "id": 3975,
+          "title": {
+            "romaji": "Uchi no 3 Shimai",
+            "english": null,
+            "native": "うちの3姉妹"
+          }
+        },
+        {
+          "id": 4038,
+          "title": {
+            "romaji": "Zettai Karen Children",
+            "english": "Psychic Squad",
+            "native": "絶対可憐チルドレン"
+          }
+        },
+        {
+          "id": 4039,
+          "title": {
+            "romaji": "Golgo 13 (TV)",
+            "english": null,
+            "native": "ゴルゴ13 (TV)"
+          }
+        },
+        {
+          "id": 4051,
+          "title": {
+            "romaji": "Net Ghost PIPOPA",
+            "english": "Web Ghosts PiPoPa",
+            "native": "ネットゴーストPIPOPA"
+          }
+        },
+        {
+          "id": 4080,
+          "title": {
+            "romaji": "Kyou kara Maou! 3rd Series",
+            "english": "Kyo Kara Maoh! Season 3",
+            "native": "今日からマ王！第3シリーズ"
+          }
+        },
+        {
+          "id": 4197,
+          "title": {
+            "romaji": "BLUE DRAGON: Tenkai no Shichi Ryuu",
+            "english": "Blue Dragon: The Seven Dragons of the Heavens",
+            "native": "BLUE DRAGON 天界の七竜"
+          }
+        },
+        {
+          "id": 5854,
+          "title": {
+            "romaji": "Shin Chou Kyou Ryo: Condor Hero III",
+            "english": "Legend of the Condor Hero III",
+            "native": "神鵰俠侶 III: 相約十六年"
+          }
+        },
+        {
+          "id": 5938,
+          "title": {
+            "romaji": "Onegai My Melody Kirara☆",
+            "english": "Onegai My Melody Kirara",
+            "native": "おねがいマイメロディ きららっ☆"
+          }
+        },
+        {
+          "id": 18937,
+          "title": {
+            "romaji": "Hakken Taiken Daisuki! Shimajirou",
+            "english": null,
+            "native": "はっけん たいけん だいすき! しまじろう"
+          }
+        }
+      ]
+    }
+  }
+}

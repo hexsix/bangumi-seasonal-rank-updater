@@ -1,0 +1,16 @@
+POST https://graphql.anilist.co
+Content-Type: application/json
+
+{
+  "query": "query ($page: Int = 1, $perPage: Int = 50, $type: MediaType = ANIME, $format: MediaFormat = TV, $seasonYear: Int, $season: MediaSeason) { Page(page: $page, perPage: $perPage) { pageInfo { currentPage hasNextPage lastPage total perPage } media(type: $type, format: $format, seasonYear: $seasonYear, season: $season) { id title { romaji english native } } } }",
+  "variables": {
+    "page": 1,
+    "perPage": 50,
+    "type": "ANIME",
+    "format": "TV",
+    "seasonYear": 2000,
+    "season": "WINTER"
+  }
+}
+
+###

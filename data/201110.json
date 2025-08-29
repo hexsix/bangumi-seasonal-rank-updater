@@ -1,0 +1,227 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 6773,
+          "title": {
+            "romaji": "Shakugan no Shana III (Final)",
+            "english": "Shakugan no Shana: Season III",
+            "native": "灼眼のシャナIII (Final)"
+          }
+        },
+        {
+          "id": 9936,
+          "title": {
+            "romaji": "Maken-Ki!",
+            "english": "Maken-Ki! Battling Venus",
+            "native": "マケン姫っ！"
+          }
+        },
+        {
+          "id": 9981,
+          "title": {
+            "romaji": "Phi Brain: Kami no Puzzle",
+            "english": "Phi Brain: Puzzle of God",
+            "native": "ファイ・ブレイン 神のパズル"
+          }
+        },
+        {
+          "id": 10030,
+          "title": {
+            "romaji": "Bakuman. 2",
+            "english": null,
+            "native": "バクマン。2"
+          }
+        },
+        {
+          "id": 10087,
+          "title": {
+            "romaji": "Fate/Zero",
+            "english": "Fate/Zero",
+            "native": "Fate/Zero"
+          }
+        },
+        {
+          "id": 10213,
+          "title": {
+            "romaji": "Maji de Watashi ni Koi Shinasai!",
+            "english": "Majikoi: Oh! Samurai Girls",
+            "native": "真剣で私に恋しなさい！"
+          }
+        },
+        {
+          "id": 10232,
+          "title": {
+            "romaji": "Tamayura: hitotose",
+            "english": "Tamayura: Hitotose",
+            "native": "たまゆら～hitotose～"
+          }
+        },
+        {
+          "id": 10336,
+          "title": {
+            "romaji": "Last Exile: Ginyoku no Fam",
+            "english": "LASTEXILE -Fam, the Silver Wing",
+            "native": "ラストエグザイル-銀翼のファム-"
+          }
+        },
+        {
+          "id": 10378,
+          "title": {
+            "romaji": "Shinryaku!? Ika Musume",
+            "english": "Squid Girl 2",
+            "native": "侵略!?イカ娘"
+          }
+        },
+        {
+          "id": 10396,
+          "title": {
+            "romaji": "Ben-To",
+            "english": "Ben-To",
+            "native": "ベン・トー"
+          }
+        },
+        {
+          "id": 10397,
+          "title": {
+            "romaji": "Mashiroiro Symphony: The color of lovers",
+            "english": "Mashiroiro Symphony",
+            "native": "ましろ色シンフォニー -The color of lovers-"
+          }
+        },
+        {
+          "id": 10456,
+          "title": {
+            "romaji": "Kyoukaisenjou no Horizon",
+            "english": "Horizon in the Middle of Nowhere",
+            "native": "境界線上のホライゾン"
+          }
+        },
+        {
+          "id": 10460,
+          "title": {
+            "romaji": "Kimi to Boku.",
+            "english": "You and Me.",
+            "native": "君と僕。"
+          }
+        },
+        {
+          "id": 10521,
+          "title": {
+            "romaji": "WORKING'!!",
+            "english": "Wagnaria!!2",
+            "native": "WORKING'!!"
+          }
+        },
+        {
+          "id": 10578,
+          "title": {
+            "romaji": "C³",
+            "english": "C3",
+            "native": "シーキューブ"
+          }
+        },
+        {
+          "id": 10588,
+          "title": {
+            "romaji": "Persona 4 the Animation",
+            "english": "Persona 4 the Animation",
+            "native": "ペルソナ4アニメーション"
+          }
+        },
+        {
+          "id": 10620,
+          "title": {
+            "romaji": "Mirai Nikki",
+            "english": "The Future Diary",
+            "native": "未来日記"
+          }
+        },
+        {
+          "id": 10719,
+          "title": {
+            "romaji": "Boku wa Tomodachi ga Sukunai",
+            "english": "Haganai",
+            "native": "僕は友達が少ない"
+          }
+        },
+        {
+          "id": 10793,
+          "title": {
+            "romaji": "Guilty Crown",
+            "english": "Guilty Crown",
+            "native": "ギルティクラウン"
+          }
+        },
+        {
+          "id": 10798,
+          "title": {
+            "romaji": "UN-GO",
+            "english": "UN-GO",
+            "native": "UN-GO アン ゴ"
+          }
+        },
+        {
+          "id": 10800,
+          "title": {
+            "romaji": "Chihayafuru",
+            "english": "Chihayafuru",
+            "native": "ちはやふる"
+          }
+        },
+        {
+          "id": 10808,
+          "title": {
+            "romaji": "Kidou Senshi Gundam AGE",
+            "english": "Mobile Suit Gundam AGE",
+            "native": "機動戦士ガンダムAGE"
+          }
+        },
+        {
+          "id": 11017,
+          "title": {
+            "romaji": "Battle Spirits: Heroes",
+            "english": null,
+            "native": "バトルスピリッツ 覇王（ヒーローズ）"
+          }
+        },
+        {
+          "id": 11061,
+          "title": {
+            "romaji": "HUNTER×HUNTER (2011)",
+            "english": "Hunter x Hunter (2011)",
+            "native": "HUNTER×HUNTER (2011)"
+          }
+        },
+        {
+          "id": 11123,
+          "title": {
+            "romaji": "Sekaiichi Hatsukoi 2",
+            "english": "Sekai Ichi Hatsukoi - The World's Greatest First Love Season 2",
+            "native": "世界一初恋 2"
+          }
+        },
+        {
+          "id": 11385,
+          "title": {
+            "romaji": "Digimon Xros Wars: Toki wo Kakeru Shounen Hunter-tachi",
+            "english": "Digimon Xros Wars: The Young Hunters Who Leapt Through Time",
+            "native": "デジモンクロスウォーズ 時を駆ける少年ハンターたち"
+          }
+        },
+        {
+          "id": 11541,
+          "title": {
+            "romaji": "Ad Lib Anime Kenkyuujo",
+            "english": null,
+            "native": "アドリブアニメ研究所"
+          }
+        }
+      ]
+    }
+  }
+}

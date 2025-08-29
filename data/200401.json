@@ -1,0 +1,171 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 148,
+          "title": {
+            "romaji": "Kita e.: Diamond Dust Drops",
+            "english": "Diamond Daydreams",
+            "native": "北へ。 ～Diamond Dust Drops～"
+          }
+        },
+        {
+          "id": 158,
+          "title": {
+            "romaji": "Maria-sama ga Miteru",
+            "english": "Maria Watches Over Us",
+            "native": "マリア様がみてる"
+          }
+        },
+        {
+          "id": 204,
+          "title": {
+            "romaji": "Yumeria",
+            "english": null,
+            "native": "ゆめりあ"
+          }
+        },
+        {
+          "id": 222,
+          "title": {
+            "romaji": "MEZZO",
+            "english": "Mezzo",
+            "native": "MEZZO -メゾ-"
+          }
+        },
+        {
+          "id": 242,
+          "title": {
+            "romaji": "Gokusen",
+            "english": "The Gokusen",
+            "native": "ごくせん"
+          }
+        },
+        {
+          "id": 284,
+          "title": {
+            "romaji": "Area 88 (TV)",
+            "english": null,
+            "native": "エリア８８"
+          }
+        },
+        {
+          "id": 295,
+          "title": {
+            "romaji": "Divergence Eve 2: Misaki Chronicles",
+            "english": "Misaki Chronicle: Divergence Eve",
+            "native": "みさきクロニクル 〜ダイバージェンス・イヴ〜"
+          }
+        },
+        {
+          "id": 323,
+          "title": {
+            "romaji": "Mousou Dairinin",
+            "english": "Paranoia Agent",
+            "native": "妄想代理人"
+          }
+        },
+        {
+          "id": 603,
+          "title": {
+            "romaji": "Futari wa Precure",
+            "english": "Precure",
+            "native": "ふたりはプリキュア"
+          }
+        },
+        {
+          "id": 636,
+          "title": {
+            "romaji": "Juubei-chan 2: Siberia Yagyuu no Gyakushuu",
+            "english": "Jubei Chan the Ninja Girl 2: The Counterattack of Siberia Yagyu",
+            "native": "十兵衛ちゃん2 -シベリア柳生の逆襲-"
+          }
+        },
+        {
+          "id": 693,
+          "title": {
+            "romaji": "Burn Up Scramble",
+            "english": "Burn-Up Scramble",
+            "native": "バーンナップスクランブル"
+          }
+        },
+        {
+          "id": 801,
+          "title": {
+            "romaji": "Koukaku Kidoutai: Stand Alone Complex 2nd GIG",
+            "english": "Ghost in the Shell: Stand Alone Complex 2nd GIG",
+            "native": "攻殻機動隊 S.A.C. 2nd GIG"
+          }
+        },
+        {
+          "id": 927,
+          "title": {
+            "romaji": "Transformers: Superlink",
+            "english": "Transformers: Energon",
+            "native": "トランスフォーマー スーパーリンク"
+          }
+        },
+        {
+          "id": 1082,
+          "title": {
+            "romaji": "Hikari to Mizu no Daphne",
+            "english": "Daphne in the Brilliant Blue",
+            "native": "光と水のダフネ"
+          }
+        },
+        {
+          "id": 1149,
+          "title": {
+            "romaji": "Choujuushin Gravion Zwei",
+            "english": "Gravion Zwei",
+            "native": "超重神グラヴィオンツヴァイ"
+          }
+        },
+        {
+          "id": 1246,
+          "title": {
+            "romaji": "Yuugo: Negotiator",
+            "english": "Yugo the Negotiator",
+            "native": "勇午 〜交渉人〜"
+          }
+        },
+        {
+          "id": 2391,
+          "title": {
+            "romaji": "SD Gundam Force",
+            "english": null,
+            "native": "SDガンダムフォース"
+          }
+        },
+        {
+          "id": 2740,
+          "title": {
+            "romaji": "Monkey Turn",
+            "english": null,
+            "native": "モンキーターン"
+          }
+        },
+        {
+          "id": 2789,
+          "title": {
+            "romaji": "B-Densetsu! Battle B-Daman",
+            "english": "Battle B-Daman",
+            "native": "B-伝説！バトルビーダマン"
+          }
+        },
+        {
+          "id": 3638,
+          "title": {
+            "romaji": "Kaiketsu Zorori",
+            "english": null,
+            "native": "かいけつゾロリ"
+          }
+        }
+      ]
+    }
+  }
+}

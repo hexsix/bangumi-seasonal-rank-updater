@@ -1,0 +1,131 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 5032,
+          "title": {
+            "romaji": "COBRA THE ANIMATION",
+            "english": null,
+            "native": "COBRA THE ANIMATION"
+          }
+        },
+        {
+          "id": 5690,
+          "title": {
+            "romaji": "Nodame Cantabile Finale",
+            "english": null,
+            "native": "のだめカンタービレ フィナーレ"
+          }
+        },
+        {
+          "id": 6324,
+          "title": {
+            "romaji": "Omamori Himari",
+            "english": "Omamori Himari",
+            "native": "おまもりひまり"
+          }
+        },
+        {
+          "id": 6347,
+          "title": {
+            "romaji": "Baka to Test to Shoukanjuu",
+            "english": "Baka and Test - Summon the Beasts",
+            "native": "バカとテストと召喚獣"
+          }
+        },
+        {
+          "id": 6500,
+          "title": {
+            "romaji": "Seikon no Qwaser",
+            "english": "The Qwaser of Stigmata",
+            "native": "聖痕のクェイサー"
+          }
+        },
+        {
+          "id": 6574,
+          "title": {
+            "romaji": "Hanamaru Youchien",
+            "english": "Hanamaru Kindergarten",
+            "native": "はなまる幼稚園"
+          }
+        },
+        {
+          "id": 6594,
+          "title": {
+            "romaji": "Katanagatari",
+            "english": "Katanagatari",
+            "native": "刀語"
+          }
+        },
+        {
+          "id": 6645,
+          "title": {
+            "romaji": "Chuu Bra!!",
+            "english": "Chu-Bra",
+            "native": "ちゅーぶら!!"
+          }
+        },
+        {
+          "id": 6746,
+          "title": {
+            "romaji": "Durarara!!",
+            "english": "Durarara!!",
+            "native": "デュラララ!!"
+          }
+        },
+        {
+          "id": 6747,
+          "title": {
+            "romaji": "Dance in the Vampire Bund",
+            "english": "Dance in the Vampire Bund",
+            "native": "ダンスインザヴァンパイアバンド"
+          }
+        },
+        {
+          "id": 6802,
+          "title": {
+            "romaji": "So Ra No Wo To",
+            "english": "Sound of the Sky",
+            "native": "ソ・ラ・ノ・ヲ・ト"
+          }
+        },
+        {
+          "id": 7062,
+          "title": {
+            "romaji": "Hidamari Sketch x ☆☆☆",
+            "english": "Hidamari Sketch x Hoshimittsu",
+            "native": "ひだまりスケッチ x ☆☆☆"
+          }
+        },
+        {
+          "id": 7079,
+          "title": {
+            "romaji": "Ookami Kakushi",
+            "english": "Okamikakushi ~ Masque of the Wolf",
+            "native": "おおかみかくし"
+          }
+        },
+        {
+          "id": 7148,
+          "title": {
+            "romaji": "Ladies versus Butlers!",
+            "english": "Ladies Versus Butlers",
+            "native": "れでぃ×ばと!"
+          }
+        },
+        {
+          "id": 7645,
+          "title": {
+            "romaji": "Heartcatch Precure!",
+            "english": "Heartcatch Precure!",
+            "native": "ハートキャッチプリキュア!"
+          }
+        }
+      ]
+    }
+  }
+}

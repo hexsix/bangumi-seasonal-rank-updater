@@ -1,0 +1,387 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 1690,
+          "title": {
+            "romaji": "Bokurano",
+            "english": "Bokurano",
+            "native": "ぼくらの"
+          }
+        },
+        {
+          "id": 1691,
+          "title": {
+            "romaji": "Kaze no Stigma",
+            "english": "Kaze no Stigma",
+            "native": "風のスティグマ"
+          }
+        },
+        {
+          "id": 1694,
+          "title": {
+            "romaji": "Idolm@ster Xenoglossia",
+            "english": "IDOLM@STER: XENOGLOSSIA",
+            "native": "アイドルマスター ゼノグラシア"
+          }
+        },
+        {
+          "id": 1699,
+          "title": {
+            "romaji": "Romeo x Juliet",
+            "english": null,
+            "native": "ロミオ × ジュリエット"
+          }
+        },
+        {
+          "id": 1721,
+          "title": {
+            "romaji": "Hitohira",
+            "english": null,
+            "native": "ひとひら"
+          }
+        },
+        {
+          "id": 1722,
+          "title": {
+            "romaji": "Nagasarete Airantou",
+            "english": "Nagasarete Airanto",
+            "native": "ながされて藍蘭島"
+          }
+        },
+        {
+          "id": 1727,
+          "title": {
+            "romaji": "Shinkyoku Soukai Polyphonica",
+            "english": "Polyphonica",
+            "native": "神曲奏界ポリフォニカ"
+          }
+        },
+        {
+          "id": 1808,
+          "title": {
+            "romaji": "Kamichama Karin",
+            "english": null,
+            "native": "かみちゃまかりん"
+          }
+        },
+        {
+          "id": 1818,
+          "title": {
+            "romaji": "CLAYMORE",
+            "english": "Claymore",
+            "native": "CLAYMORE"
+          }
+        },
+        {
+          "id": 1827,
+          "title": {
+            "romaji": "Seirei no Moribito",
+            "english": "Moribito: Guardian of the Spirit",
+            "native": "精霊の守り人"
+          }
+        },
+        {
+          "id": 1878,
+          "title": {
+            "romaji": "Kaze no Shoujo Emily",
+            "english": null,
+            "native": "風の少女エミリー"
+          }
+        },
+        {
+          "id": 1887,
+          "title": {
+            "romaji": "Lucky☆Star",
+            "english": "Lucky☆Star",
+            "native": "らき☆すた"
+          }
+        },
+        {
+          "id": 1914,
+          "title": {
+            "romaji": "Saiunkoku Monogatari 2nd Season",
+            "english": "The Story of Saiunkoku Second Series",
+            "native": "彩雲国物語 第2シリーズ"
+          }
+        },
+        {
+          "id": 1915,
+          "title": {
+            "romaji": "Mahou Shoujo Lyrical Nanoha StrikerS",
+            "english": "Magical Girl Lyrical Nanoha StrikerS",
+            "native": "魔法少女リリカルなのはStrikerS"
+          }
+        },
+        {
+          "id": 1965,
+          "title": {
+            "romaji": "sola",
+            "english": null,
+            "native": "sola"
+          }
+        },
+        {
+          "id": 2001,
+          "title": {
+            "romaji": "Tengen Toppa Gurren Lagann",
+            "english": "Gurren Lagann",
+            "native": "天元突破グレンラガン"
+          }
+        },
+        {
+          "id": 2002,
+          "title": {
+            "romaji": "Heroic Age",
+            "english": "Heroic Age",
+            "native": "ヒロイック・エイジ"
+          }
+        },
+        {
+          "id": 2025,
+          "title": {
+            "romaji": "DARKER THAN BLACK: Kuro no Keiyakusha",
+            "english": "Darker than Black",
+            "native": "DARKER THAN BLACK -黒の契約者-"
+          }
+        },
+        {
+          "id": 2026,
+          "title": {
+            "romaji": "Hayate no Gotoku!",
+            "english": "Hayate the Combat Butler",
+            "native": "ハヤテのごとく！"
+          }
+        },
+        {
+          "id": 2030,
+          "title": {
+            "romaji": "El Cazador",
+            "english": "El Cazador de la Bruja",
+            "native": "エル・カザド"
+          }
+        },
+        {
+          "id": 2031,
+          "title": {
+            "romaji": "Shining Tears X Wind",
+            "english": "Shining Tears X Wind",
+            "native": "シャイニング・ティアーズ・クロス・ウィンド"
+          }
+        },
+        {
+          "id": 2032,
+          "title": {
+            "romaji": "Wellber no Monogatari: Sisters of Wellber",
+            "english": null,
+            "native": "ウエルベールの物語 Sisters of Wellber"
+          }
+        },
+        {
+          "id": 2034,
+          "title": {
+            "romaji": "Lovely★Complex",
+            "english": "Lovely Complex",
+            "native": "ラブ★コン"
+          }
+        },
+        {
+          "id": 2035,
+          "title": {
+            "romaji": "Eikoku Koi Monogatari Emma: Molders-hen",
+            "english": "Emma: A Victorian Romance Second Act",
+            "native": "英國戀物語エマ ～メルダース編～"
+          }
+        },
+        {
+          "id": 2104,
+          "title": {
+            "romaji": "Seto no Hanayome",
+            "english": "My Bride is a Mermaid",
+            "native": "瀬戸の花嫁"
+          }
+        },
+        {
+          "id": 2105,
+          "title": {
+            "romaji": "Touka Gettan",
+            "english": "Toka Gettan, The Moonlight Lady Returns",
+            "native": "桃華月憚"
+          }
+        },
+        {
+          "id": 2106,
+          "title": {
+            "romaji": "Kiss Dum: ENGAGE planet",
+            "english": null,
+            "native": "キスダム -ENGAGE planet-"
+          }
+        },
+        {
+          "id": 2112,
+          "title": {
+            "romaji": "Over Drive",
+            "english": null,
+            "native": "オーバードライヴ"
+          }
+        },
+        {
+          "id": 2130,
+          "title": {
+            "romaji": "Kaibutsu Oujo",
+            "english": "Princess Resurrection",
+            "native": "怪物王女"
+          }
+        },
+        {
+          "id": 2142,
+          "title": {
+            "romaji": "Blue Dragon",
+            "english": null,
+            "native": "ブルー・ドラゴン"
+          }
+        },
+        {
+          "id": 2152,
+          "title": {
+            "romaji": "Oh! Edo Rocket",
+            "english": "Oh! Edo Rocket",
+            "native": "大江戸ロケット"
+          }
+        },
+        {
+          "id": 2153,
+          "title": {
+            "romaji": "Saint Beast: Kouin Jojishi Tenshi Tan",
+            "english": null,
+            "native": "セイント・ビースト～光陰叙事詩天使譚～"
+          }
+        },
+        {
+          "id": 2155,
+          "title": {
+            "romaji": "Kono Aozora ni Yakusoku wo: Youkoso Tsugumi Ryou e",
+            "english": null,
+            "native": "この青空に約束を― 〜ようこそつぐみ寮へ〜"
+          }
+        },
+        {
+          "id": 2156,
+          "title": {
+            "romaji": "Bakugan Battle Brawlers",
+            "english": "Bakugan Battle Brawlers",
+            "native": "爆丸バトルブローラーズ"
+          }
+        },
+        {
+          "id": 2157,
+          "title": {
+            "romaji": "Koutetsushin Jeeg",
+            "english": null,
+            "native": "鋼鉄神ジーグ"
+          }
+        },
+        {
+          "id": 2158,
+          "title": {
+            "romaji": "Terra e... (TV)",
+            "english": "Toward the Terra (TV)",
+            "native": "地球へ… (TV)"
+          }
+        },
+        {
+          "id": 2159,
+          "title": {
+            "romaji": "Ookiku Furikabutte",
+            "english": "Big Windup!",
+            "native": "おおきく振りかぶって"
+          }
+        },
+        {
+          "id": 2161,
+          "title": {
+            "romaji": "SKULL MAN",
+            "english": "The Skull Man",
+            "native": "スカルマン SKULL MAN"
+          }
+        },
+        {
+          "id": 2162,
+          "title": {
+            "romaji": "Koutetsu Sangokushi",
+            "english": null,
+            "native": "鋼鉄三国志"
+          }
+        },
+        {
+          "id": 2164,
+          "title": {
+            "romaji": "Dennou Coil",
+            "english": "Den-noh Coil",
+            "native": "電脳コイル"
+          }
+        },
+        {
+          "id": 2165,
+          "title": {
+            "romaji": "Gegege no Kitarou (2007)",
+            "english": null,
+            "native": "ゲゲゲの鬼太郎 (2007)"
+          }
+        },
+        {
+          "id": 2215,
+          "title": {
+            "romaji": "Kishin Taisen Gigantic Formula",
+            "english": null,
+            "native": "機神大戦 ギガンティック・フォーミュラ"
+          }
+        },
+        {
+          "id": 2620,
+          "title": {
+            "romaji": "Spider Riders: Yomigaeru Taiyou",
+            "english": "Spider Riders: Resurrected Sun",
+            "native": "スパイダーライダーズ ～よみがえる太陽～"
+          }
+        },
+        {
+          "id": 3073,
+          "title": {
+            "romaji": "Robby & Kerobby",
+            "english": "Robby & Kerobby",
+            "native": "ロビーとケロビー"
+          }
+        },
+        {
+          "id": 4444,
+          "title": {
+            "romaji": "Zero Duel Masters",
+            "english": null,
+            "native": "ゼロ デュエル・マスターズ"
+          }
+        },
+        {
+          "id": 7522,
+          "title": {
+            "romaji": "Taichi Senjimon",
+            "english": "Tai Chi Chasers",
+            "native": "太極千字文"
+          }
+        },
+        {
+          "id": 19467,
+          "title": {
+            "romaji": "Revbahaf Wang-gug Jaegeon-soelgi",
+            "english": null,
+            "native": "르브바하프 왕국 재건설기"
+          }
+        }
+      ]
+    }
+  }
+}

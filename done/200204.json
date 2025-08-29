@@ -1,0 +1,203 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 48,
+          "title": {
+            "romaji": ".hack//SIGN",
+            "english": ".hack//SIGN",
+            "native": ".hack//SIGN"
+          }
+        },
+        {
+          "id": 53,
+          "title": {
+            "romaji": "Ai Yori Aoshi",
+            "english": "Ai Yori Aoshi",
+            "native": "藍より青し"
+          }
+        },
+        {
+          "id": 59,
+          "title": {
+            "romaji": "Chobits",
+            "english": "Chobits",
+            "native": "ちょびっツ"
+          }
+        },
+        {
+          "id": 66,
+          "title": {
+            "romaji": "Azumanga Daiou THE ANIMATION",
+            "english": "Azumanga Daioh",
+            "native": "あずまんが大王 THE ANIMATION"
+          }
+        },
+        {
+          "id": 107,
+          "title": {
+            "romaji": "Ou Dorobou JING",
+            "english": "Jing: King of Bandits",
+            "native": "王ドロボウ JING"
+          }
+        },
+        {
+          "id": 122,
+          "title": {
+            "romaji": "Full Moon wo Sagashite",
+            "english": "Looking for the Full Moon",
+            "native": "満月をさがして"
+          }
+        },
+        {
+          "id": 153,
+          "title": {
+            "romaji": "Juuni Kokuki",
+            "english": "The Twelve Kingdoms",
+            "native": "十二国記"
+          }
+        },
+        {
+          "id": 162,
+          "title": {
+            "romaji": "Pitaten",
+            "english": "Pita-Ten",
+            "native": "ぴたテン"
+          }
+        },
+        {
+          "id": 175,
+          "title": {
+            "romaji": "Tokyo Underground",
+            "english": "Tokyo Underground",
+            "native": "東京アンダーグラウンド"
+          }
+        },
+        {
+          "id": 183,
+          "title": {
+            "romaji": "Whistle!",
+            "english": null,
+            "native": "ホイッスル！"
+          }
+        },
+        {
+          "id": 200,
+          "title": {
+            "romaji": "Tenshi na Konamaiki",
+            "english": null,
+            "native": "天使な小生意気"
+          }
+        },
+        {
+          "id": 260,
+          "title": {
+            "romaji": "HAPPY☆LESSON (TV)",
+            "english": null,
+            "native": "HAPPY☆LESSON"
+          }
+        },
+        {
+          "id": 306,
+          "title": {
+            "romaji": "Abenobashi Mahou☆Shoutengai",
+            "english": "Magical Shopping Arcade Abenobashi",
+            "native": "アベノ橋魔法☆商店街"
+          }
+        },
+        {
+          "id": 687,
+          "title": {
+            "romaji": "Tokyo Mew Mew",
+            "english": "Tokyo Mew Mew",
+            "native": "東京ミュウミュウ"
+          }
+        },
+        {
+          "id": 1132,
+          "title": {
+            "romaji": "Digimon Frontier",
+            "english": null,
+            "native": "デジモンフロンティア"
+          }
+        },
+        {
+          "id": 1133,
+          "title": {
+            "romaji": "Tenchi Muyou! GXP",
+            "english": "Tenchi Muyo! GXP",
+            "native": "天地無用! GXP"
+          }
+        },
+        {
+          "id": 1706,
+          "title": {
+            "romaji": "Gun Frontier",
+            "english": null,
+            "native": "ガンフロンティア"
+          }
+        },
+        {
+          "id": 1710,
+          "title": {
+            "romaji": "Rockman.EXE",
+            "english": "MegaMan NT Warrior",
+            "native": "ロックマン エグゼ"
+          }
+        },
+        {
+          "id": 1744,
+          "title": {
+            "romaji": "Wagamama☆Fairy Mirumo de Pon!",
+            "english": "Mirmo Zibang!",
+            "native": "わがまま☆フェアリー ミルモでポン!"
+          }
+        },
+        {
+          "id": 1745,
+          "title": {
+            "romaji": "Wild 7 another Bouryaku Unga",
+            "english": "Wild 7 Another",
+            "native": "ワイルド7 another 謀略運河"
+          }
+        },
+        {
+          "id": 3006,
+          "title": {
+            "romaji": "Atashin'chi",
+            "english": null,
+            "native": "あたしンち"
+          }
+        },
+        {
+          "id": 3271,
+          "title": {
+            "romaji": "Bakuto Sengen Daigander",
+            "english": "Daigunder",
+            "native": "爆闘宣言ダイガンダー"
+          }
+        },
+        {
+          "id": 8956,
+          "title": {
+            "romaji": "Denkou Chou Tokkyuu Hikarian",
+            "english": null,
+            "native": "電光超特急ヒカリアン"
+          }
+        },
+        {
+          "id": 18005,
+          "title": {
+            "romaji": "Forza! Hidemaru",
+            "english": null,
+            "native": "フォルツァ！ひでまる"
+          }
+        }
+      ]
+    }
+  }
+}

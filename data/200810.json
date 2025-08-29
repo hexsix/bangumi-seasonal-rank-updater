@@ -1,0 +1,331 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 3464,
+          "title": {
+            "romaji": "Kemeko DX",
+            "english": null,
+            "native": "ケメコデラックス！"
+          }
+        },
+        {
+          "id": 3653,
+          "title": {
+            "romaji": "Kurogane no Linebarrels",
+            "english": "Linebarrels of Iron",
+            "native": "鉄のラインバレル"
+          }
+        },
+        {
+          "id": 3654,
+          "title": {
+            "romaji": "Macademi WAsshoi!",
+            "english": null,
+            "native": "まかでみWAっしょい！"
+          }
+        },
+        {
+          "id": 3713,
+          "title": {
+            "romaji": "Jigoku Shoujo: Mitsuganae",
+            "english": "Hell Girl: Three Vessels",
+            "native": "地獄少女 三鼎"
+          }
+        },
+        {
+          "id": 3927,
+          "title": {
+            "romaji": "Kidou Senshi Gundam 00 2nd Season",
+            "english": "Mobile Suit Gundam 00 Second Season",
+            "native": "機動戦士ガンダム00 セカンドシーズン"
+          }
+        },
+        {
+          "id": 3958,
+          "title": {
+            "romaji": "Kannagi",
+            "english": "Kannagi: Crazy Shrine Maidens",
+            "native": "かんなぎ"
+          }
+        },
+        {
+          "id": 4066,
+          "title": {
+            "romaji": "Tytania",
+            "english": "Tytania",
+            "native": "タイタニア"
+          }
+        },
+        {
+          "id": 4087,
+          "title": {
+            "romaji": "Michiko to Hatchin",
+            "english": "Michiko & Hatchin",
+            "native": "ミチコとハッチン"
+          }
+        },
+        {
+          "id": 4181,
+          "title": {
+            "romaji": "CLANNAD: After Story",
+            "english": "Clannad: After Story",
+            "native": "ＣＬＡＮＮＡＤ ~After Story~ クラナド アフターストーリー"
+          }
+        },
+        {
+          "id": 4214,
+          "title": {
+            "romaji": "Rosario to Vampire Capu2",
+            "english": "Rosario + Vampire Capu2",
+            "native": "ロザリオとバンパイア Capu2"
+          }
+        },
+        {
+          "id": 4224,
+          "title": {
+            "romaji": "Toradora!",
+            "english": "Toradora!",
+            "native": "とらドラ！"
+          }
+        },
+        {
+          "id": 4477,
+          "title": {
+            "romaji": "Nodame Cantabile: Paris-hen",
+            "english": null,
+            "native": "のだめカンタービレ 巴里編"
+          }
+        },
+        {
+          "id": 4548,
+          "title": {
+            "romaji": "Yozakura Quartet",
+            "english": null,
+            "native": "夜桜四重奏 ～ヨザクラカルテット～"
+          }
+        },
+        {
+          "id": 4549,
+          "title": {
+            "romaji": "Hokuto no Ken: Raoh Gaiden Ten no Haoh",
+            "english": "Legends of the Dark King: A Fist of the North Star Story",
+            "native": "北斗の拳 ラオウ外伝 天の覇王"
+          }
+        },
+        {
+          "id": 4550,
+          "title": {
+            "romaji": "Hyakko",
+            "english": "Hyakko",
+            "native": "ヒャッコ"
+          }
+        },
+        {
+          "id": 4551,
+          "title": {
+            "romaji": "Hakushaku to Yousei",
+            "english": "Earl and Fairy",
+            "native": "伯爵と妖精"
+          }
+        },
+        {
+          "id": 4581,
+          "title": {
+            "romaji": "Shikabane Hime: Aka",
+            "english": "Corpse Princess: Aka",
+            "native": "屍姫 赫"
+          }
+        },
+        {
+          "id": 4654,
+          "title": {
+            "romaji": "Toaru Majutsu no Index",
+            "english": "A Certain Magical Index",
+            "native": "とある魔術の禁書目録"
+          }
+        },
+        {
+          "id": 4722,
+          "title": {
+            "romaji": "Skip Beat!",
+            "english": "Skip Beat!",
+            "native": "スキップ・ビート！"
+          }
+        },
+        {
+          "id": 4725,
+          "title": {
+            "romaji": "Ga-Rei-Zero",
+            "english": "Ga-Rei-Zero",
+            "native": "喰霊-零-"
+          }
+        },
+        {
+          "id": 4744,
+          "title": {
+            "romaji": "Akane-iro ni Somaru Saka",
+            "english": "The Hill Dyed Rose Madder",
+            "native": "あかね色に染まる坂"
+          }
+        },
+        {
+          "id": 4752,
+          "title": {
+            "romaji": "Vampire Knight Guilty",
+            "english": "Vampire Knight: Guilty",
+            "native": "ヴァンパイア騎士"
+          }
+        },
+        {
+          "id": 4789,
+          "title": {
+            "romaji": "ef: a tale of melodies.",
+            "english": "ef ~ A Tale of Melodies",
+            "native": "ef - a tale of melodies."
+          }
+        },
+        {
+          "id": 4814,
+          "title": {
+            "romaji": "Junjou Romantica 2",
+            "english": "Junjo Romantica 2",
+            "native": "純情ロマンチカ2(に)"
+          }
+        },
+        {
+          "id": 4879,
+          "title": {
+            "romaji": "Mouryou no Hako",
+            "english": null,
+            "native": "魍魎の匣"
+          }
+        },
+        {
+          "id": 4884,
+          "title": {
+            "romaji": "Tales of the Abyss",
+            "english": "Tales of the Abyss",
+            "native": "テイルズ オブ ジ アビス"
+          }
+        },
+        {
+          "id": 4898,
+          "title": {
+            "romaji": "Kuroshitsuji",
+            "english": "Black Butler",
+            "native": "黒執事"
+          }
+        },
+        {
+          "id": 4903,
+          "title": {
+            "romaji": "Kyou no Go no Ni (2008)",
+            "english": null,
+            "native": "今日の５の２ (2008)"
+          }
+        },
+        {
+          "id": 4975,
+          "title": {
+            "romaji": "ChäoS;HEAd",
+            "english": "ChäoS;HEAd",
+            "native": "カオスヘッド"
+          }
+        },
+        {
+          "id": 4981,
+          "title": {
+            "romaji": "Casshern Sins",
+            "english": "Casshern Sins",
+            "native": "キャシャーンSins"
+          }
+        },
+        {
+          "id": 5027,
+          "title": {
+            "romaji": "Stitch!",
+            "english": "Stitch!",
+            "native": "スティッチ！"
+          }
+        },
+        {
+          "id": 5039,
+          "title": {
+            "romaji": "Kurozuka",
+            "english": "Kurozuka",
+            "native": "黒塚"
+          }
+        },
+        {
+          "id": 5040,
+          "title": {
+            "romaji": "One Outs",
+            "english": "One Outs",
+            "native": "ワンナウツ"
+          }
+        },
+        {
+          "id": 5082,
+          "title": {
+            "romaji": "Battle Spirits: Shounen Toppa Bashin",
+            "english": null,
+            "native": "バトルスピリッツ 少年突破バシン"
+          }
+        },
+        {
+          "id": 5089,
+          "title": {
+            "romaji": "Noramimi 2",
+            "english": null,
+            "native": "のらみみ2"
+          }
+        },
+        {
+          "id": 5184,
+          "title": {
+            "romaji": "Negibouzu no Asatarou",
+            "english": null,
+            "native": "ねぎぼうずのあさたろう"
+          }
+        },
+        {
+          "id": 5231,
+          "title": {
+            "romaji": "Inazuma Eleven",
+            "english": null,
+            "native": "イナズマイレブン"
+          }
+        },
+        {
+          "id": 5234,
+          "title": {
+            "romaji": "Zettai Yareru Girisha Shinwa",
+            "english": null,
+            "native": "絶対やれるギリシャ神話"
+          }
+        },
+        {
+          "id": 5235,
+          "title": {
+            "romaji": "Live On CARDLIVER Kakeru",
+            "english": null,
+            "native": "ライブオン CARDLIVER 翔"
+          }
+        },
+        {
+          "id": 5262,
+          "title": {
+            "romaji": "Shugo Chara!! Doki",
+            "english": "Shugo Chara!! Doki",
+            "native": "しゅごキャラ！！どきっ"
+          }
+        }
+      ]
+    }
+  }
+}

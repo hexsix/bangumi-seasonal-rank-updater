@@ -1,0 +1,235 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 6875,
+          "title": {
+            "romaji": "Iron Man",
+            "english": null,
+            "native": "アイアンマン"
+          }
+        },
+        {
+          "id": 7662,
+          "title": {
+            "romaji": "Shinrei Tantei Yakumo",
+            "english": "Psychic Detective Yakumo",
+            "native": "心霊探偵 八雲"
+          }
+        },
+        {
+          "id": 7674,
+          "title": {
+            "romaji": "Bakuman.",
+            "english": "Bakuman.",
+            "native": "バクマン。"
+          }
+        },
+        {
+          "id": 7768,
+          "title": {
+            "romaji": "Tantei Opera Milky Holmes",
+            "english": "Detective Opera Milky Holmes",
+            "native": "探偵オペラ ミルキィホームズ"
+          }
+        },
+        {
+          "id": 8129,
+          "title": {
+            "romaji": "Kuragehime",
+            "english": "Princess Jellyfish",
+            "native": "海月姫"
+          }
+        },
+        {
+          "id": 8277,
+          "title": {
+            "romaji": "Hyakka Ryouran: Samurai Girls",
+            "english": "Samurai Girls",
+            "native": "百花繚乱 サムライガールズ"
+          }
+        },
+        {
+          "id": 8311,
+          "title": {
+            "romaji": "Tegami Bachi REVERSE",
+            "english": "Letter Bee Reverse",
+            "native": "テガミバチ REVERSE"
+          }
+        },
+        {
+          "id": 8407,
+          "title": {
+            "romaji": "Sora no Otoshimono: Forte",
+            "english": "Heaven's Lost Property: Forte",
+            "native": "そらのおとしものf（フォルテ）"
+          }
+        },
+        {
+          "id": 8424,
+          "title": {
+            "romaji": "MM!",
+            "english": "MM!",
+            "native": "えむえむっ!"
+          }
+        },
+        {
+          "id": 8449,
+          "title": {
+            "romaji": "Togainu no Chi",
+            "english": null,
+            "native": "咎狗の血"
+          }
+        },
+        {
+          "id": 8476,
+          "title": {
+            "romaji": "Otome Youkai Zakuro",
+            "english": "Zakuro",
+            "native": "おとめ妖怪 ざくろ"
+          }
+        },
+        {
+          "id": 8525,
+          "title": {
+            "romaji": "Kami nomi zo Shiru Sekai",
+            "english": "The World God Only Knows",
+            "native": "神のみぞ知るセカイ"
+          }
+        },
+        {
+          "id": 8536,
+          "title": {
+            "romaji": "FORTUNE ARTERIAL: Akai Yakusoku",
+            "english": null,
+            "native": "FORTUNE ARTERIAL 赤い約束"
+          }
+        },
+        {
+          "id": 8557,
+          "title": {
+            "romaji": "Shinryaku! Ika Musume",
+            "english": "Squid Girl",
+            "native": "侵略!イカ娘"
+          }
+        },
+        {
+          "id": 8726,
+          "title": {
+            "romaji": "Soredemo Machi wa Mawatteiru",
+            "english": "And Yet The Town Moves",
+            "native": "それでも町は廻っている"
+          }
+        },
+        {
+          "id": 8769,
+          "title": {
+            "romaji": "Ore no Imouto ga Konna ni Kawaii Wake ga Nai",
+            "english": "Oreimo",
+            "native": "俺の妹がこんなに可愛いわけがない"
+          }
+        },
+        {
+          "id": 8795,
+          "title": {
+            "romaji": "Panty & Stocking with Garterbelt",
+            "english": "Panty & Stocking with Garterbelt",
+            "native": "パンティ＆ストッキングwithガーターベルト"
+          }
+        },
+        {
+          "id": 8861,
+          "title": {
+            "romaji": "Yosuga no Sora",
+            "english": "Yosuga no Sora: In Solitude Where We are Least Alone",
+            "native": "ヨスガノソラ"
+          }
+        },
+        {
+          "id": 8934,
+          "title": {
+            "romaji": "STAR DRIVER: Kagayaki no Takuto",
+            "english": "Star Driver",
+            "native": "STAR DRIVER 輝きのタクト"
+          }
+        },
+        {
+          "id": 8937,
+          "title": {
+            "romaji": "Toaru Majutsu no Index II",
+            "english": "A Certain Magical Index II",
+            "native": "とある魔術の禁書目録II"
+          }
+        },
+        {
+          "id": 9065,
+          "title": {
+            "romaji": "Hakuouki Hekketsuroku",
+            "english": "Hakuoki ~Demon of the Fleeting Blossom~ Record of the Jade Blood",
+            "native": "薄桜鬼 碧血録"
+          }
+        },
+        {
+          "id": 9074,
+          "title": {
+            "romaji": "Arakawa Under the Bridge x Bridge",
+            "english": "Arakawa Under the Bridge x Bridge",
+            "native": "荒川アンダー ザ ブリッジ×ブリッジ"
+          }
+        },
+        {
+          "id": 9107,
+          "title": {
+            "romaji": "Pocket Monsters Best Wishes!",
+            "english": "Pokémon: Black & White",
+            "native": "ポケットモンスターベストウイッシュ"
+          }
+        },
+        {
+          "id": 9181,
+          "title": {
+            "romaji": "Motto To LOVE-Ru",
+            "english": "Motto To Love Ru",
+            "native": "もっと To LOVEる -とらぶる-"
+          }
+        },
+        {
+          "id": 9241,
+          "title": {
+            "romaji": "Super Robot Taisen OG: The Inspector",
+            "english": "Super Robot Wars OG: The Inspector",
+            "native": "スーパーロボット大戦OG -ジ・インスペクター-"
+          }
+        },
+        {
+          "id": 9346,
+          "title": {
+            "romaji": "Battle Spirits: Brave",
+            "english": null,
+            "native": "バトルスピリッツ ブレイヴ"
+          }
+        },
+        {
+          "id": 9441,
+          "title": {
+            "romaji": "Yumeiro Pâtissière SP Professional",
+            "english": "Yumeiro Patissiere SP Professional",
+            "native": "夢色パティシエールSP（スペシャル）プロフェッショナル"
+          }
+        },
+        {
+          "id": 9562,
+          "title": {
+            "romaji": "Tachumaru Gekijou",
+            "english": null,
+            "native": "たちゅまる劇場"
+          }
+        }
+      ]
+    }
+  }
+}

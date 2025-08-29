@@ -1,0 +1,259 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 15,
+          "title": {
+            "romaji": "Eyeshield 21",
+            "english": "Eyeshield 21",
+            "native": "アイシールド21"
+          }
+        },
+        {
+          "id": 16,
+          "title": {
+            "romaji": "Hachimitsu to Clover",
+            "english": "Honey and Clover",
+            "native": "ハチミツとクローバー"
+          }
+        },
+        {
+          "id": 27,
+          "title": {
+            "romaji": "Trinity Blood",
+            "english": "Trinity Blood",
+            "native": "トリニティ・ブラッド"
+          }
+        },
+        {
+          "id": 67,
+          "title": {
+            "romaji": "Basilisk: Kouga Ninpouchou",
+            "english": "Basilisk",
+            "native": "バジリスク 甲賀忍法帖"
+          }
+        },
+        {
+          "id": 126,
+          "title": {
+            "romaji": "Futakoi Alternative",
+            "english": "Futakoi Alternative",
+            "native": "フタコイ オルタナティブ"
+          }
+        },
+        {
+          "id": 149,
+          "title": {
+            "romaji": "LOVELESS",
+            "english": "Loveless",
+            "native": "LOVELESS"
+          }
+        },
+        {
+          "id": 177,
+          "title": {
+            "romaji": "Tsubasa Chronicle",
+            "english": "Tsubasa RESERVoir CHRoNiCLE",
+            "native": "ツバサ・クロニクル"
+          }
+        },
+        {
+          "id": 198,
+          "title": {
+            "romaji": "Speed Grapher",
+            "english": "Speed Grapher",
+            "native": "スピードグラファー"
+          }
+        },
+        {
+          "id": 237,
+          "title": {
+            "romaji": "Koukyoushihen Eureka Seven",
+            "english": "Eureka Seven",
+            "native": "交響詩篇エウレカセブン"
+          }
+        },
+        {
+          "id": 248,
+          "title": {
+            "romaji": "Ichigo 100%",
+            "english": "Strawberry 100%",
+            "native": "いちご100%"
+          }
+        },
+        {
+          "id": 308,
+          "title": {
+            "romaji": "Zettai Shounen",
+            "english": null,
+            "native": "絶対少年"
+          }
+        },
+        {
+          "id": 345,
+          "title": {
+            "romaji": "Eikoku Koi Monogatari Emma",
+            "english": "Emma: A Victorian Romance",
+            "native": "英國戀物語エマ"
+          }
+        },
+        {
+          "id": 412,
+          "title": {
+            "romaji": "Kore ga Watashi no Goshujin-sama",
+            "english": "He is My Master",
+            "native": "これが私の御主人様"
+          }
+        },
+        {
+          "id": 456,
+          "title": {
+            "romaji": "Gokujou Seitokai",
+            "english": "Best Student Council",
+            "native": "極上生徒会"
+          }
+        },
+        {
+          "id": 478,
+          "title": {
+            "romaji": "Sousei no Aquarion",
+            "english": "Aquarion",
+            "native": "創聖のアクエリオン"
+          }
+        },
+        {
+          "id": 479,
+          "title": {
+            "romaji": "Ueki no Housoku",
+            "english": "The Law of Ueki",
+            "native": "うえきの法則"
+          }
+        },
+        {
+          "id": 505,
+          "title": {
+            "romaji": "Fushigiboshi no☆Futagohime",
+            "english": "Twin Princesses of the Wonder Planet",
+            "native": "ふしぎ星の☆ふたご姫"
+          }
+        },
+        {
+          "id": 668,
+          "title": {
+            "romaji": "Koi Koi 7",
+            "english": "Koi Koi Seven",
+            "native": "こいこい7"
+          }
+        },
+        {
+          "id": 706,
+          "title": {
+            "romaji": "Comic Party Revolution",
+            "english": "Comic Party Revolution",
+            "native": "こみっくパーティー Revolution"
+          }
+        },
+        {
+          "id": 712,
+          "title": {
+            "romaji": "Zoids Genesis",
+            "english": "Zoids Genesis",
+            "native": "ゾイド ジェネシス"
+          }
+        },
+        {
+          "id": 738,
+          "title": {
+            "romaji": "MÄR",
+            "english": "Marchen Awakens Romance",
+            "native": "メル"
+          }
+        },
+        {
+          "id": 754,
+          "title": {
+            "romaji": "Yuki no Joou",
+            "english": "The Snow Queen",
+            "native": "雪の女王"
+          }
+        },
+        {
+          "id": 988,
+          "title": {
+            "romaji": "Shinshaku Sengoku Eiyuu Densetsu: Sanada Juu Yuushi The Animation",
+            "english": null,
+            "native": "新釈 戦国英雄伝説 眞田十勇士 The Animation"
+          }
+        },
+        {
+          "id": 1250,
+          "title": {
+            "romaji": "Erementar Gerad",
+            "english": "Elemental Gelade",
+            "native": "エレメンタルジェレイド"
+          }
+        },
+        {
+          "id": 1974,
+          "title": {
+            "romaji": "Glass no Kamen (2005)",
+            "english": "Glass Mask (2005)",
+            "native": "ガラスの仮面 (2005)"
+          }
+        },
+        {
+          "id": 2489,
+          "title": {
+            "romaji": "Onegai My Melody",
+            "english": "Onegai My Melody",
+            "native": "おねがいマイメロディ"
+          }
+        },
+        {
+          "id": 2523,
+          "title": {
+            "romaji": "IZUMO: Takeki Tsurugi no Senki",
+            "english": "Izumo: Flash of a Brave Sword",
+            "native": "IZUMO -猛き剣の閃記-"
+          }
+        },
+        {
+          "id": 4050,
+          "title": {
+            "romaji": "Kouchuu Ouja Mushiking: Mori no Tami no Densetsu",
+            "english": null,
+            "native": "甲虫王者ムシキング ～森の民の伝説～"
+          }
+        },
+        {
+          "id": 4416,
+          "title": {
+            "romaji": "Yuusha-Ou GaoGaiGar FINAL Grand Glorious Gathering",
+            "english": "King of Braves GaoGaiGar Final Grand Glorious Gathering",
+            "native": "勇者王ガオガイガーFINAL Grand Glorious Gathering"
+          }
+        },
+        {
+          "id": 8687,
+          "title": {
+            "romaji": "Doraemon (2005)",
+            "english": null,
+            "native": "ドラえもん (2005)"
+          }
+        },
+        {
+          "id": 170428,
+          "title": {
+            "romaji": "Wagamama☆Fairy Mirumo de Pon! Charming",
+            "english": null,
+            "native": "わがまま☆フェアリー ミルモでポン! ちゃあみんぐ"
+          }
+        }
+      ]
+    }
+  }
+}

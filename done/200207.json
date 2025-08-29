@@ -1,0 +1,91 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 7,
+          "title": {
+            "romaji": "Witch Hunter ROBIN",
+            "english": "Witch Hunter ROBIN",
+            "native": "Witch Hunter ROBIN"
+          }
+        },
+        {
+          "id": 296,
+          "title": {
+            "romaji": "Dragon Drive",
+            "english": null,
+            "native": "ドラゴンドライブ"
+          }
+        },
+        {
+          "id": 419,
+          "title": {
+            "romaji": "Samurai Deeper Kyou",
+            "english": "Samurai Deeper Kyo",
+            "native": "Samurai Deeper Kyo"
+          }
+        },
+        {
+          "id": 529,
+          "title": {
+            "romaji": "Saishuu Heiki Kanojo",
+            "english": "She, The Ultimate Weapon",
+            "native": "最終兵器彼女"
+          }
+        },
+        {
+          "id": 721,
+          "title": {
+            "romaji": "Princess Tutu",
+            "english": "Princess Tutu",
+            "native": "プリンセスチュチュ"
+          }
+        },
+        {
+          "id": 1127,
+          "title": {
+            "romaji": "UFO Princess Valkyrie",
+            "english": "UFO Ultramaiden Valkyrie",
+            "native": "円盤皇女ワるきゅーレ"
+          }
+        },
+        {
+          "id": 1623,
+          "title": {
+            "romaji": "G-on Riders",
+            "english": null,
+            "native": "G-onらいだーす"
+          }
+        },
+        {
+          "id": 1628,
+          "title": {
+            "romaji": "Maou Dante",
+            "english": "Demon Lord Dante",
+            "native": "魔王ダンテ"
+          }
+        },
+        {
+          "id": 3355,
+          "title": {
+            "romaji": "Fortune Dogs",
+            "english": null,
+            "native": "ふぉうちゅんドッグす"
+          }
+        },
+        {
+          "id": 10237,
+          "title": {
+            "romaji": "Ki-Fighter Taerang",
+            "english": "Ki Fighter",
+            "native": "キ・ファイター テラン"
+          }
+        }
+      ]
+    }
+  }
+}

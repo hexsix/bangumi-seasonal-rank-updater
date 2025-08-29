@@ -1,0 +1,275 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 26,
+          "title": {
+            "romaji": "TEXHNOLYZE",
+            "english": "Texhnolyze",
+            "native": "TEXHNOLYZE"
+          }
+        },
+        {
+          "id": 61,
+          "title": {
+            "romaji": "D.N.Angel",
+            "english": "D.N.Angel",
+            "native": "Ｄ・Ｎ・ＡＮＧＥＬ"
+          }
+        },
+        {
+          "id": 97,
+          "title": {
+            "romaji": "Last Exile",
+            "english": "Last Exile",
+            "native": "ラストエグザイル"
+          }
+        },
+        {
+          "id": 113,
+          "title": {
+            "romaji": "Uchuu no Stellvia",
+            "english": "Stellvia of the Universe",
+            "native": "宇宙のステルヴィア"
+          }
+        },
+        {
+          "id": 167,
+          "title": {
+            "romaji": "Scrapped Princess",
+            "english": "Scrapped Princess",
+            "native": "スクラップド・プリンセス"
+          }
+        },
+        {
+          "id": 178,
+          "title": {
+            "romaji": "Ultra Maniac",
+            "english": "Ultramaniac - Magical Girl",
+            "native": "ウルトラマニアック"
+          }
+        },
+        {
+          "id": 230,
+          "title": {
+            "romaji": "Air Master",
+            "english": "Air Master",
+            "native": "エアマスター"
+          }
+        },
+        {
+          "id": 236,
+          "title": {
+            "romaji": "E'S OTHERWISE",
+            "english": "E's Otherwise",
+            "native": "E'S OTHERWISE"
+          }
+        },
+        {
+          "id": 250,
+          "title": {
+            "romaji": "Konjiki no Gash Bell!!",
+            "english": "Zatch Bell!",
+            "native": "金色のガッシュベル!!"
+          }
+        },
+        {
+          "id": 271,
+          "title": {
+            "romaji": "Gad Guard",
+            "english": "Gad Guard",
+            "native": "ガドガード"
+          }
+        },
+        {
+          "id": 292,
+          "title": {
+            "romaji": "Dear Boys",
+            "english": "Hoop Days",
+            "native": "ディア・ボーイズ"
+          }
+        },
+        {
+          "id": 335,
+          "title": {
+            "romaji": "Matantei Loki RAGNAROK",
+            "english": "Mythical Detective Loki Ragnarok",
+            "native": "魔探偵ロキ RAGNAROK"
+          }
+        },
+        {
+          "id": 407,
+          "title": {
+            "romaji": "Tantei Gakuen Q",
+            "english": "Detective School Q",
+            "native": "探偵学園Q"
+          }
+        },
+        {
+          "id": 427,
+          "title": {
+            "romaji": "Kaleido Star",
+            "english": "Kaleido Star",
+            "native": "カレイドスター"
+          }
+        },
+        {
+          "id": 486,
+          "title": {
+            "romaji": "Kino no Tabi: the Beautiful World",
+            "english": "Kino's Journey",
+            "native": "キノの旅 -the Beautiful World-"
+          }
+        },
+        {
+          "id": 521,
+          "title": {
+            "romaji": "Mermaid Melody: Pichi Pichi Pitch",
+            "english": null,
+            "native": "マーメイドメロディー ぴちぴちピッチ"
+          }
+        },
+        {
+          "id": 545,
+          "title": {
+            "romaji": "Mousou Kagaku Series: Wandaba Style",
+            "english": "Wacky Science Fiction Series: Wandaba Style",
+            "native": "妄想科学シリーズ ワンダバスタイル"
+          }
+        },
+        {
+          "id": 610,
+          "title": {
+            "romaji": "Popotan",
+            "english": "Popotan",
+            "native": "ぽぽたん"
+          }
+        },
+        {
+          "id": 618,
+          "title": {
+            "romaji": "Juubee Ninpuuchou: Ryuuhougyoku-hen",
+            "english": "Ninja Scroll: The Series",
+            "native": "獣兵衛忍風帖「龍宝玉篇」"
+          }
+        },
+        {
+          "id": 840,
+          "title": {
+            "romaji": "Narue no Sekai",
+            "english": "The World of Narue",
+            "native": "成恵の世界"
+          }
+        },
+        {
+          "id": 971,
+          "title": {
+            "romaji": "Astro Boy Tetsuwan Atom",
+            "english": "Astro Boy (2003)",
+            "native": "アストロボーイ・鉄腕アトム"
+          }
+        },
+        {
+          "id": 1037,
+          "title": {
+            "romaji": "Saint Beast",
+            "english": null,
+            "native": "セイント・ビースト～聖獣降臨編～"
+          }
+        },
+        {
+          "id": 1083,
+          "title": {
+            "romaji": "Ningen Kousaten",
+            "english": "Human Crossing",
+            "native": "人間交差点"
+          }
+        },
+        {
+          "id": 1713,
+          "title": {
+            "romaji": "Submarine Super 99",
+            "english": null,
+            "native": "サブマリン スーパー９９"
+          }
+        },
+        {
+          "id": 1816,
+          "title": {
+            "romaji": "Sonic X",
+            "english": "Sonic X",
+            "native": "ソニックX"
+          }
+        },
+        {
+          "id": 2382,
+          "title": {
+            "romaji": "FIRESTORM",
+            "english": null,
+            "native": "FIRESTORM　ファイアーストーム"
+          }
+        },
+        {
+          "id": 2735,
+          "title": {
+            "romaji": "Mugen Senki Portriss",
+            "english": null,
+            "native": "無限戦記ポトリス"
+          }
+        },
+        {
+          "id": 2738,
+          "title": {
+            "romaji": "Kasumin 3rd Series",
+            "english": null,
+            "native": "カスミン (第3シリーズ)"
+          }
+        },
+        {
+          "id": 3637,
+          "title": {
+            "romaji": "Bouken Yuuki Pluster World",
+            "english": null,
+            "native": "冒険遊記プラスターワールド"
+          }
+        },
+        {
+          "id": 5071,
+          "title": {
+            "romaji": "CROKET!",
+            "english": null,
+            "native": "コロッケ！"
+          }
+        },
+        {
+          "id": 5129,
+          "title": {
+            "romaji": "Jikuu Boukenki Zentrix",
+            "english": "Zentrix",
+            "native": "時空冒険記　ゼントリックス"
+          }
+        },
+        {
+          "id": 12359,
+          "title": {
+            "romaji": "Pecola",
+            "english": "Pecola",
+            "native": "ペコラ"
+          }
+        },
+        {
+          "id": 12809,
+          "title": {
+            "romaji": "Wonder Bebil-kun",
+            "english": null,
+            "native": "ワンダーベビルくん"
+          }
+        }
+      ]
+    }
+  }
+}

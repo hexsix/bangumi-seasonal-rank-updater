@@ -1,0 +1,179 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 50,
+          "title": {
+            "romaji": "Aa! Megami-sama! (TV)",
+            "english": "Oh! My Goddess (TV)",
+            "native": "ああっ女神さまっ (TV)"
+          }
+        },
+        {
+          "id": 101,
+          "title": {
+            "romaji": "AIR",
+            "english": "Air",
+            "native": "AIR"
+          }
+        },
+        {
+          "id": 141,
+          "title": {
+            "romaji": "Jinki:Extend",
+            "english": "Jinki:Extend",
+            "native": "ジンキ・エクステンド"
+          }
+        },
+        {
+          "id": 157,
+          "title": {
+            "romaji": "Mahou Sensei Negima!",
+            "english": "Negima!",
+            "native": "魔法先生 ネギま！"
+          }
+        },
+        {
+          "id": 184,
+          "title": {
+            "romaji": "Xenosaga: THE ANIMATION",
+            "english": "Xenosaga: The Animation",
+            "native": "ゼノサーガ THE ANIMATION"
+          }
+        },
+        {
+          "id": 325,
+          "title": {
+            "romaji": "Peach Girl",
+            "english": "Peach Girl: Super Pop Love Hurricane",
+            "native": "ピーチガール"
+          }
+        },
+        {
+          "id": 342,
+          "title": {
+            "romaji": "Starship Operators",
+            "english": null,
+            "native": "スターシップ・オペレーターズ"
+          }
+        },
+        {
+          "id": 349,
+          "title": {
+            "romaji": "Magical Canan",
+            "english": "Magical Kanan",
+            "native": "まじかるカナン"
+          }
+        },
+        {
+          "id": 364,
+          "title": {
+            "romaji": "Gallery Fake",
+            "english": null,
+            "native": "ギャラリーフェイク"
+          }
+        },
+        {
+          "id": 406,
+          "title": {
+            "romaji": "BUZZER BEATER",
+            "english": null,
+            "native": "BUZZER BEATER"
+          }
+        },
+        {
+          "id": 487,
+          "title": {
+            "romaji": "GIRLS Bravo: second season",
+            "english": null,
+            "native": "GIRLSブラボー second season"
+          }
+        },
+        {
+          "id": 519,
+          "title": {
+            "romaji": "Mahoraba: Heartful days",
+            "english": "Mahoraba ~HeartfuL days~",
+            "native": "まほらば ~Heartful days~"
+          }
+        },
+        {
+          "id": 928,
+          "title": {
+            "romaji": "Transformers: Galaxy Force",
+            "english": "Transformers: Cybertron",
+            "native": "トランスフォーマー ギャラクシーフォース"
+          }
+        },
+        {
+          "id": 960,
+          "title": {
+            "romaji": "Shin Chou Kyou Ryo: Condor Hero II",
+            "english": "Legend of the Condor Hero II",
+            "native": "神鵰俠侶 II 襄陽風雲"
+          }
+        },
+        {
+          "id": 1532,
+          "title": {
+            "romaji": "Suki na Mono wa Suki Dakara Shou ga Nai!!",
+            "english": "Sukisho",
+            "native": "好きなものは好きだからしょうがない！！"
+          }
+        },
+        {
+          "id": 1929,
+          "title": {
+            "romaji": "Futari wa Precure: Max Heart",
+            "english": "PreCure Max Heart",
+            "native": "ふたりはプリキュア Max Heart"
+          }
+        },
+        {
+          "id": 2308,
+          "title": {
+            "romaji": "Lime-iro Ryuukitan X CROSS: Koi",
+            "english": null,
+            "native": "らいむいろ流奇譚 X CROSS ～恋"
+          }
+        },
+        {
+          "id": 2707,
+          "title": {
+            "romaji": "Majime ni Fumajime Kaiketsu Zorori",
+            "english": null,
+            "native": "まじめにふまじめ　かいけつゾロリ"
+          }
+        },
+        {
+          "id": 4049,
+          "title": {
+            "romaji": "Pandalian",
+            "english": "Pandalian",
+            "native": "魔豆奇伝パンダリアン"
+          }
+        },
+        {
+          "id": 4667,
+          "title": {
+            "romaji": "B-Densetsu! Battle B-Daman Enkon",
+            "english": "Battle B-Daman: Fire Spirits",
+            "native": "B-伝説! バトルビーダマン 炎魂"
+          }
+        },
+        {
+          "id": 108745,
+          "title": {
+            "romaji": "Akuei to Gacchinpo: Tenkomori",
+            "english": null,
+            "native": "アークエとガッチンポー てんこもり"
+          }
+        }
+      ]
+    }
+  }
+}

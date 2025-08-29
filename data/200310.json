@@ -1,0 +1,267 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 56,
+          "title": {
+            "romaji": "Avenger",
+            "english": null,
+            "native": "アヴェンジャー"
+          }
+        },
+        {
+          "id": 60,
+          "title": {
+            "romaji": "Chrno Crusade",
+            "english": "Chrono Crusade",
+            "native": "クロノクルセイド"
+          }
+        },
+        {
+          "id": 121,
+          "title": {
+            "romaji": "Hagane no Renkinjutsushi",
+            "english": "Fullmetal Alchemist",
+            "native": "鋼の錬金術師"
+          }
+        },
+        {
+          "id": 130,
+          "title": {
+            "romaji": "Saiyuuki RELOAD",
+            "english": "Saiyuki Reload",
+            "native": "最遊記RELOAD"
+          }
+        },
+        {
+          "id": 134,
+          "title": {
+            "romaji": "GUNSLINGER GIRL",
+            "english": "Gunslinger Girl",
+            "native": "GUNSLINGER GIRL"
+          }
+        },
+        {
+          "id": 147,
+          "title": {
+            "romaji": "Kimi ga Nozomu Eien",
+            "english": "Rumbling Hearts",
+            "native": "君が望む永遠"
+          }
+        },
+        {
+          "id": 161,
+          "title": {
+            "romaji": "PEACE MAKER Kurogane",
+            "english": "Peacemaker",
+            "native": "PEACE MAKER 鐵"
+          }
+        },
+        {
+          "id": 169,
+          "title": {
+            "romaji": "Shingetsutan Tsukihime",
+            "english": "Lunar Legend Tsukihime",
+            "native": "真月譚 月姫"
+          }
+        },
+        {
+          "id": 193,
+          "title": {
+            "romaji": "Maburaho",
+            "english": "Maburaho",
+            "native": "まぶらほ"
+          }
+        },
+        {
+          "id": 209,
+          "title": {
+            "romaji": "R.O.D -THE TV-",
+            "english": "R.O.D -THE TV-",
+            "native": "R.O.D -THE TV-"
+          }
+        },
+        {
+          "id": 267,
+          "title": {
+            "romaji": "Gungrave",
+            "english": "Gungrave",
+            "native": "ガングレイヴ"
+          }
+        },
+        {
+          "id": 279,
+          "title": {
+            "romaji": "Kyougoku Natsuhiko: Kousetsu Hyaku Monogatari",
+            "english": "Requiem from the Darkness",
+            "native": "京極夏彦 巷説百物語"
+          }
+        },
+        {
+          "id": 329,
+          "title": {
+            "romaji": "Planetes",
+            "english": "Planetes",
+            "native": "プラネテス"
+          }
+        },
+        {
+          "id": 344,
+          "title": {
+            "romaji": "Futatsu no Spica",
+            "english": "Twin Spica",
+            "native": "ふたつのスピカ"
+          }
+        },
+        {
+          "id": 385,
+          "title": {
+            "romaji": "Gilgamesh",
+            "english": null,
+            "native": "ギルガメッシュ"
+          }
+        },
+        {
+          "id": 394,
+          "title": {
+            "romaji": "Ai Yori Aoshi: Enishi",
+            "english": "Ai Yori Aoshi: Enishi",
+            "native": "藍より青し～縁～"
+          }
+        },
+        {
+          "id": 497,
+          "title": {
+            "romaji": "Yami to Boushi to Hon no Tabibito",
+            "english": "YAMIBO: Darkness, the Hat, and Travelers of the Books",
+            "native": "ヤミと帽子と本の旅人"
+          }
+        },
+        {
+          "id": 592,
+          "title": {
+            "romaji": "Popolocrois",
+            "english": null,
+            "native": "ポポロクロイス"
+          }
+        },
+        {
+          "id": 620,
+          "title": {
+            "romaji": "Takahashi Rumiko Gekijou: Ningyo no Mori",
+            "english": "Mermaid Forest (TV)",
+            "native": "高橋留美子劇場 人魚の森"
+          }
+        },
+        {
+          "id": 709,
+          "title": {
+            "romaji": "Mujin Wakusei Survive",
+            "english": null,
+            "native": "無人惑星サヴァイヴ"
+          }
+        },
+        {
+          "id": 1050,
+          "title": {
+            "romaji": "Bobobo-bo Bo-bobo",
+            "english": "Bobobo-bo Bo-bobo",
+            "native": "ボボボーボ・ボーボボ"
+          }
+        },
+        {
+          "id": 1103,
+          "title": {
+            "romaji": "Shinkon Gattai Godannar",
+            "english": "Marriage of God & Soul Godannar!!",
+            "native": "神魂合体ゴーダンナー！！"
+          }
+        },
+        {
+          "id": 1128,
+          "title": {
+            "romaji": "UFO Princess Valkyrie 2: Juunigatsu no Yasoukyoku",
+            "english": "UFO Ultramaiden Valkyrie 2: December Nocturne",
+            "native": "円盤皇女ワるきゅーレ 十二月の夜想曲"
+          }
+        },
+        {
+          "id": 1373,
+          "title": {
+            "romaji": "Black Jack Specials: Inochi wo Meguru Yottsu no Kiseki",
+            "english": null,
+            "native": "ブラック・ジャックスペシャル ～命をめぐる4つの奇跡～"
+          }
+        },
+        {
+          "id": 1490,
+          "title": {
+            "romaji": "Ginga Tetsudou Monogatari",
+            "english": "The Galaxy Railways",
+            "native": "銀河鉄道物語"
+          }
+        },
+        {
+          "id": 2108,
+          "title": {
+            "romaji": "Rockman.EXE AXESS",
+            "english": "MegaMan: NT Warrior AXESS",
+            "native": "ロックマンエグゼ AXESS"
+          }
+        },
+        {
+          "id": 2501,
+          "title": {
+            "romaji": "Papuwa",
+            "english": "Papuwa",
+            "native": "パプワ"
+          }
+        },
+        {
+          "id": 2742,
+          "title": {
+            "romaji": "Omoikkiri Kagaku Adventure Sou Nanda!",
+            "english": "Full-Blast Science Adventure: So That's How It Is!",
+            "native": "おもいっきり科学アドベンチャー そーなんだ!"
+          }
+        },
+        {
+          "id": 3101,
+          "title": {
+            "romaji": "F-ZERO: Falcon Densetsu",
+            "english": "F-Zero: GP Legend",
+            "native": "F-ZERO ファルコン伝説"
+          }
+        },
+        {
+          "id": 3772,
+          "title": {
+            "romaji": "Cubix",
+            "english": "Cubix",
+            "native": "큐빅스"
+          }
+        },
+        {
+          "id": 7751,
+          "title": {
+            "romaji": "Midnight Horror School",
+            "english": null,
+            "native": "ミッドナイトホラースクール"
+          }
+        },
+        {
+          "id": 170426,
+          "title": {
+            "romaji": "Wagamama☆Fairy Mirumo de Pon! Golden",
+            "english": null,
+            "native": "わがまま☆フェアリー ミルモでポン! ごおるでん"
+          }
+        }
+      ]
+    }
+  }
+}

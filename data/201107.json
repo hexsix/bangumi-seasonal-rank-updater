@@ -1,0 +1,195 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 6920,
+          "title": {
+            "romaji": "Blade",
+            "english": "Blade",
+            "native": "ブレイド"
+          }
+        },
+        {
+          "id": 8516,
+          "title": {
+            "romaji": "Baka to Test to Shoukanjuu Ni!",
+            "english": "Baka and Test - Summon the Beasts 2",
+            "native": "バカとテストと召喚獣 にっ！"
+          }
+        },
+        {
+          "id": 8915,
+          "title": {
+            "romaji": "Dantalian no Shoka",
+            "english": "The Mystic Archives of Dantalian",
+            "native": "ダンタリアンの書架"
+          }
+        },
+        {
+          "id": 9750,
+          "title": {
+            "romaji": "Itsuka Tenma no Kuro Usagi",
+            "english": "A Dark Rabbit has Seven Lives",
+            "native": "いつか天魔の黒ウサギ"
+          }
+        },
+        {
+          "id": 9934,
+          "title": {
+            "romaji": "Nekogami Yaoyorozu",
+            "english": "The Everyday Tales of a Cat God",
+            "native": "猫神やおよろず"
+          }
+        },
+        {
+          "id": 9938,
+          "title": {
+            "romaji": "Ikoku Meiro no Croisée",
+            "english": "Croisée in a Foreign Labyrinth ~ The Animation",
+            "native": "異国迷路のクロワーゼ"
+          }
+        },
+        {
+          "id": 10049,
+          "title": {
+            "romaji": "Nurarihyon no Mago: Sennen Makyou",
+            "english": "Nura: Rise of the Yokai Clan - Demon Capital",
+            "native": "ぬらりひょんの孫 千年魔京"
+          }
+        },
+        {
+          "id": 10110,
+          "title": {
+            "romaji": "Mayo Chiki!",
+            "english": "Mayo Chiki!",
+            "native": "まよチキ!"
+          }
+        },
+        {
+          "id": 10156,
+          "title": {
+            "romaji": "Sacred Seven",
+            "english": null,
+            "native": "セイクリッドセブン"
+          }
+        },
+        {
+          "id": 10161,
+          "title": {
+            "romaji": "NO.6",
+            "english": "No.6",
+            "native": "NO.6"
+          }
+        },
+        {
+          "id": 10162,
+          "title": {
+            "romaji": "Usagi Drop",
+            "english": "Bunny Drop",
+            "native": "うさぎドロップ"
+          }
+        },
+        {
+          "id": 10217,
+          "title": {
+            "romaji": "Kaitou Tenshi Twin Angel: Kyun Kyun☆Tokimeki Paradise!!",
+            "english": "Twin Angel: Twinkle Paradise",
+            "native": "快盗天使ツインエンジェル 〜キュンキュン☆ときめきパラダイス!!〜"
+          }
+        },
+        {
+          "id": 10278,
+          "title": {
+            "romaji": "THE IDOLM@STER",
+            "english": "The Idol Master",
+            "native": "アイドルマスター"
+          }
+        },
+        {
+          "id": 10321,
+          "title": {
+            "romaji": "Uta no☆Prince-sama♪ Maji LOVE 1000%",
+            "english": "Uta no Prince Sama",
+            "native": "うたの☆プリンスさまっ♪ マジLOVE1000%"
+          }
+        },
+        {
+          "id": 10372,
+          "title": {
+            "romaji": "Kamisama Dolls",
+            "english": null,
+            "native": "神様ドォルズ"
+          }
+        },
+        {
+          "id": 10379,
+          "title": {
+            "romaji": "Natsume Yuujinchou San",
+            "english": "Natsume's Book of Friends Season 3",
+            "native": "夏目友人帳 参"
+          }
+        },
+        {
+          "id": 10465,
+          "title": {
+            "romaji": "Manyuu Hikenchou",
+            "english": "Manyu Scroll",
+            "native": "魔乳秘剣帖"
+          }
+        },
+        {
+          "id": 10490,
+          "title": {
+            "romaji": "BLOOD-C",
+            "english": "Blood-C",
+            "native": "BLOOD-C"
+          }
+        },
+        {
+          "id": 10495,
+          "title": {
+            "romaji": "Yuru Yuri",
+            "english": "YuruYuri",
+            "native": "ゆるゆり"
+          }
+        },
+        {
+          "id": 10568,
+          "title": {
+            "romaji": "Kamisama no Memochou",
+            "english": "Heaven's Memo Pad",
+            "native": "神様のメモ帳"
+          }
+        },
+        {
+          "id": 10572,
+          "title": {
+            "romaji": "Ro-Kyu-Bu!",
+            "english": "Ro-Kyu-Bu ~ Fast Break!",
+            "native": "ロウきゅーぶ!"
+          }
+        },
+        {
+          "id": 10611,
+          "title": {
+            "romaji": "R-15",
+            "english": null,
+            "native": "あーるじゅうご"
+          }
+        },
+        {
+          "id": 10721,
+          "title": {
+            "romaji": "Mawaru Penguindrum",
+            "english": "Penguindrum",
+            "native": "輪るピングドラム"
+          }
+        }
+      ]
+    }
+  }
+}

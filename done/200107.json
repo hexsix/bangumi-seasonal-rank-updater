@@ -1,0 +1,123 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 120,
+          "title": {
+            "romaji": "Fruits Basket",
+            "english": "Fruits Basket",
+            "native": "フルーツバスケット"
+          }
+        },
+        {
+          "id": 154,
+          "title": {
+            "romaji": "Shaman King",
+            "english": "Shaman King",
+            "native": "シャーマンキング"
+          }
+        },
+        {
+          "id": 168,
+          "title": {
+            "romaji": "Scryed",
+            "english": "s-CRY-ed",
+            "native": "スクライド"
+          }
+        },
+        {
+          "id": 397,
+          "title": {
+            "romaji": "Seikai no Senki II",
+            "english": "Banner of the Stars II",
+            "native": "星界の戦旗 II"
+          }
+        },
+        {
+          "id": 509,
+          "title": {
+            "romaji": "I My Me! Strawberry Eggs",
+            "english": null,
+            "native": "あぃまぃみぃ！ストロベリー・エッグ"
+          }
+        },
+        {
+          "id": 551,
+          "title": {
+            "romaji": "Grappler Baki: Saidai Tournament-hen",
+            "english": "Grappler Baki Maximum Tournament",
+            "native": "グラップラー刃牙(バキ) 最大トーナメント編"
+          }
+        },
+        {
+          "id": 952,
+          "title": {
+            "romaji": "Magical Nyan Nyan Taruto",
+            "english": "Magical Meow Meow Taruto",
+            "native": "魔法少女猫[まじかる にゃん にゃん]たると"
+          }
+        },
+        {
+          "id": 1098,
+          "title": {
+            "romaji": "SAMURAI GIRL Real Bout High School",
+            "english": "Samurai Girl Real Bout High School",
+            "native": "SAMURAI GIRL　リアルバウトハイスクール"
+          }
+        },
+        {
+          "id": 1676,
+          "title": {
+            "romaji": "Cosmo Warrior Zero",
+            "english": "Cosmo Warrior Zero",
+            "native": "コスモウォーリアー零"
+          }
+        },
+        {
+          "id": 1677,
+          "title": {
+            "romaji": "Young Harlock o Oe! Cosmo Warrior Zero Gaiden",
+            "english": null,
+            "native": "ヤングハーロックを追え! コスモウォーリアー零外伝"
+          }
+        },
+        {
+          "id": 4940,
+          "title": {
+            "romaji": "Sabaku no Kaizoku! Captain Kuppa",
+            "english": "Captain Kuppa",
+            "native": "砂漠の海賊！ キャプテンクッパ"
+          }
+        },
+        {
+          "id": 6625,
+          "title": {
+            "romaji": "Nono-chan",
+            "english": null,
+            "native": "ののちゃん"
+          }
+        },
+        {
+          "id": 10360,
+          "title": {
+            "romaji": "Kinniku Banzuke: Kongou-kun no Daibouken!",
+            "english": null,
+            "native": "筋肉番付 金剛くんの大冒険!"
+          }
+        },
+        {
+          "id": 11525,
+          "title": {
+            "romaji": "Mamimume★Mogacho",
+            "english": null,
+            "native": "まみむめ★もがちょ"
+          }
+        }
+      ]
+    }
+  }
+}

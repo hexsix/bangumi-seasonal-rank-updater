@@ -1,0 +1,179 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 1688,
+          "title": {
+            "romaji": "Nanatsu-iro★Drops",
+            "english": null,
+            "native": "ななついろ★ドロップス"
+          }
+        },
+        {
+          "id": 1726,
+          "title": {
+            "romaji": "Devil May Cry",
+            "english": "Devil May Cry",
+            "native": "デビル メイ クライ"
+          }
+        },
+        {
+          "id": 1840,
+          "title": {
+            "romaji": "Zero no Tsukaima: Futatsuki no Kishi",
+            "english": "The Familiar of Zero: Knight of the Twin Moons",
+            "native": "ゼロの使い魔 ～双月の騎士～"
+          }
+        },
+        {
+          "id": 1889,
+          "title": {
+            "romaji": "Higurashi no Naku Koro ni Kai",
+            "english": "When They Cry Kai",
+            "native": "ひぐらしのなく頃に解"
+          }
+        },
+        {
+          "id": 2216,
+          "title": {
+            "romaji": "Shigurui",
+            "english": "Shigurui: Death Frenzy",
+            "native": "シグルイ"
+          }
+        },
+        {
+          "id": 2246,
+          "title": {
+            "romaji": "Mononoke",
+            "english": "Mononoke",
+            "native": "モノノ怪"
+          }
+        },
+        {
+          "id": 2251,
+          "title": {
+            "romaji": "Baccano!",
+            "english": "Baccano!",
+            "native": "バッカーノ！"
+          }
+        },
+        {
+          "id": 2367,
+          "title": {
+            "romaji": "Moetan",
+            "english": null,
+            "native": "もえたん"
+          }
+        },
+        {
+          "id": 2404,
+          "title": {
+            "romaji": "Zombie-Loan",
+            "english": "Zombie Loan",
+            "native": "ゾンビローン"
+          }
+        },
+        {
+          "id": 2476,
+          "title": {
+            "romaji": "School Days (TV)",
+            "english": "School Days (TV)",
+            "native": "School Days (TV)"
+          }
+        },
+        {
+          "id": 2552,
+          "title": {
+            "romaji": "Tetsuko no Tabi",
+            "english": null,
+            "native": "鉄子の旅"
+          }
+        },
+        {
+          "id": 2564,
+          "title": {
+            "romaji": "CODE-E",
+            "english": null,
+            "native": "CODE-E"
+          }
+        },
+        {
+          "id": 2602,
+          "title": {
+            "romaji": "Kenkou Zenrakei Suieibu Umishou",
+            "english": null,
+            "native": "ケンコー全裸系水泳部 ウミショー"
+          }
+        },
+        {
+          "id": 2603,
+          "title": {
+            "romaji": "Mushi-Uta",
+            "english": "Mushi-Uta",
+            "native": "ムシウタ"
+          }
+        },
+        {
+          "id": 2604,
+          "title": {
+            "romaji": "Sky Girls",
+            "english": null,
+            "native": "スカイガールズ"
+          }
+        },
+        {
+          "id": 2605,
+          "title": {
+            "romaji": "Sayonara Zetsubou Sensei",
+            "english": "Sayonara, Zetsubou-Sensei",
+            "native": "さよなら絶望先生"
+          }
+        },
+        {
+          "id": 2608,
+          "title": {
+            "romaji": "Wangan Midnight",
+            "english": null,
+            "native": "湾岸ミッドナイト"
+          }
+        },
+        {
+          "id": 2683,
+          "title": {
+            "romaji": "Tokyo Majin Gakuen Kenpucho: Tou Dai Ni Maku",
+            "english": "Tokyo Majin Season 2",
+            "native": "東京魔人學園剣風帖　龖（トウ） 第弐幕"
+          }
+        },
+        {
+          "id": 2684,
+          "title": {
+            "romaji": "BUZZER BEATER (2007)",
+            "english": null,
+            "native": "BUZZER BEATER (2007)"
+          }
+        },
+        {
+          "id": 2744,
+          "title": {
+            "romaji": "Potemayo",
+            "english": null,
+            "native": "ぽてまよ"
+          }
+        },
+        {
+          "id": 5276,
+          "title": {
+            "romaji": "Happy Happy Clover",
+            "english": null,
+            "native": "はぴはぴクローバー"
+          }
+        }
+      ]
+    }
+  }
+}

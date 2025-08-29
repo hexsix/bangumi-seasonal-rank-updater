@@ -1,0 +1,203 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 356,
+          "title": {
+            "romaji": "Fate/stay night",
+            "english": "Fate/stay night",
+            "native": "Fate/stay night"
+          }
+        },
+        {
+          "id": 558,
+          "title": {
+            "romaji": "Major S2",
+            "english": null,
+            "native": "メジャー  (第2シリーズ)"
+          }
+        },
+        {
+          "id": 576,
+          "title": {
+            "romaji": "Magikano",
+            "english": "Magikano",
+            "native": "マジカノ"
+          }
+        },
+        {
+          "id": 577,
+          "title": {
+            "romaji": "Kagihime Monogatari: Eikyuu Alice Rinbukyoku",
+            "english": "Key Princess Story Eternal Alice Rondo",
+            "native": "鍵姫物語 永久アリス輪舞曲"
+          }
+        },
+        {
+          "id": 586,
+          "title": {
+            "romaji": "ayakashi: Japanese Classic Horror",
+            "english": "Ayakashi: Samurai Horror Tales",
+            "native": "怪～ayakashi～ Japanese Classic Horror"
+          }
+        },
+        {
+          "id": 587,
+          "title": {
+            "romaji": "Hanbun no Tsuki ga Noboru Sora",
+            "english": "Looking Up at the Half-Moon",
+            "native": "半分の月がのぼる空"
+          }
+        },
+        {
+          "id": 590,
+          "title": {
+            "romaji": "Kage kara Mamoru!",
+            "english": "Guardian Ninja Mamoru",
+            "native": "陰からマモル！"
+          }
+        },
+        {
+          "id": 667,
+          "title": {
+            "romaji": "Kashimashi: Girl Meets Girl",
+            "english": "Girl Meets Girl",
+            "native": "かしまし〜ガール・ミーツ・ガール〜"
+          }
+        },
+        {
+          "id": 671,
+          "title": {
+            "romaji": "Lemon Angel Project",
+            "english": null,
+            "native": "レモン エンジェル プロジェクト"
+          }
+        },
+        {
+          "id": 771,
+          "title": {
+            "romaji": "Ginyuu Mokushiroku Meine Liebe Wieder",
+            "english": null,
+            "native": "吟遊黙示録マイネリーベ ヴィーダー"
+          }
+        },
+        {
+          "id": 790,
+          "title": {
+            "romaji": "Ergo Proxy",
+            "english": "Ergo Proxy",
+            "native": "Ergo Proxy"
+          }
+        },
+        {
+          "id": 798,
+          "title": {
+            "romaji": "Yomigaeru Sora: Rescue Wings",
+            "english": null,
+            "native": "よみがえる空 -Rescue Wings-"
+          }
+        },
+        {
+          "id": 817,
+          "title": {
+            "romaji": "Tactical Roar",
+            "english": null,
+            "native": "タクティカルロア"
+          }
+        },
+        {
+          "id": 886,
+          "title": {
+            "romaji": "Amaenaide yo!! Katsu!!",
+            "english": "Ah My Buddha Katsu",
+            "native": "あまえないでよっ!! 喝!!"
+          }
+        },
+        {
+          "id": 1534,
+          "title": {
+            "romaji": "Futari wa Precure: Splash☆Star",
+            "english": "PreCure Splash Star",
+            "native": "ふたりはプリキュア Splash☆Star"
+          }
+        },
+        {
+          "id": 1655,
+          "title": {
+            "romaji": "Nerima Daikon Brothers",
+            "english": "Nerima Daikon Brothers",
+            "native": "練馬大根ブラザーズ"
+          }
+        },
+        {
+          "id": 2244,
+          "title": {
+            "romaji": "Rakugo Tennyo Oyui",
+            "english": null,
+            "native": "落語天女おゆい"
+          }
+        },
+        {
+          "id": 3112,
+          "title": {
+            "romaji": "Papillon Rose",
+            "english": null,
+            "native": "パピヨンローゼ"
+          }
+        },
+        {
+          "id": 3769,
+          "title": {
+            "romaji": "Play Ball 2nd",
+            "english": "Play Ball 2nd",
+            "native": "プレイボール2nd"
+          }
+        },
+        {
+          "id": 4101,
+          "title": {
+            "romaji": "Wan Wan Serepu Soreyuke! Tetsunoshin",
+            "english": null,
+            "native": "ワンワンセレプー それゆけ！徹之進"
+          }
+        },
+        {
+          "id": 4563,
+          "title": {
+            "romaji": "Bakukyuu HIT! Crash B-Daman",
+            "english": null,
+            "native": "爆球HIT! クラッシュビーダマン"
+          }
+        },
+        {
+          "id": 4823,
+          "title": {
+            "romaji": "Youkai Ningen Bem (2006)",
+            "english": "Humanoid Monster Bem (2006)",
+            "native": "妖怪人間ベム"
+          }
+        },
+        {
+          "id": 5968,
+          "title": {
+            "romaji": "Kinnikuman II Sei: ULTIMATE MUSCLE 2",
+            "english": null,
+            "native": "キン肉マンII世 ULTIMATE MUSCLE 2"
+          }
+        },
+        {
+          "id": 173824,
+          "title": {
+            "romaji": "Majime ni Fumajime Kaiketsu Zorori: Zekkouchou!",
+            "english": null,
+            "native": "まじめにふまじめ かいけつゾロリ ゼッコーチョー！"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 3594,
+          "title": {
+            "romaji": "Tears to Tiara",
+            "english": "Tears to Tiara",
+            "native": "ティアーズ・トゥ・ティアラ"
+          }
+        },
+        {
+          "id": 4192,
+          "title": {
+            "romaji": "Hayate no Gotoku!!",
+            "english": "Hayate the Combat Butler!!",
+            "native": "ハヤテのごとく！！"
+          }
+        },
+        {
+          "id": 4382,
+          "title": {
+            "romaji": "Suzumiya Haruhi no Yuuutsu (2009)",
+            "english": "The Melancholy of Haruhi Suzumiya (2009)",
+            "native": "涼宮ハルヒの憂鬱"
+          }
+        },
+        {
+          "id": 4657,
+          "title": {
+            "romaji": "Arad Senki: Slap Up Party",
+            "english": null,
+            "native": "アラド戦記 ～スラップアップパーティー～"
+          }
+        },
+        {
+          "id": 4719,
+          "title": {
+            "romaji": "Queen's Blade: Rurou no Senshi",
+            "english": "Queen's Blade: The Exiled Virgin",
+            "native": "クイーンズブレイド 流浪の戦士"
+          }
+        },
+        {
+          "id": 5041,
+          "title": {
+            "romaji": "Guin Saga",
+            "english": "Guin Saga",
+            "native": "グイン・サーガ"
+          }
+        },
+        {
+          "id": 5114,
+          "title": {
+            "romaji": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
+            "english": "Fullmetal Alchemist: Brotherhood",
+            "native": "鋼の錬金術師 FULLMETAL ALCHEMIST"
+          }
+        },
+        {
+          "id": 5150,
+          "title": {
+            "romaji": "Hatsukoi Limited",
+            "english": "Hatsukoi Limited",
+            "native": "初恋限定。"
+          }
+        },
+        {
+          "id": 5220,
+          "title": {
+            "romaji": "Shangri-La",
+            "english": "Shangri-la",
+            "native": "シャングリ・ラ"
+          }
+        },
+        {
+          "id": 5226,
+          "title": {
+            "romaji": "Souten Kouro",
+            "english": "Beyond the Heavens",
+            "native": "蒼天航路"
+          }
+        },
+        {
+          "id": 5337,
+          "title": {
+            "romaji": "Bakugan Battle Brawlers: New Vestroia",
+            "english": "Bakugan: New Vestroia",
+            "native": "爆丸バトルブローラーズ  New Vestroia"
+          }
+        },
+        {
+          "id": 5342,
+          "title": {
+            "romaji": "Asura Cryin'",
+            "english": "Asura Cryin'",
+            "native": "アスラクライン"
+          }
+        },
+        {
+          "id": 5355,
+          "title": {
+            "romaji": "Sengoku BASARA",
+            "english": "Sengoku Basara: Samurai Kings",
+            "native": "戦国BASARA"
+          }
+        },
+        {
+          "id": 5485,
+          "title": {
+            "romaji": "Shin Mazinger Shougeki! Z-hen",
+            "english": "Mazinger Edition Z: The Impact!",
+            "native": "真マジンガー 衝撃！Z編"
+          }
+        },
+        {
+          "id": 5494,
+          "title": {
+            "romaji": "Konnichiwa Anne: Before Green Gables",
+            "english": null,
+            "native": "こんにちは アン 〜Before Green Gables"
+          }
+        },
+        {
+          "id": 5504,
+          "title": {
+            "romaji": "Shinkyoku Soukai Polyphonica crimson S",
+            "english": "Polyphonica Crimson S",
+            "native": "神曲奏界ポリフォニカcrimsonS"
+          }
+        },
+        {
+          "id": 5507,
+          "title": {
+            "romaji": "Senjou no Valkyria: Gallian Chronicles",
+            "english": "Valkyria Chronicles",
+            "native": "戦場のヴァルキュリア -Gallian Chronicles-"
+          }
+        },
+        {
+          "id": 5525,
+          "title": {
+            "romaji": "07-Ghost",
+            "english": "07-Ghost",
+            "native": "セブンゴースト"
+          }
+        },
+        {
+          "id": 5530,
+          "title": {
+            "romaji": "Pandora Hearts",
+            "english": null,
+            "native": "パンドラハーツ"
+          }
+        },
+        {
+          "id": 5597,
+          "title": {
+            "romaji": "Natsu no Arashi!",
+            "english": "Natsu no Arashi!",
+            "native": "夏のあらし!"
+          }
+        },
+        {
+          "id": 5630,
+          "title": {
+            "romaji": "Higashi no Eden",
+            "english": "Eden of the East",
+            "native": "東のエデン"
+          }
+        },
+        {
+          "id": 5671,
+          "title": {
+            "romaji": "Saki",
+            "english": "Saki",
+            "native": "咲-Saki-"
+          }
+        },
+        {
+          "id": 5675,
+          "title": {
+            "romaji": "Basquash!",
+            "english": "BASQUASH!",
+            "native": "バスカッシュ！"
+          }
+        },
+        {
+          "id": 5680,
+          "title": {
+            "romaji": "K-ON!",
+            "english": "K-ON!",
+            "native": "けいおん!"
+          }
+        },
+        {
+          "id": 5682,
+          "title": {
+            "romaji": "Phantom: Requiem for the Phantom",
+            "english": "Phantom: Requiem for the Phantom",
+            "native": "Phantom 〜Requiem for the Phantom〜"
+          }
+        },
+        {
+          "id": 5734,
+          "title": {
+            "romaji": "Tayutama: Kiss on my Deity",
+            "english": null,
+            "native": "タユタマ -Kiss on my Deity-"
+          }
+        },
+        {
+          "id": 5835,
+          "title": {
+            "romaji": "Hanasakeru Seishounen",
+            "english": "Hanasakeru Seishounen ",
+            "native": "花咲ける青少年"
+          }
+        },
+        {
+          "id": 5941,
+          "title": {
+            "romaji": "Cross Game",
+            "english": "Cross Game",
+            "native": "クロスゲーム"
+          }
+        },
+        {
+          "id": 5962,
+          "title": {
+            "romaji": "Metal Fight Beyblade",
+            "english": "Beyblade: Metal Fusion",
+            "native": "メタルファイト ベイブレード"
+          }
+        },
+        {
+          "id": 5984,
+          "title": {
+            "romaji": "Ristorante Paradiso",
+            "english": "Ristorante Paradiso",
+            "native": "リストランテ・パラディーゾ"
+          }
+        },
+        {
+          "id": 6008,
+          "title": {
+            "romaji": "Jewelpet",
+            "english": "Jewelpet",
+            "native": "ジュエルペット"
+          }
+        },
+        {
+          "id": 6033,
+          "title": {
+            "romaji": "Dragon Ball Kai",
+            "english": "Dragon Ball Z Kai",
+            "native": "ドラゴンボール改"
+          }
+        },
+        {
+          "id": 6116,
+          "title": {
+            "romaji": "Mainichi Kaasan",
+            "english": "Kaasan - Mom's Life",
+            "native": "毎日かあさん"
+          }
+        },
+        {
+          "id": 6117,
+          "title": {
+            "romaji": "Gokujou!! Mecha Mote Iinchou",
+            "english": "The Best!! Extremely Cool Student Council President",
+            "native": "極上!!めちゃモテ委員長"
+          }
+        }
+      ]
+    }
+  }
+}

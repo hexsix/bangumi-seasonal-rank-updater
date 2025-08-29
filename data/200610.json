@@ -1,0 +1,387 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 1482,
+          "title": {
+            "romaji": "D.Gray-man",
+            "english": "D.Gray-man",
+            "native": "ディー・グレイマン"
+          }
+        },
+        {
+          "id": 1498,
+          "title": {
+            "romaji": "BLACK BLOOD BROTHERS",
+            "english": "Black Blood Brothers",
+            "native": "BLACK BLOOD BROTHERS"
+          }
+        },
+        {
+          "id": 1519,
+          "title": {
+            "romaji": "BLACK LAGOON: The Second Barrage",
+            "english": "Black Lagoon: The Second Barrage",
+            "native": "BLACK LAGOON The Second Barrage"
+          }
+        },
+        {
+          "id": 1530,
+          "title": {
+            "romaji": "Kanon (2006)",
+            "english": "Kanon (2006)",
+            "native": "カノン (2006)"
+          }
+        },
+        {
+          "id": 1535,
+          "title": {
+            "romaji": "DEATH NOTE",
+            "english": "Death Note",
+            "native": "DEATH NOTE"
+          }
+        },
+        {
+          "id": 1536,
+          "title": {
+            "romaji": "Busou Renkin",
+            "english": "Arms Alchemy",
+            "native": "武装錬金"
+          }
+        },
+        {
+          "id": 1538,
+          "title": {
+            "romaji": "Pumpkin Scissors",
+            "english": "Pumpkin Scissors",
+            "native": "パンプキン・シザーズ"
+          }
+        },
+        {
+          "id": 1541,
+          "title": {
+            "romaji": "Souten no Ken",
+            "english": "Fist of the Blue Sky",
+            "native": "蒼天の拳"
+          }
+        },
+        {
+          "id": 1543,
+          "title": {
+            "romaji": "Yoake Mae Yori Ruriiro na: Crescent Love",
+            "english": "Brighter Than the Dawning Blue",
+            "native": "夜明け前より瑠璃色な -Crescent Love-"
+          }
+        },
+        {
+          "id": 1546,
+          "title": {
+            "romaji": "Negima!?",
+            "english": "Negima!? Magister Negi Magi",
+            "native": "ネギま!?"
+          }
+        },
+        {
+          "id": 1554,
+          "title": {
+            "romaji": "Asatte no Houkou",
+            "english": "Living for the Day After Tomorrow",
+            "native": "あさっての方向。"
+          }
+        },
+        {
+          "id": 1555,
+          "title": {
+            "romaji": "Tokimeki Memorial: Only Love",
+            "english": "Tokimeki Memorial",
+            "native": "ときめきメモリアル Only Love"
+          }
+        },
+        {
+          "id": 1557,
+          "title": {
+            "romaji": "Shounen Onmyouji",
+            "english": "Shonen Onmyoji",
+            "native": "少年陰陽師"
+          }
+        },
+        {
+          "id": 1559,
+          "title": {
+            "romaji": "Shijou Saikyou no Deshi Kenichi",
+            "english": "Kenichi: The Mightiest Disciple",
+            "native": "史上最強の弟子 ケンイチ"
+          }
+        },
+        {
+          "id": 1561,
+          "title": {
+            "romaji": "Lovedol: Lovely Idol",
+            "english": "Lovely Idol",
+            "native": "らぶドル～Lovely Idol～"
+          }
+        },
+        {
+          "id": 1562,
+          "title": {
+            "romaji": "Yamato Nadeshiko Shichi Henge♥",
+            "english": "The Wallflower",
+            "native": "ヤマトナデシコ七変化♥"
+          }
+        },
+        {
+          "id": 1565,
+          "title": {
+            "romaji": "Pocket Monsters Diamond & Pearl",
+            "english": "Pokémon the Series: Diamond and Pearl",
+            "native": "ポケットモンスター ダイヤモンド&パール"
+          }
+        },
+        {
+          "id": 1568,
+          "title": {
+            "romaji": "Sumomomo Momomo: Chijou Saikyou no Yome",
+            "english": null,
+            "native": "すもももももも〜地上最強のヨメ〜"
+          }
+        },
+        {
+          "id": 1569,
+          "title": {
+            "romaji": "Otome wa Boku ni Koishiteru",
+            "english": "Otoboku: Maidens are Falling for Me",
+            "native": "乙女は僕に恋してる"
+          }
+        },
+        {
+          "id": 1570,
+          "title": {
+            "romaji": "Happiness!",
+            "english": null,
+            "native": "はぴねす！"
+          }
+        },
+        {
+          "id": 1571,
+          "title": {
+            "romaji": "Ghost Hunt",
+            "english": "Ghost Hunt",
+            "native": "ゴーストハント"
+          }
+        },
+        {
+          "id": 1575,
+          "title": {
+            "romaji": "Code Geass: Hangyaku no Lelouch",
+            "english": "Code Geass: Lelouch of the Rebellion",
+            "native": "コードギアス 反逆のルルーシュ"
+          }
+        },
+        {
+          "id": 1579,
+          "title": {
+            "romaji": "Kiniro no Corda: primo passo",
+            "english": "La Corda D'Oro: Primo Passo",
+            "native": "金色のコルダ ～primo passo～"
+          }
+        },
+        {
+          "id": 1581,
+          "title": {
+            "romaji": "Gift: eternal rainbow",
+            "english": null,
+            "native": "ギフト～ eternal rainbow"
+          }
+        },
+        {
+          "id": 1583,
+          "title": {
+            "romaji": "009-1",
+            "english": "009-1",
+            "native": "ゼロゼロナインワン"
+          }
+        },
+        {
+          "id": 1587,
+          "title": {
+            "romaji": "Tenpou Ibun Ayakashi Ayashi",
+            "english": "Ghost Slayers Ayashi",
+            "native": "天保異聞 妖奇士"
+          }
+        },
+        {
+          "id": 1588,
+          "title": {
+            "romaji": "Mamoru-kun ni Megami no Shukufuku wo!",
+            "english": "Venus to Mamoru!",
+            "native": "護くんに女神の祝福を！"
+          }
+        },
+        {
+          "id": 1589,
+          "title": {
+            "romaji": "Bartender",
+            "english": "Bartender",
+            "native": "バーテンダー"
+          }
+        },
+        {
+          "id": 1592,
+          "title": {
+            "romaji": "Hataraki Man",
+            "english": "Hataraki Man",
+            "native": "働きマン"
+          }
+        },
+        {
+          "id": 1594,
+          "title": {
+            "romaji": "Jigoku Shoujo: Futakomori",
+            "english": "Hell Girl: Two Mirrors",
+            "native": "地獄少女 二籠"
+          }
+        },
+        {
+          "id": 1600,
+          "title": {
+            "romaji": "Galaxy Angel Rune",
+            "english": "Galaxy Angel Rune",
+            "native": "ギャラクシーエンジェる～ん"
+          }
+        },
+        {
+          "id": 1601,
+          "title": {
+            "romaji": "Red Garden",
+            "english": "Red Garden",
+            "native": "レッド ガーデン"
+          }
+        },
+        {
+          "id": 1602,
+          "title": {
+            "romaji": "Soukou no Strain",
+            "english": "STRAIN: Strategic Armored Infantry",
+            "native": "奏光のストレイン"
+          }
+        },
+        {
+          "id": 1603,
+          "title": {
+            "romaji": "Super Robot Taisen OG: Divine Wars",
+            "english": "Super Robot Wars The Original Generation: The Divine Wars",
+            "native": "スーパーロボット大戦OG -ディバイン・ウォーズ-"
+          }
+        },
+        {
+          "id": 1604,
+          "title": {
+            "romaji": "Katekyou Hitman REBORN!",
+            "english": "REBORN!",
+            "native": "家庭教師ヒットマンREBORN!"
+          }
+        },
+        {
+          "id": 1606,
+          "title": {
+            "romaji": "Kekkaishi",
+            "english": "Kekkaishi",
+            "native": "結界師"
+          }
+        },
+        {
+          "id": 1703,
+          "title": {
+            "romaji": "TOKYO TRIBE 2",
+            "english": null,
+            "native": "TOKYO TRIBE 2"
+          }
+        },
+        {
+          "id": 1863,
+          "title": {
+            "romaji": "Silk Road Shounen Yuuto",
+            "english": null,
+            "native": "シルクロード少年 ユート"
+          }
+        },
+        {
+          "id": 1868,
+          "title": {
+            "romaji": "Giniro no Olynsis: TOKITO",
+            "english": null,
+            "native": "銀色のオリンシス TOKITO"
+          }
+        },
+        {
+          "id": 1882,
+          "title": {
+            "romaji": "Sasami☆Mahou Shoujo Club Season 2",
+            "english": "Sasami Magical Girls Club 2",
+            "native": "砂沙美☆魔法少女クラブ シーズン2"
+          }
+        },
+        {
+          "id": 1912,
+          "title": {
+            "romaji": "Marginal Prince: Gekkeiju no Ouji-tachi",
+            "english": "Marginal Prince",
+            "native": "マージナルプリンス -月桂樹の王子達-"
+          }
+        },
+        {
+          "id": 2717,
+          "title": {
+            "romaji": "Ginga Tetsudou Monogatari: Eien he no Bunkiten",
+            "english": null,
+            "native": "銀河鉄道物語 ～永遠への分岐点～"
+          }
+        },
+        {
+          "id": 3372,
+          "title": {
+            "romaji": "RGB Adventure",
+            "english": "RGB Adventure",
+            "native": "RGBアドベンチャ"
+          }
+        },
+        {
+          "id": 9426,
+          "title": {
+            "romaji": "Pururun! Shizuku-chan",
+            "english": null,
+            "native": "ぷるるんっ！しずくちゃん"
+          }
+        },
+        {
+          "id": 15913,
+          "title": {
+            "romaji": "Happy☆Lucky Bikkuriman",
+            "english": null,
+            "native": "祝! (ハピ☆ラキ)ビックリマン"
+          }
+        },
+        {
+          "id": 17291,
+          "title": {
+            "romaji": "Jinzou Konchuu Kabutoborg VxV",
+            "english": null,
+            "native": "人造昆虫カブトボーグ V×V"
+          }
+        },
+        {
+          "id": 123074,
+          "title": {
+            "romaji": "Yu☆Gi☆Oh! Duel Monsters ALEX",
+            "english": "Yu-Gi-Oh! Capsule Monsters",
+            "native": "遊☆戯☆王デュエルモンスターズALEX"
+          }
+        }
+      ]
+    }
+  }
+}

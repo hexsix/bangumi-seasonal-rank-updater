@@ -1,0 +1,227 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 4334,
+          "title": {
+            "romaji": "Heroman",
+            "english": "HEROMAN",
+            "native": "ヒーローマン"
+          }
+        },
+        {
+          "id": 6114,
+          "title": {
+            "romaji": "RAINBOW: Nisha Rokubou no Shichinin",
+            "english": "Rainbow",
+            "native": "RAINBOW -二舎六房の七人-"
+          }
+        },
+        {
+          "id": 6547,
+          "title": {
+            "romaji": "Angel Beats!",
+            "english": "Angel Beats!",
+            "native": "Angel Beats!"
+          }
+        },
+        {
+          "id": 6895,
+          "title": {
+            "romaji": "Hakuouki",
+            "english": "Hakuoki ~Demon of the Fleeting Blossom~",
+            "native": "薄桜鬼"
+          }
+        },
+        {
+          "id": 6956,
+          "title": {
+            "romaji": "WORKING!!",
+            "english": "Wagnaria!!",
+            "native": "WORKING!!"
+          }
+        },
+        {
+          "id": 6973,
+          "title": {
+            "romaji": "Senkou no Night Raid",
+            "english": "Night Raid 1931",
+            "native": "閃光のナイトレイド"
+          }
+        },
+        {
+          "id": 7054,
+          "title": {
+            "romaji": "Kaichou wa Maid-sama!",
+            "english": "Maid-Sama!",
+            "native": "会長はメイド様!"
+          }
+        },
+        {
+          "id": 7058,
+          "title": {
+            "romaji": "Uragiri wa Boku no Namae wo Shitteiru",
+            "english": "The Betrayal Knows My Name",
+            "native": "裏切りは僕の名前を知っている"
+          }
+        },
+        {
+          "id": 7088,
+          "title": {
+            "romaji": "Ichiban Ushiro no Daimaou",
+            "english": "Demon King Daimao",
+            "native": "いちばんうしろの大魔王"
+          }
+        },
+        {
+          "id": 7334,
+          "title": {
+            "romaji": "Bakugan Battle Brawlers: Gundalian Invaders",
+            "english": "Bakugan: Gundalian Invaders",
+            "native": "爆丸バトルブローラーズ Gundalian Invaders"
+          }
+        },
+        {
+          "id": 7580,
+          "title": {
+            "romaji": "Ikkitousen: XTREME XECUTOR",
+            "english": "Ikki Tousen: Xtreme Xecutor",
+            "native": "一騎当千 XTREME XECUTOR"
+          }
+        },
+        {
+          "id": 7588,
+          "title": {
+            "romaji": "Saraiya Goyou",
+            "english": "House of Five Leaves",
+            "native": "さらい屋 五葉"
+          }
+        },
+        {
+          "id": 7590,
+          "title": {
+            "romaji": "Mayoi Neko Overrun!",
+            "english": null,
+            "native": "迷い猫オーバーラン!"
+          }
+        },
+        {
+          "id": 7593,
+          "title": {
+            "romaji": "kiss×sis (TV)",
+            "english": null,
+            "native": "kiss×sis (TV)"
+          }
+        },
+        {
+          "id": 7647,
+          "title": {
+            "romaji": "Arakawa Under the Bridge",
+            "english": "Arakawa Under the Bridge",
+            "native": "荒川アンダー ザ ブリッジ"
+          }
+        },
+        {
+          "id": 7655,
+          "title": {
+            "romaji": "Major S6",
+            "english": null,
+            "native": "メジャー（第6シリーズ)"
+          }
+        },
+        {
+          "id": 7661,
+          "title": {
+            "romaji": "GIANT KILLING",
+            "english": "Giant Killing",
+            "native": "GIANT KILLING"
+          }
+        },
+        {
+          "id": 7720,
+          "title": {
+            "romaji": "Ookiku Furikabutte: Natsu no Taikai-hen",
+            "english": "Big Windup! 2",
+            "native": "おおきく振りかぶって　〜夏の大会編〜"
+          }
+        },
+        {
+          "id": 7785,
+          "title": {
+            "romaji": "Yojouhan Shinwa Taikei",
+            "english": "The Tatami Galaxy",
+            "native": "四畳半神話大系"
+          }
+        },
+        {
+          "id": 7791,
+          "title": {
+            "romaji": "K-ON!!",
+            "english": "K-ON! Season 2",
+            "native": "けいおん!!"
+          }
+        },
+        {
+          "id": 7793,
+          "title": {
+            "romaji": "Ring ni Kakero 1: Shadow-hen",
+            "english": null,
+            "native": "リングにかけろ1 影道編"
+          }
+        },
+        {
+          "id": 7817,
+          "title": {
+            "romaji": "B Gata H Kei",
+            "english": "Yamada's First Time: B Gata H Kei",
+            "native": "B型H系"
+          }
+        },
+        {
+          "id": 8057,
+          "title": {
+            "romaji": "Shin Koihime†Musou: Otome Tairan",
+            "english": null,
+            "native": "真恋姫†無双 ~乙女大乱~"
+          }
+        },
+        {
+          "id": 8206,
+          "title": {
+            "romaji": "Hime Chen! Otogi Chikku Idol Lilpri",
+            "english": "Spellbound! Magical Princess Lilpri",
+            "native": "ひめチェン! おとぎちっくアイドル リルぷりっ"
+          }
+        },
+        {
+          "id": 8217,
+          "title": {
+            "romaji": "Jewelpet Twinkle☆",
+            "english": null,
+            "native": "ジュエルペット てぃんくる☆"
+          }
+        },
+        {
+          "id": 8410,
+          "title": {
+            "romaji": "Metal Fight Beyblade: Baku",
+            "english": "Beyblade: Metal Masters",
+            "native": "メタルファイト ベイブレード～爆～"
+          }
+        },
+        {
+          "id": 8538,
+          "title": {
+            "romaji": "Gokujou!! Mecha Mote Iinchou Second Collection",
+            "english": "The Best!! Extremely Cool Student Council President Second Collection",
+            "native": "極上!!めちゃモテ委員長 セカンドコレクション"
+          }
+        }
+      ]
+    }
+  }
+}

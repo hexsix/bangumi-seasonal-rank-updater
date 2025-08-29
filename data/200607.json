@@ -1,0 +1,187 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 607,
+          "title": {
+            "romaji": "Otogi-juushi Akazukin",
+            "english": "Fairy Musketeers",
+            "native": "おとぎ銃士 赤ずきん"
+          }
+        },
+        {
+          "id": 1142,
+          "title": {
+            "romaji": "Hachimitsu to Clover II",
+            "english": "Honey and Clover II",
+            "native": "ハチミツとクローバー II"
+          }
+        },
+        {
+          "id": 1194,
+          "title": {
+            "romaji": "Coyote Ragtime Show",
+            "english": "Coyote Ragtime Show",
+            "native": "コヨーテ ラグタイムショー"
+          }
+        },
+        {
+          "id": 1195,
+          "title": {
+            "romaji": "Zero no Tsukaima",
+            "english": "The Familiar of Zero",
+            "native": "ゼロの使い魔"
+          }
+        },
+        {
+          "id": 1198,
+          "title": {
+            "romaji": "Tsuyokiss",
+            "english": null,
+            "native": "つよきす"
+          }
+        },
+        {
+          "id": 1210,
+          "title": {
+            "romaji": "NHK ni Youkoso!",
+            "english": "Welcome to the N-H-K",
+            "native": "N・H・Kにようこそ！"
+          }
+        },
+        {
+          "id": 1214,
+          "title": {
+            "romaji": "Binbou Shimai Monogatari",
+            "english": null,
+            "native": "貧乏姉妹物語"
+          }
+        },
+        {
+          "id": 1218,
+          "title": {
+            "romaji": "Tonagura!",
+            "english": "Tonagura!",
+            "native": "となグラ！"
+          }
+        },
+        {
+          "id": 1219,
+          "title": {
+            "romaji": "Chocotto Sister",
+            "english": null,
+            "native": "ちょこッとSister"
+          }
+        },
+        {
+          "id": 1221,
+          "title": {
+            "romaji": "Demashitaa! Powerpuff Girls Z",
+            "english": "Powerpuff Girls Z",
+            "native": "出ましたっ！パワパフガールズZ"
+          }
+        },
+        {
+          "id": 1222,
+          "title": {
+            "romaji": "Bokura ga Ita",
+            "english": "We Were There",
+            "native": "僕等がいた"
+          }
+        },
+        {
+          "id": 1230,
+          "title": {
+            "romaji": "Innocent Venus",
+            "english": null,
+            "native": "イノセント・ヴィーナス"
+          }
+        },
+        {
+          "id": 1243,
+          "title": {
+            "romaji": "NIGHT HEAD GENESIS",
+            "english": null,
+            "native": "NIGHT HEAD GENESIS"
+          }
+        },
+        {
+          "id": 1454,
+          "title": {
+            "romaji": "Kemonozume",
+            "english": null,
+            "native": "ケモノヅメ"
+          }
+        },
+        {
+          "id": 1509,
+          "title": {
+            "romaji": "Mamotte! Lollipop",
+            "english": "Save Me! Lollipop",
+            "native": "まもって！ロリポップ"
+          }
+        },
+        {
+          "id": 1578,
+          "title": {
+            "romaji": "Koi Suru Tenshi Angelique: Kokoro no Mezameru Toki",
+            "english": "Loving Angel Angelique: When Hearts Awaken",
+            "native": "恋する天使アンジェリーク　～心のめざめる時～"
+          }
+        },
+        {
+          "id": 1591,
+          "title": {
+            "romaji": "Kujibiki♥Unbalance (TV)",
+            "english": null,
+            "native": "くじびき♥アンバランス"
+          }
+        },
+        {
+          "id": 1738,
+          "title": {
+            "romaji": "Muteki Kanban Musume",
+            "english": "Ramen Fighter Miki",
+            "native": "無敵看板娘"
+          }
+        },
+        {
+          "id": 1740,
+          "title": {
+            "romaji": "Naikaku Kenryoku Hanzai Kyousei Torishimarikan Zaizen Joutarou",
+            "english": null,
+            "native": "内閣権力犯罪強制取締官 財前丈太郎"
+          }
+        },
+        {
+          "id": 20461,
+          "title": {
+            "romaji": "Le Chevalier D'Eon",
+            "english": null,
+            "native": "シェヴァリエ ~Le Chevalier D'Eon~"
+          }
+        },
+        {
+          "id": 107295,
+          "title": {
+            "romaji": "Wa Wa Wa Wappi-chan",
+            "english": null,
+            "native": "和・和・和 ワッピちゃん"
+          }
+        },
+        {
+          "id": 110453,
+          "title": {
+            "romaji": "Patta Potta Monta",
+            "english": null,
+            "native": "パッタ ポッタ モン太"
+          }
+        }
+      ]
+    }
+  }
+}

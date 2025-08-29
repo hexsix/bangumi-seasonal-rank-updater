@@ -1,0 +1,171 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 3467,
+          "title": {
+            "romaji": "Nogizaka Haruka no Himitsu",
+            "english": "Haruka Nogizaka's Secret",
+            "native": "乃木坂春香の秘密"
+          }
+        },
+        {
+          "id": 3604,
+          "title": {
+            "romaji": "Hidamari Sketch x 365",
+            "english": "Hidamari Sketch x 365",
+            "native": "ひだまりスケッチ×３６５"
+          }
+        },
+        {
+          "id": 3614,
+          "title": {
+            "romaji": "Yakushiji Ryouko no Kaiki Jikenbo",
+            "english": "Ryoko's Case File",
+            "native": "薬師寺涼子の怪奇事件簿"
+          }
+        },
+        {
+          "id": 3667,
+          "title": {
+            "romaji": "Strike Witches",
+            "english": "Strike Witches",
+            "native": "ストライクウィッチーズ"
+          }
+        },
+        {
+          "id": 3668,
+          "title": {
+            "romaji": "Telepathy Shoujo Ran",
+            "english": null,
+            "native": "テレパシー少女 蘭"
+          }
+        },
+        {
+          "id": 3712,
+          "title": {
+            "romaji": "Zero no Tsukaima: Princesses no Rondo",
+            "english": "The Familiar of Zero: \"Rondo\" of Princesses",
+            "native": "ゼロの使い魔 ～三美姫（プリンセッセ）の輪舞（ロンド）～"
+          }
+        },
+        {
+          "id": 3974,
+          "title": {
+            "romaji": "Tetsuwan Birdy DECODE",
+            "english": "Birdy the Mighty: Decode",
+            "native": "鉄腕バーディー DECODE"
+          }
+        },
+        {
+          "id": 4021,
+          "title": {
+            "romaji": "Antique Bakery",
+            "english": "Antique Bakery",
+            "native": "西洋 骨董 洋菓子店"
+          }
+        },
+        {
+          "id": 4028,
+          "title": {
+            "romaji": "Slayers REVOLUTION",
+            "english": "The Slayers Revolution",
+            "native": "スレイヤーズ REVOLUTION"
+          }
+        },
+        {
+          "id": 4063,
+          "title": {
+            "romaji": "Sekirei",
+            "english": null,
+            "native": "セキレイ"
+          }
+        },
+        {
+          "id": 4081,
+          "title": {
+            "romaji": "Natsume Yuujinchou",
+            "english": "Natsume's Book of Friends Season 1",
+            "native": "夏目友人帳"
+          }
+        },
+        {
+          "id": 4151,
+          "title": {
+            "romaji": "Mugen no Juunin",
+            "english": "Blade of the Immortal",
+            "native": "無限の住人"
+          }
+        },
+        {
+          "id": 4196,
+          "title": {
+            "romaji": "Ikkitousen: Great Guardians",
+            "english": "Ikki Tousen: Great Guardians",
+            "native": "一騎当千: Great Guardians"
+          }
+        },
+        {
+          "id": 4209,
+          "title": {
+            "romaji": "MISSION-E",
+            "english": null,
+            "native": "MISSION-E"
+          }
+        },
+        {
+          "id": 4262,
+          "title": {
+            "romaji": "Koihime†Musou",
+            "english": null,
+            "native": "恋姫†無双"
+          }
+        },
+        {
+          "id": 4264,
+          "title": {
+            "romaji": "Ultraviolet: Code 044",
+            "english": "Ultraviolet: Code 044",
+            "native": "ウルトラヴァイオレットコード044"
+          }
+        },
+        {
+          "id": 4415,
+          "title": {
+            "romaji": "World Destruction: Sekai Bokumetsu no Rokunin",
+            "english": "Sands of Destruction",
+            "native": "ワールド・デストラクション ～世界撲滅の六人～"
+          }
+        },
+        {
+          "id": 4483,
+          "title": {
+            "romaji": "Mahoutsukai ni Taisetsu na Koto: Natsu no Sora",
+            "english": "Someday's Dreamers II Sora",
+            "native": "魔法遣いに大切なこと ～夏のソラ～"
+          }
+        },
+        {
+          "id": 4662,
+          "title": {
+            "romaji": "Neo Angelique Abyss: Second Age",
+            "english": null,
+            "native": "ネオアンジェリーク Abyss -Second Age-"
+          }
+        },
+        {
+          "id": 4684,
+          "title": {
+            "romaji": "Scarecrowman",
+            "english": "Scarecrowman",
+            "native": "スケアクロウマン"
+          }
+        }
+      ]
+    }
+  }
+}

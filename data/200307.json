@@ -1,0 +1,107 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 62,
+          "title": {
+            "romaji": "D.C.: Da Capo",
+            "english": "D.C.~Da Capo~",
+            "native": "D.C.～ダ・カーポ～"
+          }
+        },
+        {
+          "id": 72,
+          "title": {
+            "romaji": "Full Metal Panic? Fumoffu",
+            "english": "Full Metal Panic? Fumoffu",
+            "native": "フルメタル・パニック? ふもっふ"
+          }
+        },
+        {
+          "id": 133,
+          "title": {
+            "romaji": "Green Green",
+            "english": null,
+            "native": "グリーングリーン"
+          }
+        },
+        {
+          "id": 196,
+          "title": {
+            "romaji": "Onegai☆Twins",
+            "english": "Please☆Twins!",
+            "native": "おねがい☆ツインズ"
+          }
+        },
+        {
+          "id": 257,
+          "title": {
+            "romaji": "Ikkitousen",
+            "english": "Battle Vixens: Ikki Tousen",
+            "native": "一騎当千"
+          }
+        },
+        {
+          "id": 261,
+          "title": {
+            "romaji": "HAPPY☆LESSON: ADVANCE",
+            "english": null,
+            "native": "HAPPY☆LESSON ADVANCE"
+          }
+        },
+        {
+          "id": 294,
+          "title": {
+            "romaji": "Divergence Eve",
+            "english": null,
+            "native": "ダイバージェンス・イヴ"
+          }
+        },
+        {
+          "id": 301,
+          "title": {
+            "romaji": "Cinderella Boy",
+            "english": null,
+            "native": "シンデレラボーイ"
+          }
+        },
+        {
+          "id": 838,
+          "title": {
+            "romaji": "Narutaru: Mukuro Naru Hoshi Tama Taru Ko",
+            "english": "Shadow Star Narutaru",
+            "native": "なるたる ～骸なる星・珠たる子～"
+          }
+        },
+        {
+          "id": 1617,
+          "title": {
+            "romaji": "Massugu ni Ikou",
+            "english": null,
+            "native": "まっすぐにいこう。"
+          }
+        },
+        {
+          "id": 1837,
+          "title": {
+            "romaji": "Sumeba Miyako no Cosmos-sou Suttoko Taisen Dokkoida",
+            "english": "Dokkoida?!",
+            "native": "住めば都のコスモス荘 すっとこ大戦ドッコイダー"
+          }
+        },
+        {
+          "id": 2486,
+          "title": {
+            "romaji": "Takahashi Rumiko Anthology",
+            "english": null,
+            "native": "高橋留美子劇場"
+          }
+        }
+      ]
+    }
+  }
+}

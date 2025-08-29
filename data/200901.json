@@ -1,0 +1,187 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 3750,
+          "title": {
+            "romaji": "Maria-sama ga Miteru 4th Season",
+            "english": "Maria Watches Over Us Season 4",
+            "native": "マリア様がみてる 4thシーズン"
+          }
+        },
+        {
+          "id": 4186,
+          "title": {
+            "romaji": "Koukaku no Regios",
+            "english": "Chrome Shelled Regios",
+            "native": "鋼殻のレギオス"
+          }
+        },
+        {
+          "id": 4618,
+          "title": {
+            "romaji": "RideBack",
+            "english": "RideBack",
+            "native": "ライドバック"
+          }
+        },
+        {
+          "id": 4720,
+          "title": {
+            "romaji": "WHITE ALBUM",
+            "english": "White Album",
+            "native": "WHITE ALBUM"
+          }
+        },
+        {
+          "id": 4726,
+          "title": {
+            "romaji": "Druaga no Tou: the Sword of URUK",
+            "english": "Tower of Druaga: The Sword of Uruk",
+            "native": "ドルアーガの塔 ～the Sword of URUK～"
+          }
+        },
+        {
+          "id": 4999,
+          "title": {
+            "romaji": "Asu no Yoichi!",
+            "english": "Samurai Harem",
+            "native": "明日のよいち！"
+          }
+        },
+        {
+          "id": 5028,
+          "title": {
+            "romaji": "Major S5",
+            "english": null,
+            "native": "メジャー（第5シリーズ)"
+          }
+        },
+        {
+          "id": 5030,
+          "title": {
+            "romaji": "Maria†Holic",
+            "english": "Maria†Holic",
+            "native": "まりあ†ほりっく"
+          }
+        },
+        {
+          "id": 5034,
+          "title": {
+            "romaji": "Shikabane Hime: Kuro",
+            "english": "Corpse Princess: Kuro",
+            "native": "屍姫 玄"
+          }
+        },
+        {
+          "id": 5074,
+          "title": {
+            "romaji": "Tetsuwan Birdy DECODE:02",
+            "english": "Birdy the Mighty: Decode 02",
+            "native": "鉄腕バーディー DECODE:02"
+          }
+        },
+        {
+          "id": 5079,
+          "title": {
+            "romaji": "Kurokami The Animation",
+            "english": "Black God",
+            "native": "黒神 The Animation"
+          }
+        },
+        {
+          "id": 5112,
+          "title": {
+            "romaji": "Akikan!",
+            "english": "Akikan!",
+            "native": "アキカン!"
+          }
+        },
+        {
+          "id": 5155,
+          "title": {
+            "romaji": "Genji Monogatari Sennenki",
+            "english": "Millennium Old Journal: Tale of Genji",
+            "native": "源氏物語千年紀Genji"
+          }
+        },
+        {
+          "id": 5162,
+          "title": {
+            "romaji": "Minami-ke: Okaeri",
+            "english": null,
+            "native": "みなみけ おかえり"
+          }
+        },
+        {
+          "id": 5233,
+          "title": {
+            "romaji": "Slayers EVOLUTION-R",
+            "english": "The Slayers Evolution-R",
+            "native": "スレイヤーズ EVOLUTION-R"
+          }
+        },
+        {
+          "id": 5258,
+          "title": {
+            "romaji": "Hajime no Ippo: New Challenger",
+            "english": "Hajime no Ippo: The Fighting! New Challenger",
+            "native": "はじめの一歩 New Challenger"
+          }
+        },
+        {
+          "id": 5300,
+          "title": {
+            "romaji": "Zoku Natsume Yuujinchou",
+            "english": "Natsume's Book of Friends Season 2",
+            "native": "続 夏目友人帳"
+          }
+        },
+        {
+          "id": 5307,
+          "title": {
+            "romaji": "Sora wo Kakeru Shoujo",
+            "english": "The Girl Who Leapt Through Space",
+            "native": "宇宙をかける少女"
+          }
+        },
+        {
+          "id": 5420,
+          "title": {
+            "romaji": "Kemono no Souja Erin",
+            "english": "Erin",
+            "native": "獣の奏者エリン"
+          }
+        },
+        {
+          "id": 5505,
+          "title": {
+            "romaji": "Viper's Creed",
+            "english": null,
+            "native": "ヴァイパーズ・クリード"
+          }
+        },
+        {
+          "id": 5684,
+          "title": {
+            "romaji": "Fresh Precure!",
+            "english": null,
+            "native": "フレッシュプリキュア！"
+          }
+        },
+        {
+          "id": 5702,
+          "title": {
+            "romaji": "Sora wo Miageru Shoujo no Hitomi ni Utsuru Sekai",
+            "english": null,
+            "native": "空を見上げる少女の瞳に映る世界"
+          }
+        }
+      ]
+    }
+  }
+}

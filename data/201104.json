@@ -1,0 +1,323 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 6880,
+          "title": {
+            "romaji": "Deadman Wonderland",
+            "english": "Deadman Wonderland",
+            "native": "デッドマン・ワンダーランド"
+          }
+        },
+        {
+          "id": 6919,
+          "title": {
+            "romaji": "X-Men",
+            "english": null,
+            "native": "エックスメン"
+          }
+        },
+        {
+          "id": 7081,
+          "title": {
+            "romaji": "Danball Senki",
+            "english": "LBX: Little Battlers eXperience",
+            "native": "ダンボール戦機"
+          }
+        },
+        {
+          "id": 8630,
+          "title": {
+            "romaji": "Hidan no Aria",
+            "english": "Aria the Scarlet Ammo",
+            "native": "緋弾のアリア"
+          }
+        },
+        {
+          "id": 9253,
+          "title": {
+            "romaji": "Steins;Gate",
+            "english": "Steins;Gate",
+            "native": "シュタインズ・ゲート"
+          }
+        },
+        {
+          "id": 9289,
+          "title": {
+            "romaji": "Hanasaku Iroha",
+            "english": "Hanasaku Iroha ~Blossoms for Tomorrow~",
+            "native": "花咲くいろは"
+          }
+        },
+        {
+          "id": 9379,
+          "title": {
+            "romaji": "Denpa Onna to Seishun Otoko",
+            "english": "Ground Control to Psychoelectric Girl",
+            "native": "電波女と青春男"
+          }
+        },
+        {
+          "id": 9493,
+          "title": {
+            "romaji": "Dororon Enma-kun Meeramera",
+            "english": "Ghastly Prince Enma Burning Up",
+            "native": "Dororonえん魔くん メ〜ラめら"
+          }
+        },
+        {
+          "id": 9693,
+          "title": {
+            "romaji": "Moshidora",
+            "english": null,
+            "native": "もしドラ"
+          }
+        },
+        {
+          "id": 9712,
+          "title": {
+            "romaji": "Maria†Holic Alive",
+            "english": "Maria†Holic Alive",
+            "native": "まりあ†ほりっく あらいぶ"
+          }
+        },
+        {
+          "id": 9736,
+          "title": {
+            "romaji": "Astarotte no Omocha!",
+            "english": "Astarotte's Toy",
+            "native": "アスタロッテのおもちゃ！"
+          }
+        },
+        {
+          "id": 9776,
+          "title": {
+            "romaji": "A-Channel",
+            "english": "A-Channel",
+            "native": "Aチャンネル"
+          }
+        },
+        {
+          "id": 9863,
+          "title": {
+            "romaji": "SKET DANCE",
+            "english": "SKET Dance",
+            "native": "SKET DANCE"
+          }
+        },
+        {
+          "id": 9919,
+          "title": {
+            "romaji": "Ao no Exorcist",
+            "english": "Blue Exorcist",
+            "native": "青の祓魔師"
+          }
+        },
+        {
+          "id": 9922,
+          "title": {
+            "romaji": "Oretachi ni Tsubasa wa Nai: under the innocent sky.",
+            "english": "We Without Wings – Under the Innocent Sky",
+            "native": "俺たちに翼はない -under the innocent sky."
+          }
+        },
+        {
+          "id": 9926,
+          "title": {
+            "romaji": "Sekaiichi Hatsukoi",
+            "english": "Sekai Ichi Hatsukoi - The World's Greatest First Love",
+            "native": "世界一初恋 TV"
+          }
+        },
+        {
+          "id": 9941,
+          "title": {
+            "romaji": "TIGER & BUNNY",
+            "english": "Tiger & Bunny",
+            "native": "TIGER & BUNNY"
+          }
+        },
+        {
+          "id": 9969,
+          "title": {
+            "romaji": "Gintama'",
+            "english": "Gintama Season 2",
+            "native": "銀魂’"
+          }
+        },
+        {
+          "id": 9989,
+          "title": {
+            "romaji": "Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.",
+            "english": "Anohana: The Flower We Saw That Day",
+            "native": "あの日見た花の名前を僕達はまだ知らない。"
+          }
+        },
+        {
+          "id": 9996,
+          "title": {
+            "romaji": "Hyouge Mono",
+            "english": null,
+            "native": "へうげもの"
+          }
+        },
+        {
+          "id": 10014,
+          "title": {
+            "romaji": "Shouwa Monogatari",
+            "english": null,
+            "native": "昭和物語 TV"
+          }
+        },
+        {
+          "id": 10015,
+          "title": {
+            "romaji": "Yu☆Gi☆Oh! ZEXAL",
+            "english": "Yu-Gi-Oh! Zexal",
+            "native": "遊☆戯☆王ZEXAL"
+          }
+        },
+        {
+          "id": 10033,
+          "title": {
+            "romaji": "Toriko",
+            "english": null,
+            "native": "トリコ"
+          }
+        },
+        {
+          "id": 10073,
+          "title": {
+            "romaji": "Seikon no Qwaser II",
+            "english": "The Qwaser of Stigmata II",
+            "native": "聖痕のクェイサー II"
+          }
+        },
+        {
+          "id": 10079,
+          "title": {
+            "romaji": "Hoshizora e Kakaru Hashi",
+            "english": "A Bridge to the Starry Skies",
+            "native": "星空へ架かる橋"
+          }
+        },
+        {
+          "id": 10080,
+          "title": {
+            "romaji": "Kami nomi zo Shiru Sekai II",
+            "english": "The World God Only Knows II",
+            "native": "神のみぞ知るセカイⅡ"
+          }
+        },
+        {
+          "id": 10109,
+          "title": {
+            "romaji": "Softenni",
+            "english": null,
+            "native": "そふてにっ"
+          }
+        },
+        {
+          "id": 10155,
+          "title": {
+            "romaji": "Dog Days",
+            "english": "Dog Days",
+            "native": "ドッグデイズ"
+          }
+        },
+        {
+          "id": 10163,
+          "title": {
+            "romaji": "C: THE MONEY OF SOUL AND POSSIBILITY CONTROL",
+            "english": "[C] - CONTROL - The Money and Soul of Possibility",
+            "native": "「C」 THE MONEY OF SOUL AND POSSIBILITY CONTROL"
+          }
+        },
+        {
+          "id": 10165,
+          "title": {
+            "romaji": "Nichijou",
+            "english": "Nichijou - My Ordinary Life",
+            "native": "日常"
+          }
+        },
+        {
+          "id": 10257,
+          "title": {
+            "romaji": "Pretty Rhythm: Aurora Dream",
+            "english": null,
+            "native": "プリティーリズム・オーロラドリーム"
+          }
+        },
+        {
+          "id": 10271,
+          "title": {
+            "romaji": "Gyakkyou Burai Kaiji: Hakairoku-hen",
+            "english": "Kaiji - Against All Rules",
+            "native": "逆境無頼カイジ 破戒録篇"
+          }
+        },
+        {
+          "id": 10308,
+          "title": {
+            "romaji": "Sengoku Otome: Momoiro Paradox",
+            "english": "Battle Girls: Time Paradox",
+            "native": "戦国乙女～桃色パラドックス～"
+          }
+        },
+        {
+          "id": 10346,
+          "title": {
+            "romaji": "Ring ni Kakero 1: Sekai Taikai-hen",
+            "english": null,
+            "native": "リングにかけろ1 世界大会編"
+          }
+        },
+        {
+          "id": 10359,
+          "title": {
+            "romaji": "Jewelpet Sunshine",
+            "english": null,
+            "native": "ジュエルペット サンシャイン"
+          }
+        },
+        {
+          "id": 10370,
+          "title": {
+            "romaji": "Metal Fight Beyblade 4D",
+            "english": "Beyblade: Metal Fury",
+            "native": "メタルファイト ベイブレード 4D"
+          }
+        },
+        {
+          "id": 10444,
+          "title": {
+            "romaji": "Digimon Xros Wars: Aku no Death General to Nanatsu no Oukoku",
+            "english": "Digimon Xros Wars: The Evil Death Generals and the Seven Kingdoms",
+            "native": "デジモンクロスウォーズ～悪のデスジェネラルと七つの王国～"
+          }
+        },
+        {
+          "id": 10507,
+          "title": {
+            "romaji": "Inazuma Eleven GO",
+            "english": null,
+            "native": "イナズマイレブン GO"
+          }
+        },
+        {
+          "id": 13167,
+          "title": {
+            "romaji": "Zoobles!",
+            "english": null,
+            "native": "쥬블스"
+          }
+        }
+      ]
+    }
+  }
+}

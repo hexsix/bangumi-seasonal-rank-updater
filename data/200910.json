@@ -1,0 +1,283 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 3349,
+          "title": {
+            "romaji": "Kiddy GiRL-AND",
+            "english": null,
+            "native": "キディ・ガーランド"
+          }
+        },
+        {
+          "id": 4189,
+          "title": {
+            "romaji": "Fuyu no Sonata",
+            "english": "Winter Sonata",
+            "native": "冬のソナタ"
+          }
+        },
+        {
+          "id": 5678,
+          "title": {
+            "romaji": "Kobato.",
+            "english": "Kobato",
+            "native": "こばと。"
+          }
+        },
+        {
+          "id": 5909,
+          "title": {
+            "romaji": "Seitokai no Ichizon",
+            "english": "Student Council's Discretion",
+            "native": "生徒会の一存"
+          }
+        },
+        {
+          "id": 5940,
+          "title": {
+            "romaji": "Seiken no Blacksmith",
+            "english": "The Sacred Blacksmith",
+            "native": "聖剣の刀鍛冶（ブラックスミス）"
+          }
+        },
+        {
+          "id": 5958,
+          "title": {
+            "romaji": "Sora no Otoshimono",
+            "english": "Heaven's Lost Property",
+            "native": "そらのおとしもの"
+          }
+        },
+        {
+          "id": 6023,
+          "title": {
+            "romaji": "Nogizaka Haruka no Himitsu: Purezza",
+            "english": "Haruka Nogizaka's Secret: Purezza",
+            "native": "乃木坂春香の秘密ぴゃあれっつぁ"
+          }
+        },
+        {
+          "id": 6045,
+          "title": {
+            "romaji": "Kimi ni Todoke",
+            "english": "Kimi ni Todoke: From Me to You",
+            "native": "君に届け"
+          }
+        },
+        {
+          "id": 6112,
+          "title": {
+            "romaji": "Shin Koihime†Musou: Otome Ryouran☆Sangokushi Engi",
+            "english": null,
+            "native": "真恋姫†無双 ～乙女繚乱☆三国志演義～"
+          }
+        },
+        {
+          "id": 6165,
+          "title": {
+            "romaji": "WHITE ALBUM 2nd Season",
+            "english": null,
+            "native": "WHITE ALBUM 第2期"
+          }
+        },
+        {
+          "id": 6203,
+          "title": {
+            "romaji": "Sasameki Koto",
+            "english": "Whispered Words",
+            "native": "ささめきこと"
+          }
+        },
+        {
+          "id": 6205,
+          "title": {
+            "romaji": "Kämpfer",
+            "english": "Kämpfer",
+            "native": "けんぷファー"
+          }
+        },
+        {
+          "id": 6213,
+          "title": {
+            "romaji": "Toaru Kagaku no Railgun",
+            "english": "A Certain Scientific Railgun",
+            "native": "とある科学の超電磁砲"
+          }
+        },
+        {
+          "id": 6444,
+          "title": {
+            "romaji": "Tegami Bachi",
+            "english": "Letter Bee",
+            "native": "テガミバチ"
+          }
+        },
+        {
+          "id": 6512,
+          "title": {
+            "romaji": "Nyan Koi!",
+            "english": "Nyan Koi!",
+            "native": "にゃんこい！"
+          }
+        },
+        {
+          "id": 6573,
+          "title": {
+            "romaji": "DARKER THAN BLACK: Ryuusei no Gemini",
+            "english": "Darker than Black: Gemini of the Meteor",
+            "native": "DARKER THAN BLACK -流星の双子-"
+          }
+        },
+        {
+          "id": 6586,
+          "title": {
+            "romaji": "Yumeiro Pâtissière",
+            "english": "Yumeiro Patissiere",
+            "native": "夢色パティシエール"
+          }
+        },
+        {
+          "id": 6633,
+          "title": {
+            "romaji": "Queen's Blade: Gyokuza wo Tsugu Mono",
+            "english": "Queen's Blade 2: The Evil Eye",
+            "native": "クイーンズブレイド 玉座を継ぐ者"
+          }
+        },
+        {
+          "id": 6676,
+          "title": {
+            "romaji": "Asura Cryin' 2",
+            "english": "Asura Cryin' 2",
+            "native": "アスラクライン"
+          }
+        },
+        {
+          "id": 6682,
+          "title": {
+            "romaji": "11eyes",
+            "english": "11eyes",
+            "native": "イレブンアイズ"
+          }
+        },
+        {
+          "id": 6702,
+          "title": {
+            "romaji": "FAIRY TAIL",
+            "english": "Fairy Tail",
+            "native": "FAIRY TAIL"
+          }
+        },
+        {
+          "id": 6712,
+          "title": {
+            "romaji": "Natsu no Arashi!: Akinai-chuu",
+            "english": "Natsu no Arashi! Season 2",
+            "native": "夏のあらし! 〜春夏冬中〜"
+          }
+        },
+        {
+          "id": 6758,
+          "title": {
+            "romaji": "Tatakau Shisho: The Book of Bantorra",
+            "english": "The Book of Bantorra",
+            "native": "戦う司書 The Book of Bantorra"
+          }
+        },
+        {
+          "id": 6774,
+          "title": {
+            "romaji": "Kuuchuu Buranko",
+            "english": "Welcome to Irabu's Office",
+            "native": "空中ブランコ"
+          }
+        },
+        {
+          "id": 6811,
+          "title": {
+            "romaji": "Inuyasha: Kanketsu-hen",
+            "english": "InuYasha: The Final Act",
+            "native": "犬夜叉 完結編"
+          }
+        },
+        {
+          "id": 6899,
+          "title": {
+            "romaji": "Stitch!: Itazura Alien no Daibouken",
+            "english": "Stitch! ~The Mischievous Alien's Great Adventure~",
+            "native": "スティッチ!～いたずらエイリアンの大冒険～"
+          }
+        },
+        {
+          "id": 6900,
+          "title": {
+            "romaji": "Tamagotchi!",
+            "english": null,
+            "native": "たまごっち!"
+          }
+        },
+        {
+          "id": 6901,
+          "title": {
+            "romaji": "Battle Spirits: Shounen Gekiha Dan",
+            "english": null,
+            "native": "バトルスピリッツ 少年激覇ダン"
+          }
+        },
+        {
+          "id": 6980,
+          "title": {
+            "romaji": "Kaidan Restaurant",
+            "english": null,
+            "native": "怪談レストラン"
+          }
+        },
+        {
+          "id": 7082,
+          "title": {
+            "romaji": "Shugo Chara! Party!",
+            "english": null,
+            "native": "しゅごキャラ！パーティー！"
+          }
+        },
+        {
+          "id": 7103,
+          "title": {
+            "romaji": "Miracle☆Train: Oedo-sen e Youkoso",
+            "english": "Miracle Train: Welcome to the Oedo Line",
+            "native": "ミラクル☆トレイン〜大江戸線へようこそ〜"
+          }
+        },
+        {
+          "id": 7152,
+          "title": {
+            "romaji": "Anyamal Tantei Kiruminzoo",
+            "english": null,
+            "native": "あにゃまる探偵 キルミンずぅ"
+          }
+        },
+        {
+          "id": 7177,
+          "title": {
+            "romaji": "Gokyoudai Monogatari",
+            "english": null,
+            "native": "ご姉弟物語"
+          }
+        },
+        {
+          "id": 7193,
+          "title": {
+            "romaji": "Aoi Bungaku Series",
+            "english": "Blue Literature Series",
+            "native": "青い文学シリーズ"
+          }
+        }
+      ]
+    }
+  }
+}
