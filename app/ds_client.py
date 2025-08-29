@@ -44,7 +44,7 @@ class DSClient:
         prompt += f"目标日文名称: {native_name}"
         prompt += f"BgmInfo: {json.dumps(bgm_info.model_dump(), ensure_ascii=False)}"
         prompt += '请严格返回一个JSON对象，包含一个字段{"subject_id": int}，不要包含任何额外文本或代码块标记！'
-        logger.info(f"ds prompt: {prompt}")
+        logger.debug(f"ds prompt: {prompt}")
         response = await self.client.post(
             "/v1/chat/completions",
             json={

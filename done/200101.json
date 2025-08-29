@@ -1,0 +1,65 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 287,
+          "title": {
+            "native": "グラップラー刃牙 (TV)"
+          }
+        },
+        {
+          "id": 288,
+          "title": {
+            "native": "爆転シュート　ベイブレード"
+          }
+        },
+        {
+          "id": 352,
+          "title": {
+            "native": "も〜っと！おジャ魔女どれみ"
+          }
+        },
+        {
+          "id": 445,
+          "title": {
+            "native": "テイルズ オブ エターニア THE ANIMATION"
+          }
+        },
+        {
+          "id": 764,
+          "title": {
+            "native": "ゾイド新世紀／ゼロ"
+          }
+        },
+        {
+          "id": 812,
+          "title": {
+            "native": "地球少女アルジュナ"
+          }
+        },
+        {
+          "id": 1465,
+          "title": {
+            "native": "破壊魔定光"
+          }
+        },
+        {
+          "id": 1608,
+          "title": {
+            "native": "サラリーマン金太郎"
+          }
+        },
+        {
+          "id": 1962,
+          "title": {
+            "native": "地球防衛家族"
+          }
+        }
+      ]
+    }
+  }
+}

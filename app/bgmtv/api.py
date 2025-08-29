@@ -556,13 +556,13 @@ async def remove_subject_from_index(index_id: int, subject_id: int) -> None:
         return None
 
 
-async def create_index_and_info(season_id: int) -> int:
+async def create_index_and_info(year: int, season: str) -> int:
     index = await create_index()
     await update_index(
         index.id,
         IndexBasicInfo(
-            title=f"Season {season_id}",
-            description=f"auto updated at {datetime.now().isoformat()}",
+            title=f"{year} {season}",
+            description=f"https://anilist.co/search/anime?year={year}&season={season}&format=TV",
         ),
     )
     return index.id

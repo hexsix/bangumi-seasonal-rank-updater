@@ -1,17 +1,16 @@
 import os
 import json
 import asyncio
-from typing import Dict, Any
+import sys
+from typing import Dict, Any, Optional
 
 from dotenv import load_dotenv
 from loguru import logger
 
 from app.bgmtv import (
-    create_index,
-    update_index,
+    create_index_and_info,
     add_subject_to_index,
     search_subject_by_name,
-    IndexBasicInfo,
 )
 from app.ds_client import ds_client
 
@@ -36,6 +35,29 @@ def _anilist_url(year: int, season: str) -> str:
     return f"https://anilist.co/search/anime?year={year}&season={season}&format=TV"
 
 
+def _record_failure(year: int, season: str, filename: str, native_name: str, anilist_id: Optional[int], reason: str) -> None:
+    """Append a failure record to failures/{year}-{season}.jsonl"""
+    try:
+        root_dir = os.path.dirname(os.path.dirname(__file__))
+        failures_dir = os.path.join(root_dir, "failures")
+        os.makedirs(failures_dir, exist_ok=True)
+        out_path = os.path.join(failures_dir, f"{year}-{season}.jsonl")
+        record = {
+            "year": year,
+            "season": season,
+            "file": filename,
+            "title_native": native_name,
+            "anilist_id": anilist_id,
+            "subject": -1,
+            "reason": reason,
+        }
+        with open(out_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+        logger.debug(f"Recorded failure: {record}")
+    except Exception as e:
+        logger.error(f"Failed to write failure record: {e}")
+
+
 async def _process_file(filepath: str) -> None:
     filename = os.path.basename(filepath)
     name, _ = os.path.splitext(filename)
@@ -50,18 +72,9 @@ async def _process_file(filepath: str) -> None:
 
     logger.info(f"Processing {filename}: year={year}, season={season}")
 
-    # 1) Create bangumi index
-    index = await create_index()
-    index_id = index.id
-    logger.info(f"Created index {index_id} for {year}-{month}")
-
-    # 2) Update index description to AniList search URL
-    desc = _anilist_url(year, season)
-    try:
-        await update_index(index_id, IndexBasicInfo(description=desc))
-        logger.info(f"Updated index {index_id} description -> {desc}")
-    except Exception as e:
-        logger.error(f"Failed to update index {index_id}: {e}")
+    # 1) Create bangumi index with title & description
+    index_id = await create_index_and_info(year, season)
+    logger.info(f"Created index {index_id} for {year}-{month} with title & description")
 
     # Load data file
     with open(filepath, "r", encoding="utf-8") as f:
@@ -86,10 +99,20 @@ async def _process_file(filepath: str) -> None:
             subject_id = await ds_client.get_subject_id(native_name, bgm_info)
         except Exception as e:
             logger.error(f"Resolve subject id failed for '{native_name}': {e}")
+            try:
+                anilist_id = item.get("id") if isinstance(item, dict) else None
+            except Exception:
+                anilist_id = None
+            _record_failure(year, season, filename, native_name, anilist_id, f"resolve_failed: {e}")
             continue
 
         if not isinstance(subject_id, int) or subject_id <= 0:
             logger.info(f"Not found: {native_name}")
+            try:
+                anilist_id = item.get("id") if isinstance(item, dict) else None
+            except Exception:
+                anilist_id = None
+            _record_failure(year, season, filename, native_name, anilist_id, "ds_returned_-1")
             continue
 
         if subject_id in added:
@@ -110,7 +133,21 @@ async def _process_file(filepath: str) -> None:
 async def main():
     load_dotenv()
 
-    data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
+    root_dir = os.path.dirname(os.path.dirname(__file__))
+    logs_dir = os.path.join(root_dir, "logs")
+    os.makedirs(logs_dir, exist_ok=True)
+    # Configure logging: INFO to stdout, DEBUG to file
+    logger.remove()
+    logger.add(sys.stdout, level="INFO")
+    logger.add(
+        os.path.join(logs_dir, "run.log"),
+        level="DEBUG",
+        encoding="utf-8",
+        rotation="1 MB",
+        enqueue=True,
+    )
+
+    data_dir = os.path.join(root_dir, "data")
     if not os.path.isdir(data_dir):
         logger.error(f"Data directory not found: {data_dir}")
         return
@@ -127,7 +164,6 @@ async def main():
 
     for fp in files:
         await _process_file(fp)
-        break
 
 
 if __name__ == "__main__":
