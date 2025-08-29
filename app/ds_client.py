@@ -6,7 +6,7 @@ import httpx
 from dotenv import load_dotenv
 from loguru import logger
 
-import bgmtv
+from app import bgmtv
 
 
 load_dotenv()
