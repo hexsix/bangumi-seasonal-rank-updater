@@ -1,0 +1,101 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 180,
+          "title": {
+            "native": "ヴァンドレッド"
+          }
+        },
+        {
+          "id": 243,
+          "title": {
+            "native": "グラビテーション"
+          }
+        },
+        {
+          "id": 249,
+          "title": {
+            "native": "犬夜叉"
+          }
+        },
+        {
+          "id": 263,
+          "title": {
+            "native": "はじめの一歩 THE FIGHTING!"
+          }
+        },
+        {
+          "id": 285,
+          "title": {
+            "native": "アルジェント ソーマ"
+          }
+        },
+        {
+          "id": 553,
+          "title": {
+            "native": "闇の末裔"
+          }
+        },
+        {
+          "id": 598,
+          "title": {
+            "native": "人造人間キカイダーTHE ANIMATION"
+          }
+        },
+        {
+          "id": 1281,
+          "title": {
+            "native": "学校の怪談"
+          }
+        },
+        {
+          "id": 1508,
+          "title": {
+            "native": "サイファイハリー"
+          }
+        },
+        {
+          "id": 1684,
+          "title": {
+            "native": "ドッとKONIちゃん"
+          }
+        },
+        {
+          "id": 1975,
+          "title": {
+            "native": "無敵王トライゼノン"
+          }
+        },
+        {
+          "id": 2484,
+          "title": {
+            "native": "GEAR戦士 電童"
+          }
+        },
+        {
+          "id": 3369,
+          "title": {
+            "native": "勝負師伝説哲也"
+          }
+        },
+        {
+          "id": 3935,
+          "title": {
+            "native": "機巧奇傳 ヒヲウ戦記"
+          }
+        },
+        {
+          "id": 4067,
+          "title": {
+            "native": "真・女神転生 デビチル"
+          }
+        }
+      ]
+    }
+  }
+}

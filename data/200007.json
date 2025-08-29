@@ -1,0 +1,47 @@
+{
+  "data": {
+    "Page": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "media": [
+        {
+          "id": 171,
+          "title": {
+            "native": "ストレンジ・ドーン"
+          }
+        },
+        {
+          "id": 318,
+          "title": {
+            "native": "HAND MAID メイ"
+          }
+        },
+        {
+          "id": 508,
+          "title": {
+            "native": "とっとこハム太郎"
+          }
+        },
+        {
+          "id": 1450,
+          "title": {
+            "native": "ブリガドーン まりんとメラン"
+          }
+        },
+        {
+          "id": 3499,
+          "title": {
+            "native": "DINOZAURS : THE SERIES"
+          }
+        },
+        {
+          "id": 4052,
+          "title": {
+            "native": "メダロット魂"
+          }
+        }
+      ]
+    }
+  }
+}
