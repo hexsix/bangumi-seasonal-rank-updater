@@ -106,7 +106,7 @@ async def fetch_and_save_range(start_ym: str = "200107", end_ym: str = "201201")
 
 async def main():
     load_dotenv()
-    await fetch_and_save_range("200107", "201201")
+    await fetch_and_save_range("202510", "202510")
 
 
 if __name__ == "__main__":
