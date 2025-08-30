@@ -1,0 +1,88 @@
+{
+  "by_year": {
+    "2000": {
+      "WINTER": 0,
+      "SPRING": 21,
+      "SUMMER": 6,
+      "FALL": 15
+    },
+    "2001": {
+      "WINTER": 9,
+      "SPRING": 32,
+      "SUMMER": 14,
+      "FALL": 26
+    },
+    "2002": {
+      "WINTER": 14,
+      "SPRING": 24,
+      "SUMMER": 10,
+      "FALL": 27
+    },
+    "2003": {
+      "WINTER": 16,
+      "SPRING": 33,
+      "SUMMER": 12,
+      "FALL": 32
+    },
+    "2004": {
+      "WINTER": 20,
+      "SPRING": 34,
+      "SUMMER": 15,
+      "FALL": 38
+    },
+    "2005": {
+      "WINTER": 21,
+      "SPRING": 31,
+      "SUMMER": 18,
+      "FALL": 34
+    },
+    "2006": {
+      "WINTER": 24,
+      "SPRING": 58,
+      "SUMMER": 22,
+      "FALL": 47
+    },
+    "2007": {
+      "WINTER": 25,
+      "SPRING": 47,
+      "SUMMER": 21,
+      "FALL": 35
+    },
+    "2008": {
+      "WINTER": 22,
+      "SPRING": 38,
+      "SUMMER": 20,
+      "FALL": 40
+    },
+    "2009": {
+      "WINTER": 22,
+      "SPRING": 34,
+      "SUMMER": 18,
+      "FALL": 34
+    },
+    "2010": {
+      "WINTER": 15,
+      "SPRING": 27,
+      "SUMMER": 18,
+      "FALL": 28
+    },
+    "2011": {
+      "WINTER": 19,
+      "SPRING": 39,
+      "SUMMER": 23,
+      "FALL": 27
+    },
+    "2012": {
+      "WINTER": 23,
+      "SPRING": 0,
+      "SUMMER": 0,
+      "FALL": 0
+    }
+  },
+  "totals": {
+    "WINTER": 230,
+    "SPRING": 418,
+    "SUMMER": 197,
+    "FALL": 383
+  }
+}

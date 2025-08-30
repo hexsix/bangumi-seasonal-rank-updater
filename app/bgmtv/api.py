@@ -514,13 +514,13 @@ async def _add_subject_to_index(
             raise ValueError(f"解析JSON失败: {e}")
 
 
-async def add_subject_to_index(index_id: int, subject_id: int) -> IndexSubject:
+async def add_subject_to_index(index_id: int, subject_id: int, comment: str) -> IndexSubject:
     """
     向目录添加条目
     """
     return await _add_subject_to_index(
         index_id,
-        AddSubjectToIndexRequest(subject_id=subject_id, sort=0, comment="auto updated"),
+        AddSubjectToIndexRequest(subject_id=subject_id, sort=0, comment=comment),
     )
 
 
