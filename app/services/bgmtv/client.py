@@ -26,7 +26,11 @@ class BGMTVClient:
     def _parse_rating(self, subject: BGMTVSubject) -> tuple[int | None, float | None]:
         if subject.rating:
             rank = subject.rating.rank
-            if subject.rating.count and subject.rating.total:
+            if (
+                subject.rating.count
+                and subject.rating.total
+                and subject.rating.total > 0
+            ):
                 total_score = 0
                 for key, value in subject.rating.count.items():
                     total_score += key * value
@@ -51,7 +55,10 @@ class BGMTVClient:
                 + subject.collection.on_hold
                 + subject.collection.dropped
             )
-            drop_rate = subject.collection.dropped / total
+            if total > 0:
+                drop_rate = subject.collection.dropped / total
+            else:
+                drop_rate = None
         else:
             total = None
             drop_rate = None
