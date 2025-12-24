@@ -1,5 +1,6 @@
 mod db;
 mod models;
+mod repositories;
 
 use std::sync::Arc;
 
