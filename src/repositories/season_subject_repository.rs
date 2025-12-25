@@ -1,0 +1,296 @@
+use crate::models::{CreateSeasonSubject, SeasonSubject, Subject};
+use sqlx::PgPool;
+
+pub struct SeasonSubjectRepository<'a> {
+    pool: &'a PgPool,
+}
+
+impl<'a> SeasonSubjectRepository<'a> {
+    pub fn new(pool: &'a PgPool) -> Self {
+        Self { pool }
+    }
+
+    pub async fn create(
+        &self,
+        season_subject: CreateSeasonSubject,
+    ) -> Result<SeasonSubject, sqlx::Error> {
+        let row = sqlx::query_as::<_, SeasonSubject>(
+            r#"
+            INSERT INTO season_subjects (season_id, subject_id)
+            VALUES ($1, $2)
+            RETURNING season_id, subject_id, added_at
+            "#,
+        )
+        .bind(season_subject.season_id)
+        .bind(season_subject.subject_id)
+        .fetch_one(self.pool)
+        .await?;
+
+        Ok(row)
+    }
+
+    pub async fn find_by_season(&self, season_id: i32) -> Result<Vec<Subject>, sqlx::Error> {
+        let row = sqlx::query_as::<_, Subject>(
+            r#"
+            SELECT s.*
+            FROM subjects s
+            JOIN season_subjects ss ON s.id = ss.subject_id
+            WHERE ss.season_id = $1
+            ORDER BY s.rank ASC, s.collection_total DESC
+            "#,
+        )
+        .bind(season_id)
+        .fetch_all(self.pool)
+        .await?;
+
+        Ok(row)
+    }
+
+    pub async fn delete_and_cleanup(
+        &self,
+        season_id: i32,
+        subject_id: i32,
+    ) -> Result<bool, sqlx::Error> {
+        let mut tx = self.pool.begin().await?;
+
+        sqlx::query("DELETE FROM season_subjects WHERE season_id = $1 AND subject_id = $2")
+            .bind(season_id)
+            .bind(subject_id)
+            .execute(&mut *tx)
+            .await?;
+
+        let count: i64 =
+            sqlx::query_scalar("SELECT COUNT(*) FROM season_subjects WHERE subject_id = $1")
+                .bind(subject_id)
+                .fetch_one(&mut *tx)
+                .await?;
+
+        if count == 0 {
+            sqlx::query("DELETE FROM subjects WHERE id = $1")
+                .bind(subject_id)
+                .execute(&mut *tx)
+                .await?;
+        }
+
+        tx.commit().await?;
+        Ok(true)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::models::{CreateSeason, CreateSubject};
+    use crate::repositories::{SeasonRepository, SubjectRepository};
+
+    async fn create_test_season(pool: &PgPool) -> sqlx::Result<()> {
+        let repo = SeasonRepository::new(&pool);
+
+        let create_season = CreateSeason {
+            season_id: 202601,
+            year: 2026,
+            season: "WINTER".to_string(),
+            bangumi_index_id: 85952,
+            name: Some("2026年冬季番".to_string()),
+        };
+
+        repo.create(create_season).await?;
+
+        Ok(())
+    }
+
+    async fn create_test_subjects(pool: &PgPool) -> sqlx::Result<()> {
+        let repo = SubjectRepository::new(pool);
+
+        let create_subjects = vec![
+            CreateSubject {
+                id: 515759,
+                name: Some("葬送のフリーレン 第2期".to_string()),
+                name_cn: Some("葬送的芙莉莲 第二季".to_string()),
+                images_grid: Some(
+                    "https://lain.bgm.tv/r/100/pic/cover/l/0b/24/515759_qA1Zc.jpg".to_string(),
+                ),
+                images_large: Some(
+                    "https://lain.bgm.tv/pic/cover/l/0b/24/515759_qA1Zc.jpg".to_string(),
+                ),
+                rank: Some(395),
+                collection_total: Some(6781),
+                drop_rate: Some(0.0017696504940274296),
+                meta_tags: vec![
+                    "TV".to_string(),
+                    "日本".to_string(),
+                    "奇幻".to_string(),
+                    "漫画改".to_string(),
+                ],
+                score: Some(8.155339805825243),
+                average_comment: Some(0.0),
+                air_weekday: Some("星期五".to_string()),
+            },
+            CreateSubject {
+                id: 443106,
+                name: Some("ゴールデンカムイ 最終章".to_string()),
+                name_cn: Some("黄金神威 最终章".to_string()),
+                images_grid: Some(
+                    "https://lain.bgm.tv/r/100/pic/cover/l/7c/f1/443106_7p6M7.jpg".to_string(),
+                ),
+                images_large: Some(
+                    "https://lain.bgm.tv/pic/cover/l/7c/f1/443106_7p6M7.jpg".to_string(),
+                ),
+                rank: Some(999999),
+                collection_total: Some(817),
+                drop_rate: Some(0.006119951040391677),
+                meta_tags: vec![
+                    "TV".to_string(),
+                    "日本".to_string(),
+                    "漫画改".to_string(),
+                    "战斗".to_string(),
+                    "冒险".to_string(),
+                ],
+                score: Some(7.285714285714286),
+                average_comment: Some(0.0),
+                air_weekday: Some("星期一".to_string()),
+            },
+            CreateSubject {
+                id: 517057,
+                name: Some("【推しの子】 第3期".to_string()),
+                name_cn: Some("【我推的孩子】 第三季".to_string()),
+                images_grid: Some(
+                    "https://lain.bgm.tv/r/100/pic/cover/l/92/95/517057_257ad.jpg".to_string(),
+                ),
+                images_large: Some(
+                    "https://lain.bgm.tv/pic/cover/l/92/95/517057_257ad.jpg".to_string(),
+                ),
+                rank: Some(999999),
+                collection_total: Some(3089),
+                drop_rate: Some(0.011330527678860473),
+                meta_tags: vec![
+                    "TV".to_string(),
+                    "恋爱".to_string(),
+                    "日本".to_string(),
+                    "奇幻".to_string(),
+                    "漫画改".to_string(),
+                ],
+                score: Some(5.333333333333333),
+                average_comment: Some(0.0),
+                air_weekday: Some("星期三".to_string()),
+            },
+            CreateSubject {
+                id: 548818,
+                name: Some("メダリスト 第2期".to_string()),
+                name_cn: Some("金牌得主 第二季".to_string()),
+                images_grid: Some(
+                    "https://lain.bgm.tv/r/100/pic/cover/l/0c/08/548818_iLSG6.jpg".to_string(),
+                ),
+                images_large: Some(
+                    "https://lain.bgm.tv/pic/cover/l/0c/08/548818_iLSG6.jpg".to_string(),
+                ),
+                rank: Some(999999),
+                collection_total: Some(2536),
+                drop_rate: Some(0.003943217665615142),
+                meta_tags: vec![
+                    "TV".to_string(),
+                    "日本".to_string(),
+                    "运动".to_string(),
+                    "漫画改".to_string(),
+                ],
+                score: Some(8.11111111111111),
+                average_comment: Some(0.0),
+                air_weekday: Some("星期六".to_string()),
+            },
+        ];
+
+        for create_subject in create_subjects.into_iter() {
+            repo.create(create_subject).await?;
+        }
+
+        Ok(())
+    }
+
+    #[sqlx::test]
+    async fn test_create_season_subject(pool: PgPool) -> sqlx::Result<()> {
+        create_test_season(&pool).await?;
+        create_test_subjects(&pool).await?;
+
+        let repo = SeasonSubjectRepository::new(&pool);
+
+        let create_season_subject = CreateSeasonSubject {
+            season_id: 202601,
+            subject_id: 515759,
+        };
+
+        let season_subject = repo.create(create_season_subject).await?;
+
+        assert_eq!(season_subject.season_id, 202601);
+        assert_eq!(season_subject.subject_id, 515759);
+
+        Ok(())
+    }
+
+    #[sqlx::test]
+    async fn test_find_all_subjects_by_season_id(pool: PgPool) -> sqlx::Result<()> {
+        create_test_season(&pool).await?;
+        create_test_subjects(&pool).await?;
+
+        let repo = SeasonSubjectRepository::new(&pool);
+
+        let create_season_subjects = vec![
+            CreateSeasonSubject {
+                season_id: 202601,
+                subject_id: 443106,
+            },
+            CreateSeasonSubject {
+                season_id: 202601,
+                subject_id: 517057,
+            },
+            CreateSeasonSubject {
+                season_id: 202601,
+                subject_id: 548818,
+            },
+        ];
+
+        for create_season_subject in create_season_subjects.into_iter() {
+            repo.create(create_season_subject).await?;
+        }
+
+        let subjects = repo.find_by_season(202601).await?;
+
+        assert_eq!(subjects.len(), 3);
+
+        Ok(())
+    }
+
+    #[sqlx::test]
+    async fn test_delete_and_cleanup(pool: PgPool) -> sqlx::Result<()> {
+        create_test_season(&pool).await?;
+        create_test_subjects(&pool).await?;
+
+        let repo = SeasonSubjectRepository::new(&pool);
+
+        let create_season_subjects = vec![
+            CreateSeasonSubject {
+                season_id: 202601,
+                subject_id: 443106,
+            },
+            CreateSeasonSubject {
+                season_id: 202601,
+                subject_id: 517057,
+            },
+            CreateSeasonSubject {
+                season_id: 202601,
+                subject_id: 548818,
+            },
+        ];
+
+        for create_season_subject in create_season_subjects.into_iter() {
+            repo.create(create_season_subject).await?;
+        }
+
+        repo.delete_and_cleanup(202601, 443106).await?;
+
+        let subjects = repo.find_by_season(202601).await?;
+
+        assert_eq!(subjects.len(), 2);
+
+        Ok(())
+    }
+}

@@ -6,7 +6,6 @@ use sqlx::FromRow;
 pub struct SeasonSubject {
     pub season_id: i32,
     pub subject_id: i32,
-    pub display_order: Option<i32>,
     pub added_at: NaiveDateTime,
 }
 
@@ -14,10 +13,4 @@ pub struct SeasonSubject {
 pub struct CreateSeasonSubject {
     pub season_id: i32,
     pub subject_id: i32,
-    pub display_order: Option<i32>,
-}
-
-#[derive(Debug, Deserialize)]
-pub struct UpdateSeasonSubject {
-    pub display_order: Option<i32>,
 }
