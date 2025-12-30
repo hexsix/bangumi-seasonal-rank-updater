@@ -1,4 +1,4 @@
-use crate::models::{CreateSubject, Subject, UpdateSubject};
+use crate::dal::dto::{CreateSubject, Subject, UpdateSubject};
 use sqlx::PgPool;
 
 pub struct SubjectRepository<'a> {

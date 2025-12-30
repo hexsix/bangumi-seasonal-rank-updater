@@ -1,4 +1,4 @@
-use crate::models::{CreateSeason, Season, UpdateSeason};
+use crate::dal::dto::{CreateSeason, Season, UpdateSeason};
 use sqlx::PgPool;
 
 pub struct SeasonRepository<'a> {

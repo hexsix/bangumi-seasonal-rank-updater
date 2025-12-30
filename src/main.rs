@@ -1,10 +1,8 @@
-mod db;
-mod models;
-mod repositories;
+mod dal;
 
 use std::sync::Arc;
 
-use crate::db::Database;
+use crate::dal::db::Database;
 use axum::{Json, Router, extract::State, routing::get};
 use serde::Serialize;
 

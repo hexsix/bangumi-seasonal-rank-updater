@@ -1,4 +1,4 @@
-use crate::models::{CreateSeasonSubject, SeasonSubject, Subject};
+use crate::dal::dto::{CreateSeasonSubject, SeasonSubject, Subject};
 use sqlx::PgPool;
 
 pub struct SeasonSubjectRepository<'a> {
@@ -80,8 +80,8 @@ impl<'a> SeasonSubjectRepository<'a> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::models::{CreateSeason, CreateSubject};
-    use crate::repositories::{SeasonRepository, SubjectRepository};
+    use crate::dal::dto::{CreateSeason, CreateSubject};
+    use crate::dal::repositories::{SeasonRepository, SubjectRepository};
 
     async fn create_test_season(pool: &PgPool) -> sqlx::Result<()> {
         let repo = SeasonRepository::new(&pool);
