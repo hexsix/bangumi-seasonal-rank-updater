@@ -1,5 +1,5 @@
 use crate::services::bangumi::{BangumiClient, schemas::*};
-use anyhow::Result;
+use anyhow::{Context, Result};
 
 impl BangumiClient {
     pub async fn get_episodes(
@@ -22,11 +22,56 @@ impl BangumiClient {
 
         Returns:
             PagedEpisode: 分页剧集数据
-
-        Raises:
-            httpx.HTTPStatusError: 当API返回错误状态码时
-            ValueError: 当响应数据解析失败或重定向次数过多时
         */
-        todo!()
+        let url = self.base_url.join(&format!("/v0/episodes")).unwrap();
+
+        let response = self
+            .client
+            .get(url.as_str())
+            .query(&[
+                ("subject_id", &subject_id.to_string()),
+                ("type", &episode_type.to_string()),
+                ("limit", &limit.to_string()),
+                ("offset", &offset.to_string()),
+            ])
+            .send()
+            .await
+            .context("发送请求失败")?;
+
+        if !response.status().is_success() {
+            anyhow::bail!("API 返回错误状态码: {}, URL: {}", response.status(), url);
+        }
+
+        let paged_episodes = response
+            .json::<PagedEpisode>()
+            .await
+            .context("解析响应 JSON 失败")?;
+
+        Ok(paged_episodes)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[tokio::test]
+    async fn test_get_episodes() {
+        let client = BangumiClient::new();
+        let paged_episode = client.get_episodes(400602, 0, 100, 0).await.unwrap();
+        assert_eq!(paged_episode.total, 28);
+        assert_eq!(paged_episode.data.len(), 28);
+        assert_eq!(
+            paged_episode.data[0].airdate,
+            Some("2023-09-29".to_string())
+        );
+        assert_eq!(paged_episode.data[0].id, 1227087);
+    }
+
+    #[tokio::test]
+    async fn test_bad_episodes_not_found() {
+        let client = BangumiClient::new();
+        let paged_episode = client.get_episodes(999999999, 0, 100, 0).await;
+        assert!(paged_episode.is_err());
     }
 }
